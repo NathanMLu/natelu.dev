@@ -4,6 +4,11 @@
     import Navbar from "$lib/components/Navbar.svelte";
 </script>
 
+<svelte:head>
+    <title>Nate Lu</title>
+    <!-- TODO: Add meta tags -->
+</svelte:head>
+
 <Navbar />
 <main>
     <slot />
