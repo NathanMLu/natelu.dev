@@ -13,6 +13,9 @@ export default {
                 'dark-blue': '#063E57',
                 'modal-bg': '#DFF0F8',
                 'card-bg': '#ECF4F8'
+            },
+            fontFamily: {
+                montserrat_test: ['Montserrat', 'sans-serif'],
             }
         },
     },

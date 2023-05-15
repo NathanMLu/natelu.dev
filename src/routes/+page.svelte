@@ -8,11 +8,15 @@
     Nate Lu
 </h1>
 
+<h1 class="font-montserrat_test">
+    Nate Lu
+</h1>
+
 <style>
-    @font-face {
-        font-family: 'Montserrat';
-        src: url('/fonts/Montserrat/Montserrat-Bold.ttf');
-    }
+    /*@font-face {*/
+    /*    font-family: 'Montserratzz';*/
+    /*    src: url('/fonts/Montserrat/Montserrat-Bold.ttf');*/
+    /*}*/
     
     .font-montserrat {
         font-family: 'Montserrat', serif;
