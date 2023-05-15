@@ -24,6 +24,7 @@
 	"type": "module",
 	"dependencies": {
 		"@vercel/kv": "^0.2.0",
+		"iconify-icon": "^1.0.7",
 		"vercel": "^29.3.0"
 	}
 }
