@@ -1,4 +1,4 @@
-<p class="font-t2 text-2xl">
+<p class="font-esteban">
     Liquid Overlay is a first-person shooter game overlay that improves accessibility for the disabled community,
     transcribing voice chat, displaying game sounds as visual cues, and enabling auto-translation for users who speak
     different languages. This project won 1st place at Liquid Hacks, and was developed using audio manipulation
@@ -8,7 +8,7 @@
     Nate Lu
 </h1>
 
-<h1 class="font-montserrat_test">
+<h1 class="font-montserrat_test test">
     Nate Lu
 </h1>
 
@@ -17,9 +17,15 @@
     /*    font-family: 'Montserratzz';*/
     /*    src: url('/fonts/Montserrat/Montserrat-Bold.ttf');*/
     /*}*/
-    
+    .test {
+        font-weight: 700;
+        font-size: 84px;
+        line-height: 102px;
+        font-style: normal;
+    }
+
     .font-montserrat {
-        font-family: 'Montserrat', serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 84px;
         line-height: 102px;

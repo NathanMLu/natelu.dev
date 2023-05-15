@@ -15,7 +15,8 @@ export default {
                 'card-bg': '#ECF4F8'
             },
             fontFamily: {
-                montserrat_test: ['Montserrat', 'sans-serif'],
+                custom1: ['Montserrat-Bold', 'sans-serif'],
+                esteban: ['Esteban', 'serif'],
             }
         },
     },

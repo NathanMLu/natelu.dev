@@ -2,7 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/fonts/Montserrat/Montserrat-Bold.ttf');
+@layer base {
+    @font-face {
+        font-family: 'Montserrat';
+        src: local('Montserrat'), url('/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        src: local('Monteserrat-SemiBold'), url('/fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        src: local('Montserrat-Bold'), url('/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Esteban';
+        src: local('Esteban'), url('/fonts/Esteban/Esteban-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-display: swap;
+    }
 }
+
