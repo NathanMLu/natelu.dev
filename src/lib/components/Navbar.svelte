@@ -20,15 +20,16 @@
 <nav class="flex flex-wrap items-center justify-between px-10 py-5 text-dark">
     <div class="flex items-center">
         <a class="cursor-pointer" href="">
-            <img alt="favicon" class="h-12" src="favicon.png">
+            <img alt="favicon" class="w-12" src="favicon.png">
         </a>
     </div>
-    <div class="hidden md:flex md:items-center md:justify-center md:flex-grow">
-        <a class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#about">About</a>
-        <a class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#projects">Projects</a>
-        <a class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue"
-           href="#leaderboard">Leaderboard</a>
+
+    <div class="hidden md:flex md:flex-grow md:items-center md:justify-center gap-10">
+        <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#about">About</a>
+        <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#projects">Projects</a>
+        <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#leaderboard">Leaderboard</a>
     </div>
+
     <div class="hidden md:block">
         <a href="#contact">
             <Button color="dark" lowercase="true">
@@ -36,6 +37,7 @@
             </Button>
         </a>
     </div>
+
     <div class="md:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-dark border-dark hover:bg-white"
                 on:click={toggleHamburger}>
