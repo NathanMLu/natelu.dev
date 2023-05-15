@@ -19,7 +19,6 @@ export default {
                 montserrat: ['Montserrat', 'sans-serif'],
                 esteban: ['Esteban', 'serif'],
             }
-            // TODO: Add fontWeight and fontSize
         },
     },
     plugins: [],

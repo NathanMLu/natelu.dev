@@ -19,7 +19,7 @@
 
 <nav class="flex flex-wrap items-center justify-between px-10 py-5 text-dark">
     <div class="flex items-center mr-14">
-        <a class="cursor-pointer" href="">
+        <a class="cursor-pointer" href="/">
             <img alt="favicon" class="w-12" src="favicon.png">
         </a>
     </div>
