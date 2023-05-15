@@ -22,7 +22,7 @@
 <header class="flex items-center justify-between py-4 px-8">
     <div class="flex items-center">
         <img src="favicon.png" alt="Logo" class="h-8 w-8 mr-2">
-        <h1 class="text-lg font-bold text-dark">My Website</h1>
+        <h1 class="text-lg font-bold text-dark font-esteban">My Website</h1>
     </div>
 
     <nav class="hidden md:flex md:items-center">
