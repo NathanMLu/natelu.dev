@@ -1,70 +1,27 @@
-<script lang="ts">
-    import { onMount } from 'svelte';
+<nav class="flex items-center justify-between px-6 py-4 text-dark">
+    <div class="flex items-center">
+        <img src="favicon.png" alt="Favicon" class="h-10 mr-2">
+<!--        <h1 class="font-bold text-lg">Your Brand</h1>-->
+    </div>
+    <div class="hidden md:flex md:items-center md:justify-center flex-1">
+        <a href="#" class="mx-3 navbar-link text-dark">About</a>
+        <a href="#" class="mx-3 navbar-link text-dark">Projects</a>
+        <a href="#" class="mx-3 navbar-link text-dark">Leaderboard</a>
+    </div>
+    <div class="hidden md:block">
+        <a href="#" class="mx-3">Contact</a>
+    </div>
+    <div class="md:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-dark border-dark hover:text-dark hover:border-dark focus:outline-none">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0zM0 9h20v2H0zM0 15h20v2H0z"/></svg>
+        </button>
+    </div>
+</nav>
 
-    let showMobileNav = false;
 
-    function toggleMobileNav() {
-        showMobileNav = !showMobileNav;
+<style>
+    .navbar-link {
+
     }
 
-    onMount(() => {
-        function handleResize() {
-            showMobileNav = false;
-        }
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    });
-</script>
-
-<header class="flex items-center justify-between py-4 px-8">
-    <div class="flex items-center">
-        <img src="favicon.png" alt="Logo" class="h-8 w-8 mr-2">
-        <h1 class="text-lg font-bold text-dark font-esteban">My Website</h1>
-    </div>
-
-    <nav class="hidden md:flex md:items-center">
-        <a href="#" class="mx-4 text-dark">About</a>
-        <a href="#" class="mx-4 text-dark">Projects</a>
-        <a href="#" class="mx-4 text-dark">Leaderboard</a>
-        <a href="#" class="mx-4 text-dark">Contact</a>
-    </nav>
-
-    <button
-            class="md:hidden focus:outline-none"
-            aria-label="Toggle mobile navigation"
-            on:click={toggleMobileNav}
-    >
-        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current text-dark">
-            <path
-                    class={showMobileNav ? 'hidden' : ''}
-                    d="M4 6h16M4 12h16M4 18h16"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-            />
-            <path
-                    class={showMobileNav ? '' : 'hidden'}
-                    d="M6 18L18 6M6 6l12 12"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-            />
-        </svg>
-    </button>
-
-    {#if showMobileNav}
-        <div class="md:hidden fixed top-0 left-0 right-0 bottom-0 bg-white z-50">
-            <nav class="flex flex-col items-center justify-center h-full">
-                <a href="#" class="my-4 text-dark">About</a>
-                <a href="#" class="my-4 text-dark">Projects</a>
-                <a href="#" class="my-4 text-dark">Leaderboard</a>
-                <a href="#" class="my-4 text-dark">Contact</a>
-            </nav>
-        </div>
-    {/if}
-</header>
+</style>
