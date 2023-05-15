@@ -10,6 +10,7 @@ export default {
                 'white': '#F5F5F5',
                 'orange': '#E9AD03',
                 'green': '#9FBB46',
+                'grey': '#CCCCCC',
                 'dark-blue': '#063E57',
                 'modal-bg': '#DFF0F8',
                 'card-bg': '#ECF4F8'

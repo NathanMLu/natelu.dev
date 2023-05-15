@@ -32,11 +32,11 @@
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 p {
-    font-family: 'Esteban', serif;
+    font-family: 'Esteban', serif !important;
 }
 
 .main-headline {

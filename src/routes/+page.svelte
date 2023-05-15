@@ -1,3 +1,7 @@
+<script lang="ts">
+import Button from "$lib/components/Button.svelte";
+</script>
+
 <!--<p>-->
 <!--    Liquid Overlay is a first-person shooter game overlay that improves accessibility for the disabled community,-->
 <!--    transcribing voice chat, displaying game sounds as visual cues, and enabling auto-translation for users who speak-->
@@ -14,13 +18,10 @@
     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
     mollit.
 </p>
-
+<Button color="secondary">
+    Full List
+</Button>
 
 <style>
-    .font-montserrat {
-        font-weight: 700;
-        font-size: 84px;
-        line-height: 102px;
-        font-style: normal;
-    }
+
 </style>
