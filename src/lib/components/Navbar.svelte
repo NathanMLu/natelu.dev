@@ -19,15 +19,15 @@
 
 <nav class="flex flex-wrap items-center justify-between px-10 py-5 text-dark">
     <div class="flex items-center">
-        <a href="" class="cursor-pointer">
-            <img src="favicon.png" alt="favicon" class="h-12">
+        <a class="cursor-pointer" href="">
+            <img alt="favicon" class="h-12" src="favicon.png">
         </a>
     </div>
     <div class="hidden md:flex md:items-center md:justify-center md:flex-grow">
-        <a href="#about" class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue">About</a>
-        <a href="#projects" class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Projects</a>
-        <a href="#leaderboard"
-           class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Leaderboard</a>
+        <a class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#about">About</a>
+        <a class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#projects">Projects</a>
+        <a class="mx-3 text-dark text-lg font-semibold lowercase hover:text-dark-blue"
+           href="#leaderboard">Leaderboard</a>
     </div>
     <div class="hidden md:block">
         <a href="#contact">
@@ -39,7 +39,7 @@
     <div class="md:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-dark border-dark hover:bg-white"
                 on:click={toggleHamburger}>
-            <iconify-icon icon="quill:hamburger" height="25px" width="25px"></iconify-icon>
+            <iconify-icon height="25px" icon="quill:hamburger" width="25px"></iconify-icon>
         </button>
     </div>
 </nav>

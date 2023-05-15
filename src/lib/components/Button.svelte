@@ -6,10 +6,10 @@
 </script>
 
 <button
+        class="{color} font-semibold shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90"
         class:flat={flat}
         class:inverse={inverse}
         class:lowercase={lowercase}
-        class="{color} font-semibold shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90"
         on:click>
     <slot></slot>
 </button>

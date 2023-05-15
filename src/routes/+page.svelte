@@ -1,5 +1,4 @@
 <script lang="ts">
-import Button from "$lib/components/Button.svelte";
 </script>
 
 <!--<p>-->
@@ -11,38 +10,37 @@ import Button from "$lib/components/Button.svelte";
 <!--<h1 class="font-montserrat">-->
 <!--    Nate Lu-->
 <!--</h1>-->
-<h1 class="main-headline mt-5">Nate Lu</h1>
-<h2 class="headline">About Me</h2>
-<h3 class="subheading">Subheading</h3>
-<p class="text">
-    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit
-    mollit.
-</p>
-<Button color="secondary">
-    Full List
-</Button>
-
+<!--<h1 class="main-headline mt-5">Nate Lu</h1>-->
+<!--<h2 class="headline">About Me</h2>-->
+<!--<h3 class="subheading">Subheading</h3>-->
+<!--<p class="text">-->
+<!--    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit-->
+<!--    mollit.-->
+<!--</p>-->
+<!--<Button color="secondary">-->
+<!--    Full List-->
+<!--</Button>-->
 
 
 <style>

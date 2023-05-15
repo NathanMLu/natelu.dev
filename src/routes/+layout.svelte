@@ -2,6 +2,7 @@
     import "../app.css";
     import "iconify-icon"
     import Navbar from "$lib/components/Navbar.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 </script>
 
 <svelte:head>
@@ -9,12 +10,16 @@
     <!-- TODO: Add meta tags -->
 </svelte:head>
 
-<Navbar />
-<main>
-    <slot />
-</main>
-<div class="mt-14" style="height: 10000px"></div>
-<div id="test">got here</div>
+<div class="flex flex-col min-h-screen">
+    <Navbar/>
+    <main class="flex-grow">
+        <slot/>
+        <!--        <div style="height: 1000px"></div>-->
+    </main>
+    <Footer/>
+</div>
+
 
 <style>
+
 </style>

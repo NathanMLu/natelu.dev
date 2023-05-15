@@ -12,7 +12,7 @@ export default {
                 'green': '#9FBB46',
                 'grey': '#CCCCCC',
                 'dark-blue': '#063E57',
-                'modal-bg': '#DFF0F8',
+                'light-blue': '#DFF0F8',
                 'card-bg': '#ECF4F8'
             },
             fontFamily: {
