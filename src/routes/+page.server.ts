@@ -46,3 +46,7 @@ const createUser = async (sessionId: string) => {
         }
     }
 }
+
+const testMe = async () => {
+    console.log("Test")
+}
