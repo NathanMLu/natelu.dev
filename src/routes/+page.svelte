@@ -8,7 +8,7 @@
 </script>
 
 <!--<About/>-->
-<h1>{data.tastyCookie}</h1>
+<h1>{data.props.sessionId}</h1>
 
 <style>
 
