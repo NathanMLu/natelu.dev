@@ -7,7 +7,7 @@
     export let data: PageData;
 </script>
 
-<!--<About/>-->
+<About/>
 <h1>{data.props.sessionId}</h1>
 
 <style>
