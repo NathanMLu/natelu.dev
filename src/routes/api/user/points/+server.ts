@@ -1,21 +1,32 @@
 import {kv} from "@vercel/kv";
-import type {GetUserPointsResponse} from "$lib/models/response/GetUserPointsResponse";
-import type {GetUserPointsRequest} from "$lib/models/request/GetUserPointsRequest";
 
-// GET /api/user/points
-// pass in GetUserPointsRequest, return GetUserPointsResponse
-export async function GET(req: GetUserPointsRequest): Promise<GetUserPointsResponse> {
-    console.log(`GET /api/user/points/${req.sessionId}`);
-    let response = await kv.hget(`user:${req.sessionId}`, "points");
-    if (response === null) {
-        throw new Error("User not found");
-    }
+// GET /api/user/points/:sessionId
+export const GET = async ({ url }: { url: URL }) => {
+    try {
+        const sessionId = url.searchParams.get("sessionId");
+        if (!sessionId) {
+            return new Response(JSON.stringify({error: "sessionId is required"}), {
+                status: 400,
+            });
+        }
 
-    return {
-        "points": Number(response)
+        console.log(`GET /api/user/points - sessionId: ${sessionId}`);
+
+        const response = await kv.hget(`user:${sessionId}`, "points");
+        if (response === null) {
+            return new Response(JSON.stringify({error: "User not found"}), {
+                status: 404,
+            });
+        }
+
+        return new Response(JSON.stringify(response), {status: 200});
+    } catch (error) {
+        console.error(error);
+        return new Response(
+            JSON.stringify({error: "Internal Server Error"}),
+            {status: 500}
+        );
+
     }
 }
-
-// POST /api/user/points
-// pass in GetUserPointsRequest, return GetUserPointsResponse
 
