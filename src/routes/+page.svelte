@@ -4,20 +4,22 @@
     import About from "$lib/components/About.svelte";
     import Points from "$lib/components/Points.svelte";
     import Button from "$lib/components/Button.svelte";
+    import {playerPoints} from "$lib/stores";
 
     export const addPoints = () => {
-        // testMe()
+        playerPoints.update(n => n + 1);
     }
 
-
     export let data: PageData;
+
+    playerPoints.set(Number(data.props.user.points));
 </script>
 
 <Button color="primary" on:click={addPoints}>Add Points</Button>
 <About/>
 <h1>{data.props.user.name}</h1>
 
-<Points points={data.props.user.points} />
+<Points />
 
 <style>
 

@@ -3,7 +3,7 @@ import {defaultUserName, defaultUserPoints} from "$lib/constants";
 
 import type {PageServerLoad} from './$types';
 
-export const load: PageServerLoad = async ({ cookies }) => {
+export const load: PageServerLoad = async ({cookies}) => {
     let sessionId = cookies.get('session_id');
 
     // Create a new session if one doesn't exist
