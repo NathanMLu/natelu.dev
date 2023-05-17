@@ -6,7 +6,7 @@
     import Points from "$lib/components/Points.svelte";
     import Button from "$lib/components/Button.svelte";
     import {playerPoints} from "$lib/models/stores";
-    import type {User} from "$lib/models/User";
+    import type {User} from "$lib/models/user";
 
     export let data: PageData;
     let user: User = data.props.user as User;
@@ -26,14 +26,14 @@
                 sessionId: user.sessionId
             })
         })
-        .then(() => {
-            fetch(`/api/user?sessionId=${user.sessionId}`)
-                .then(res => res.json())
-                .then((data) => {
-                    user.points = data.points;
-                    playerPoints.set(user.points);
-                });
-        });
+            .then(() => {
+                fetch(`/api/user?sessionId=${user.sessionId}`)
+                    .then(res => res.json())
+                    .then((data) => {
+                        user.points = data.points;
+                        playerPoints.set(user.points);
+                    });
+            });
     }
 </script>
 

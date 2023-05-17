@@ -1,7 +1,7 @@
 import {kv} from "@vercel/kv";
 
 // GET /api/user/points/:sessionId
-export const GET = async ({ url }: { url: URL }) => {
+export const GET = async ({url}: { url: URL }) => {
     try {
         const sessionId = url.searchParams.get("sessionId");
         if (!sessionId) {

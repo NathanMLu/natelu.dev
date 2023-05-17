@@ -35,7 +35,7 @@ export const POST = async ({request}: { request: Request }) => {
 };
 
 // GET /api/user/:sessionId
-export const GET = async ({ url }: { url: URL }) => {
+export const GET = async ({url}: { url: URL }) => {
     try {
         const sessionId = url.searchParams.get("sessionId");
         if (!sessionId) {

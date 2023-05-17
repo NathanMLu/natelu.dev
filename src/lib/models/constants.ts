@@ -1,7 +1,7 @@
 export const defaultUserName = 'NateLu Clone';
 export const defaultUserPoints = 0;
 
-export const levelPoints: {[key: number]: number} = {
+export const levelPoints: { [key: number]: number } = {
     1: 15,
     2: 20,
     3: 25,

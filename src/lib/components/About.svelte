@@ -3,7 +3,7 @@
 </script>
 
 <div>
-    <img src="{aboutBackground}" alt="About background" />
+    <img alt="About background" src="{aboutBackground}"/>
     <h1>About</h1>
     <p>
         Lorem
