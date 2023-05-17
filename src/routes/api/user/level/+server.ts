@@ -11,11 +11,18 @@ export const POST = async ({request}: { request: Request }) => {
                 {status: 400}
             );
         }
-        console.log(`POST /api/user/level - sessionId: ${body.sessionId}`)
 
-        if (!body.level && !isNaN(Number(body.level))) {
+        console.log(`POST /api/user/level - sessionId: ${body.sessionId}`)
+        if (!body.level) {
             return new Response(
                 JSON.stringify({error: "level is required"}),
+                {status: 400}
+            );
+        }
+
+        if (typeof body.level !== "number") {
+            return new Response(
+                JSON.stringify({error: "level must be a number"}),
                 {status: 400}
             );
         }

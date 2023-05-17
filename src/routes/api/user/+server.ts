@@ -11,7 +11,14 @@ export const POST = async ({request}: { request: Request }) => {
                 {status: 400}
             );
         }
+
         console.log(`POST /api/user - sessionId: ${body.sessionId}`)
+        const user = await kv.hgetall(`user:${body.sessionId}`);
+        if (user !== null) {
+            return new Response(JSON.stringify({error: "User already exists"}), {
+                status: 400,
+            });
+        }
 
         await kv.hset(`user:${body.sessionId}`, {name: defaultUserName, points: defaultUserPoints});
 
