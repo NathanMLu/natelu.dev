@@ -15,15 +15,14 @@
         playerPoints.set(user.points);
     });
 
-    const levelOne = () => {
-        // call the api POST /api/user/level,
+    const completeLevel = (level) => {
         fetch('/api/user/level', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                level: 1,
+                level: level,
                 sessionId: user.sessionId
             })
         })
@@ -38,7 +37,7 @@
     }
 </script>
 
-<Button color="primary" on:click={levelOne}>Level One</Button>
+<Button color="primary" on:click={() => completeLevel(8)}>Level Three</Button>
 <About/>
 <h1>{user.name}</h1>
 
