@@ -1,5 +1,5 @@
 import {kv} from "@vercel/kv";
-import {defaultUserName, defaultUserPoints} from "$lib/constants";
+import {defaultUserName, defaultUserPoints} from "$lib/models/constants";
 
 // POST /api/user
 export const POST = async ({request}: { request: Request }) => {
@@ -11,6 +11,7 @@ export const POST = async ({request}: { request: Request }) => {
                 {status: 400}
             );
         }
+        console.log(`POST /api/user - sessionId: ${body.sessionId}`)
 
         await kv.hset(`user:${body.sessionId}`, {name: defaultUserName, points: defaultUserPoints});
 

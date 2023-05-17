@@ -1,7 +1,7 @@
 import {kv} from "@vercel/kv";
-import {defaultUserName, defaultUserPoints} from "$lib/constants";
 
 import type {PageServerLoad} from './$types';
+import {defaultUserName, defaultUserPoints} from "$lib/models/constants";
 
 export const load: PageServerLoad = async ({cookies}) => {
     let sessionId = cookies.get('session_id');

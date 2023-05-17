@@ -4,7 +4,7 @@
     import About from "$lib/components/About.svelte";
     import Points from "$lib/components/Points.svelte";
     import Button from "$lib/components/Button.svelte";
-    import {playerPoints} from "$lib/stores";
+    import {playerPoints} from "$lib/models/stores";
 
     export let data: PageData;
 

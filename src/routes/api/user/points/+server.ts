@@ -9,7 +9,6 @@ export const GET = async ({ url }: { url: URL }) => {
                 status: 400,
             });
         }
-
         console.log(`GET /api/user/points - sessionId: ${sessionId}`);
 
         const response = await kv.hget(`user:${sessionId}`, "points");
@@ -26,6 +25,5 @@ export const GET = async ({ url }: { url: URL }) => {
             JSON.stringify({error: "Internal Server Error"}),
             {status: 500}
         );
-
     }
 }
