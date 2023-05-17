@@ -19,14 +19,13 @@ export const load: PageServerLoad = async ({cookies}) => {
         });
     }
 
-    // Get all other user info
     const user = await kv.hgetall(`user:${sessionId}`) as { name: string, points: string };
-
     return {
         props: {
             user: {
                 name: user.name,
-                points: user.points,
+                points: Number(user.points),
+                sessionId: sessionId
             }
         }
     };
@@ -45,8 +44,4 @@ const createUser = async (sessionId: string) => {
             throw new Error(String(error));
         }
     }
-}
-
-const testMe = async () => {
-    console.log("Test")
 }

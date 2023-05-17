@@ -1,8 +1,7 @@
 export interface User {
-    name?: string; //
+    name?: string;
     points: number;
     sessionId: string;
-    levels: Levels;
 }
 
 interface Levels {
