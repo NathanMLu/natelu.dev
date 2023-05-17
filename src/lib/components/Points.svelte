@@ -17,7 +17,7 @@
     })
 </script>
 
-<div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-0 left-0 ml-8 mb-6 drop-shadow-lg">
+<div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-0 left-0 ml-6 mb-4 drop-shadow-lg">
     <img alt="NateLu Coin" class="w-8 animate-spin {addingPoints ? 'adding-points' : ''}" src="{coin}"/>
     <h5 class="text-xl font-bold ml-2">{points}</h5>
 </div>

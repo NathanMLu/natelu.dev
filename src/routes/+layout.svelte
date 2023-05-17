@@ -4,6 +4,7 @@
 
     import Navbar from "$lib/components/Navbar.svelte";
     import Footer from "$lib/components/Footer.svelte";
+    import Points from "$lib/components/Points.svelte";
 </script>
 
 <svelte:head>
@@ -15,8 +16,8 @@
     <Navbar/>
     <main class="flex-grow">
         <slot/>
-        <!--                <div style="height: 1000px"></div>-->
     </main>
+    <Points/>
     <Footer/>
 </div>
 
