@@ -1,6 +1,29 @@
-<div class="header">
+<script lang="ts">
+    import { onMount } from 'svelte';
+
+    let viewBoxWidth = 120;
+
+    onMount(() => {
+        updateViewBox();
+    });
+
+    const updateViewBox = () => {
+        const width = window.innerWidth;
+        if (width > 1024) {
+            viewBoxWidth = 120;
+        } else if (width > 768) {
+            viewBoxWidth = 100;
+        } else {
+            viewBoxWidth = 65;
+        }
+    }
+
+</script>
+
+<svelte:window on:resize={updateViewBox} />
+<div class="header mr-0 lg:mr-32">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-         viewBox="0 24 90 28" preserveAspectRatio="none" shape-rendering="auto">
+         viewBox="0 24 {viewBoxWidth} 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
             <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
         </defs>
@@ -20,23 +43,19 @@
     .header {
         position: relative;
         text-align: center;
-        /*background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);*/
         color: white;
     }
 
     .waves {
         position: relative;
-        /*width: 60%;*/
         height: 30vh;
         min-height: 100px;
         max-height: 150px;
-        /*add shadow*/
-        /*box-shadow: 0 0 20px rgba(0,0,0,0.1);*/
     }
 
     .content {
         position: relative;
-        height: 20vh;
+        height: 15vh;
         text-align: center;
     }
 
@@ -73,4 +92,5 @@
             transform: translate3d(85px, 0, 0);
         }
     }
+
 </style>
