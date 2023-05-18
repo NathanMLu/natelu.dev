@@ -5,6 +5,7 @@
     import About from "$lib/components/About.svelte";
     import {playerPoints} from "$lib/models/stores";
     import type {User} from "$lib/models/user";
+    import Hero from "$lib/components/Hero.svelte";
 
     export let data: PageData;
     let user: User = data.props.user as User;
@@ -34,6 +35,8 @@
     //         });
     // }
 </script>
+
+<Hero></Hero>
 
 <!--<Button color="primary" on:click={() => completeLevel(8)}>Level Three</Button>-->
 <!--<About/>-->
