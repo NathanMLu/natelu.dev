@@ -13,7 +13,11 @@ export default {
                 'grey': '#CCCCCC',
                 'dark-blue': '#063E57',
                 'light-blue': '#DFF0F8',
-                'card-bg': '#ECF4F8'
+                'card-bg': '#ECF4F8',
+                'wave-one': '#CFEBF8',
+                'wave-two': '#6FC4E9',
+                'wave-three': '#0F9CDA',
+                'wave-four': '#095E83',
             },
             fontFamily: {
                 montserrat: ['Montserrat', 'sans-serif'],
