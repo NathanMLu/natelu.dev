@@ -21,7 +21,7 @@
 </script>
 
 <svelte:window on:resize={updateViewBox} />
-<div class="header mr-0 lg:mr-32">
+<div class="mr-0 lg:mr-32">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
          viewBox="0 24 {viewBoxWidth} 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -40,23 +40,15 @@
 </div>
 
 <style>
-    .header {
-        position: relative;
-        text-align: center;
-        color: white;
-    }
 
     .waves {
-        position: relative;
         height: 30vh;
         min-height: 100px;
         max-height: 150px;
     }
 
     .content {
-        position: relative;
         height: 15vh;
-        text-align: center;
     }
 
     /* Animation */

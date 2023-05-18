@@ -1,6 +1,5 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
-    import wavesPlaceholder from "$lib/images/waves-placeholder.png";
     import Wave from "$lib/components/Wave.svelte";
 </script>
 
@@ -21,18 +20,15 @@
         </div>
     </div>
 
-<!--    <div class="flex justify-center align-baseline w-full mt-10 lg:mt-0 lg:w-1/2">-->
-    <div>
+    <div class="mt-10 lg:mt-0">
         <Wave />
     </div>
-<!--        <img class="w-2/3 lg:w-3/5" src={wavesPlaceholder} alt="waves placeholder">-->
-<!--    </div>-->
 </div>
 
 
 <style>
     #hero-container {
-        margin-top: 15vh;
+        margin-top: 20vh;
         margin-bottom: 25vh;
     }
 
