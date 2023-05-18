@@ -35,7 +35,7 @@
         </g>
     </svg>
 
-    <div class="content bg-wave-four">
+    <div class="content bg-wave-four drop-shadow-2xl">
     </div>
 </div>
 
