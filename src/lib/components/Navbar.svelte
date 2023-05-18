@@ -31,9 +31,9 @@
     </div>
 
     <div class="hidden md:block">
-        <a href="#contact">
+        <a href="/resume">
             <Button color="dark" lowercase="true">
-                Contact
+                Resume
             </Button>
         </a>
     </div>
