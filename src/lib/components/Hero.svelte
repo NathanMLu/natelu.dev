@@ -29,7 +29,7 @@
 <style>
     #hero-container {
         margin-top: 15vh;
-        margin-bottom: 10vh;
+        margin-bottom: 25vh;
     }
 
 </style>
