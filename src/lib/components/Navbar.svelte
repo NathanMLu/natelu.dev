@@ -47,15 +47,15 @@
 </nav>
 
 {#if showHamburger}
-    <div class="fixed top-0 left-0 w-screen h-screen bg-secondary" on:click={toggleHamburger}>
+    <div class="fixed top-0 left-0 w-screen h-screen bg-secondary z-10" on:click={toggleHamburger}>
         <div class="flex flex-col items-center justify-center h-full">
             <a href="#about" class="mx-3 my-2 text-dark text-lg font-semibold lowercase hover:text-dark-blue">About</a>
             <a href="#projects" class="mx-3 my-2 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Projects</a>
             <a href="#leaderboard"
                class="mx-3 mt-2 mb-4 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Leaderboard</a>
-            <a href="#contact">
+            <a href="/contact">
                 <Button color="dark" lowercase="true">
-                    Contact
+                    Resume
                 </Button>
             </a>
         </div>

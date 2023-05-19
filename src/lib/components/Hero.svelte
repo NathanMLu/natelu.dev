@@ -21,15 +21,28 @@
     </div>
 
     <div class="mt-10 lg:mt-0">
-        <Wave />
+        <Wave/>
     </div>
 </div>
 
 
 <style>
     #hero-container {
-        margin-top: 20vh;
+        margin-top: 25vh;
         margin-bottom: 25vh;
     }
 
+    @media (max-width: 640px) {
+        #hero-container {
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+        }
+    }
+
+    @media (min-width: 640px) and (max-width: 1024px) {
+        #hero-container {
+            margin-top: 15vh;
+            margin-bottom: 15vh;
+        }
+    }
 </style>
