@@ -2,6 +2,7 @@
     import {afterUpdate, onMount} from 'svelte';
     import {user} from "$lib/models/stores";
     import {completeLevel, getPoints} from "$lib/utils/userUtils";
+    import Toast from "$lib/components/Toast.svelte";
 
     let viewBoxWidth = 120;
     let isHovered = false;
@@ -50,6 +51,8 @@
 </script>
 
 <svelte:window on:resize={updateViewBox}/>
+
+<Toast/>
 <div class="mr-0 lg:mr-32" on:mouseleave={mouseLeave}>
     <svg
             class="waves"
