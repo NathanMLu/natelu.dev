@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
 
     let viewBoxWidth = 120;
+    let isHovered = false;
 
     onMount(() => {
         updateViewBox();
@@ -16,31 +17,48 @@
         } else {
             viewBoxWidth = 65;
         }
-    }
+    };
 
+    const mouseEnter = () => {
+        isHovered = true;
+    };
+
+    const mouseLeave = () => {
+        isHovered = false;
+    };
 </script>
 
 <svelte:window on:resize={updateViewBox} />
-<div class="mr-0 lg:mr-32">
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-         viewBox="0 24 {viewBoxWidth} 28" preserveAspectRatio="none" shape-rendering="auto">
+
+<div class="mr-0 lg:mr-32" on:mouseleave={mouseLeave}>
+    <svg
+            class="waves"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 {viewBoxWidth} 30"
+            preserveAspectRatio="none"
+            shape-rendering="auto"
+            class:is-hovered={isHovered}
+            on:mouseenter={mouseEnter}
+            on:mouseleave={mouseLeave}>
         <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+            <path
+                    id="gentle-wave"
+                    d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
         </defs>
         <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" class="fill-wave-one"/>
-            <use xlink:href="#gentle-wave" x="48" y="3" class="fill-wave-two"/>
-            <use xlink:href="#gentle-wave" x="48" y="5" class="fill-wave-three"/>
-            <use xlink:href="#gentle-wave" x="48" y="7" class="fill-wave-four"/>
+            <use xlink:href="#gentle-wave" x="48" y="0" class="fill-wave-one" />
+            <use xlink:href="#gentle-wave" x="48" y="4" class="fill-wave-two" />
+            <use xlink:href="#gentle-wave" x="48" y="7" class="fill-wave-three" />
+            <use xlink:href="#gentle-wave" x="48" y="10" class="fill-wave-four" />
         </g>
     </svg>
 
-    <div class="content bg-wave-four">
-    </div>
+    <div class="content bg-wave-four" on:mouseenter={mouseEnter}></div>
 </div>
 
 <style>
-
     .waves {
         height: 30vh;
         min-height: 100px;
@@ -76,6 +94,10 @@
         animation-duration: 20s;
     }
 
+    .waves.is-hovered .parallax > use {
+        animation-play-state: paused;
+    }
+
     @keyframes move-forever {
         0% {
             transform: translate3d(-90px, 0, 0);
@@ -84,5 +106,4 @@
             transform: translate3d(85px, 0, 0);
         }
     }
-
 </style>
