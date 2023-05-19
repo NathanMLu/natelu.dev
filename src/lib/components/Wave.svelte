@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { onMount, afterUpdate } from 'svelte';
+    import {afterUpdate, onMount} from 'svelte';
+    import {user} from "$lib/models/stores";
+    import {completeLevel, getPoints} from "$lib/utils/userUtils";
 
     let viewBoxWidth = 120;
     let isHovered = false;
@@ -12,10 +14,17 @@
     afterUpdate(() => {
         if (isHovered && !isLogged) {
             setTimeout(() => {
+                completeLevel(1, $user).then(() => {
+                    getPoints($user).then((points: number) => {
+                        user.update((u) => {
+                            u.points = points;
+                            return u;
+                        });
+                    });
+                });
 
-                console.log('good job');
                 isLogged = true;
-            }, 2000);
+            }, 1000);
         }
     });
 

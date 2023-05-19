@@ -3,37 +3,15 @@
     import {onMount} from "svelte";
 
     import About from "$lib/components/About.svelte";
-    import {playerPoints} from "$lib/models/stores";
     import type {User} from "$lib/models/user";
     import Hero from "$lib/components/Hero.svelte";
+    import {user} from "$lib/models/stores";
 
     export let data: PageData;
-    let user: User = data.props.user as User;
 
     onMount(async () => {
-        playerPoints.set(user.points);
+        user.set(data.props.user as User);
     });
-
-    // const completeLevel = (level) => {
-    //     fetch('/api/user/level', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({
-    //             level: level,
-    //             sessionId: user.sessionId
-    //         })
-    //     })
-    //         .then(() => {
-    //             fetch(`/api/user?sessionId=${user.sessionId}`)
-    //                 .then(res => res.json())
-    //                 .then((data) => {
-    //                     user.points = data.points;
-    //                     playerPoints.set(user.points);
-    //                 });
-    //         });
-    // }
 </script>
 
 <Hero></Hero>

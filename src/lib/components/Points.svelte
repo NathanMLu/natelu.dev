@@ -1,20 +1,19 @@
 <script lang="ts">
     import coin from '$lib/images/coin.svg'
-    import {playerPoints} from "$lib/models/stores";
+    import {user} from "$lib/models/stores";
 
     let points: number;
     let addingPoints: boolean = false;
 
-    playerPoints.subscribe((value) => {
-        if (value > points) {
+    user.subscribe((user) => {
+        if (user.points > points) {
             addingPoints = true;
             setTimeout(() => {
                 addingPoints = false;
             }, 1000);
         }
-
-        points = Number(value);
-    })
+        points = user.points;
+    });
 </script>
 
 <div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-0 left-0 ml-6 mb-4 drop-shadow-lg">

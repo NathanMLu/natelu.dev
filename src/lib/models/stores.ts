@@ -1,3 +1,8 @@
 import {writable} from "svelte/store";
+import type {User} from "$lib/models/user";
 
-export const playerPoints = writable(0);
+export const user = writable<User>({
+    name: '',
+    points: 0,
+    sessionId: ''
+});
