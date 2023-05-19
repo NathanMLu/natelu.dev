@@ -53,7 +53,7 @@
             <a href="#projects" class="mx-3 my-2 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Projects</a>
             <a href="#leaderboard"
                class="mx-3 mt-2 mb-4 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Leaderboard</a>
-            <a href="/contact">
+            <a href="/resume">
                 <Button color="dark" lowercase="true">
                     Resume
                 </Button>
