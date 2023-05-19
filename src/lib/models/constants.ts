@@ -13,3 +13,7 @@ export const levelPoints: { [key: number]: number } = {
     9: 55,
     10: 60,
 };
+
+export const sarcasticMessages = [
+    'You are a genius!',
+]

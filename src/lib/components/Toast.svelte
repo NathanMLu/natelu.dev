@@ -1,16 +1,20 @@
 <script lang="ts">
     import coin from '$lib/images/coin.svg'
     import {afterUpdate} from "svelte";
-    import { fade } from 'svelte/transition';
+    import {fade} from 'svelte/transition';
 
-    export let points: number;
-    export let msg: string;
+    export let points;
+    export let msg;
     let isVisible: boolean = true;
 
     afterUpdate(() => {
-        setTimeout(() => {
-            isVisible = false;
-        }, 5000);
+        console.log("after update")
+        if (points != undefined && msg != undefined) {
+            isVisible = true;
+            setTimeout(() => {
+                isVisible = false;
+            }, 3000);
+        }
     });
 
     const handleClose = () => {
@@ -23,7 +27,12 @@
         <img src="{coin}" alt="coin image" class="w-8">
         <div class="mx-5">
             <h2 class="text-xl font-bold">
-                {points} points!
+                +{points}
+                {#if points > 1}
+                    points!
+                {:else}
+                    point!
+                {/if}
             </h2>
             <p>
                 {msg}
