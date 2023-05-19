@@ -32,6 +32,13 @@
         margin-bottom: 25vh;
     }
 
+    @media (max-width: 1024px) {
+        #hero-container {
+            margin-top: 15vh;
+            margin-bottom: 15vh;
+        }
+    }
+
     @media (max-width: 640px) {
         #hero-container {
             margin-top: 10vh;
@@ -39,10 +46,4 @@
         }
     }
 
-    @media (min-width: 640px) and (max-width: 1024px) {
-        #hero-container {
-            margin-top: 15vh;
-            margin-bottom: 15vh;
-        }
-    }
 </style>
