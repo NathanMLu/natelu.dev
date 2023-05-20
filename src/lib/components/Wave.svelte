@@ -6,6 +6,7 @@
     let viewBoxWidth = 120;
     let isHovered = false;
     let isLogged = false;
+    let levelTimeout;
 
     onMount(() => {
         updateViewBox();
@@ -13,7 +14,7 @@
 
     afterUpdate(() => {
         if (isHovered && !isLogged) {
-            setTimeout(() => {
+            levelTimeout = setTimeout(() => {
                 completeLevel(1, $user).then(() => {
                     getPoints($user).then((points: number) => {
                         user.update((u) => {
@@ -46,6 +47,8 @@
     const mouseLeave = () => {
         isHovered = false;
         isLogged = false;
+
+        clearTimeout(levelTimeout);
     };
 </script>
 

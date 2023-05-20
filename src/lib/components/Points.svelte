@@ -6,20 +6,32 @@
     let points: number;
     let pointsDiff: number;
     let addingPoints: boolean = false;
+    let showToast: boolean = false;
+    let initialLoad: boolean = true;
 
     user.subscribe((user) => {
         if (user.points > points) {
             pointsDiff = user.points - points;
+
             addingPoints = true;
             setTimeout(() => {
                 addingPoints = false;
+                initialLoad = false;
             }, 1000);
+
+            if (!initialLoad) {
+                showToast = true;
+                setTimeout(() => {
+                    showToast = false;
+                }, 3000);
+            }
         }
+
         points = user.points;
     });
 </script>
 
-<Toast points={pointsDiff} msg="billy bob was here"/>
+<Toast points={pointsDiff} isVisible={showToast} msg=""/>
 <div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-4 left-6 drop-shadow-lg">
     <img alt="NateLu Coin" class="w-8 animate-spin {addingPoints ? 'adding-points' : ''}" src="{coin}"/>
     <h5 class="text-xl font-bold ml-2">{points}</h5>

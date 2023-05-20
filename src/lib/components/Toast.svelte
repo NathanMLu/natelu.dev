@@ -1,29 +1,32 @@
 <script lang="ts">
-    import coin from '$lib/images/coin.svg'
     import {afterUpdate} from "svelte";
     import {fade} from 'svelte/transition';
 
+    import coin from '$lib/images/coin.svg'
+    import {congratsMessages} from "$lib/models/constants";
+
+
     export let points;
     export let msg;
-    let isVisible: boolean = true;
+    export let isVisible: boolean = false;
 
     afterUpdate(() => {
-        console.log("after update")
-        if (points != undefined && msg != undefined) {
-            isVisible = true;
-            setTimeout(() => {
-                isVisible = false;
-            }, 3000);
-        }
+        if (!msg) generateMsg();
     });
 
     const handleClose = () => {
         isVisible = false;
     };
+
+    const generateMsg = () => {
+        const randomIndex = Math.floor(Math.random() * congratsMessages.length);
+        msg = congratsMessages[randomIndex];
+    };
 </script>
 
 {#if isVisible}
-    <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-6 drop-shadow-lg" transition:fade>
+    <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-6 drop-shadow-lg"
+         transition:fade>
         <img src="{coin}" alt="coin image" class="w-8">
         <div class="mx-5">
             <h2 class="text-xl font-bold">
