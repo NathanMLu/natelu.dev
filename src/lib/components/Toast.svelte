@@ -7,11 +7,13 @@
 
 
     export let points;
-    export let msg;
     export let isVisible: boolean = false;
+    let msg;
 
     afterUpdate(() => {
-        if (!msg) generateMsg();
+        if (isVisible) {
+            msg = generateMsg();
+        }
     });
 
     const handleClose = () => {
@@ -20,13 +22,12 @@
 
     const generateMsg = () => {
         const randomIndex = Math.floor(Math.random() * congratsMessages.length);
-        msg = congratsMessages[randomIndex];
+        return congratsMessages[randomIndex];
     };
 </script>
 
 {#if isVisible}
-    <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-6 drop-shadow-lg"
-         transition:fade>
+    <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-6 drop-shadow-lg z-10" transition:fade>
         <img src="{coin}" alt="coin image" class="w-8">
         <div class="mx-5">
             <h2 class="text-xl font-bold">
