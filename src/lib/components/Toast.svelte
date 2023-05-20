@@ -27,7 +27,7 @@
 </script>
 
 {#if isVisible}
-    <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-6 drop-shadow-lg z-10" transition:fade>
+    <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-4 drop-shadow-lg z-10" transition:fade>
         <img src="{coin}" alt="coin image" class="w-8">
         <div class="mx-5">
             <h2 class="text-xl font-bold">
