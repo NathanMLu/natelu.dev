@@ -7,24 +7,25 @@
     let pointsDiff: number;
     let addingPoints: boolean = false;
     let showToast: boolean = false;
-    let initialLoad: boolean = true;
 
     user.subscribe((user) => {
         if (user.points > points) {
             pointsDiff = user.points - points;
 
+            console.log(pointsDiff)
+
             addingPoints = true;
             setTimeout(() => {
                 addingPoints = false;
-                initialLoad = false;
             }, 1000);
 
-            if (!initialLoad) {
+            if (points != undefined && points != 0) {
                 showToast = true;
                 setTimeout(() => {
                     showToast = false;
                 }, 3000);
             }
+
         }
 
         points = user.points;
