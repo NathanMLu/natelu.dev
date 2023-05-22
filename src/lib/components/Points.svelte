@@ -12,8 +12,6 @@
         if (user.points > points) {
             pointsDiff = user.points - points;
 
-            console.log(pointsDiff)
-
             addingPoints = true;
             setTimeout(() => {
                 addingPoints = false;

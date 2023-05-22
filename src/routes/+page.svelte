@@ -15,8 +15,4 @@
 </script>
 
 <Hero></Hero>
-
-<!--<Button color="primary" on:click={() => completeLevel(8)}>Level Three</Button>-->
-<!--<About/>-->
-<!--<h1>{user.name}</h1>-->
-
+<About></About>

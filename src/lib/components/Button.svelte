@@ -7,7 +7,7 @@
 </script>
 
 <button
-        class="{color} font-semibold drop-shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90 {customClass}"
+        class="{color} w-min font-semibold drop-shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90 {customClass}"
         class:flat={flat}
         class:inverse={inverse}
         class:lowercase={lowercase}
