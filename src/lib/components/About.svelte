@@ -21,8 +21,8 @@
 
 <div id="about-container">
     <img alt="About background" src="{Curve}" class="w-full">
-    <div class="bg-white flex justify-between align-middle px-16 pb-16 gap-20">
-        <div class="flex justify-start flex-col pt-8">
+    <div class="bg-white flex justify-start lg:justify-between align-middle lg:flex-row px-16 pb-16 gap-20 flex-col">
+        <div class="flex justify-start flex-col lg:pt-8 pt-16">
             <h2 class="text-dark font-bold text-3xl">About Me</h2>
             <p class="mt-4 text-dark">I am a creative problem solver with a passion for using technology to make a
                 positive
@@ -33,12 +33,12 @@
                 <Button lowercase="true" customClass="whitespace-nowrap mt-8">More About Me!</Button>
             </a>
         </div>
-        <div class="flex justify-evenly align-middle">
+        <div class="flex gap-12 lg:gap-6 justify-evenly align-middle flex-col md:flex-row">
             <AboutCard image="{AboutCode}"
                        headline="Software Engineer"
                        link="https://www.corelogic.com/"
                        linkText="CoreLogic"
-                       text="I am a Associate Software Engineer at CoreLogic- a leader in the property solutions and intelligence industry.">
+                       text="I am a Associate Software Engineer at CoreLogic - a leader in the property solutions and intelligence industry.">
             </AboutCard>
             <AboutCard image="{AboutSchool}"
                        headline="Student"
@@ -50,7 +50,7 @@
                        headline="Entrepreneur"
                        link="https://www.ebay.com/usr/neurofix"
                        linkText="Neurofix"
-                       text="I manage Neurofix, an ecommerce business that refurbishes used consumer electronics with over $60,000 in sales.">
+                       text="I manage Neurofix - an ecommerce business that refurbishes used consumer electronics with over $60,000 in sales.">
             </AboutCard>
         </div>
     </div>
@@ -58,20 +58,20 @@
 
 <style>
     #about-container {
-        margin-top: 0;
+        margin-top: 15vh;
         margin-bottom: 15vh;
     }
 
     @media (max-width: 1024px) {
         #about-container {
-            margin-top: 0;
+            margin-top: 10vh;
             margin-bottom: 10vh;
         }
     }
 
     @media (max-width: 640px) {
         #about-container {
-            margin-top: 0;
+            margin-top: 5vh;
             margin-bottom: 5vh;
         }
     }
