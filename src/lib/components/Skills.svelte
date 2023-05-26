@@ -9,11 +9,10 @@
 <div id="skills-container"
      class="flex flex-col justify-center gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
     <div class="order-2 lg:order-1">
-        <div id="skills-logos" class="border-4 rounded-2xl border-dark-blue grid grid-cols-8 grid-rows-4 gap-4">
+        <div id="skills-logos" class="border-4 rounded-2xl border-dark-blue grid grid-cols-8 grid-rows-4 gap-4 p-4">
             {#each technologies as technology}
                 <img src="{technology.logo}" alt="{technology.name}" class="w-full h-full object-contain"/>
             {/each}
-
         </div>
         <Button lowercase="true" color="dark" customClass="mt-8">Full List</Button>
     </div>
