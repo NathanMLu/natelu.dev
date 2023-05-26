@@ -29,20 +29,20 @@
 <style>
     #hero-container {
         margin-top: 25vh;
-        margin-bottom: 25vh;
+        margin-bottom: 20vh;
     }
 
     @media (max-width: 1024px) {
         #hero-container {
             margin-top: 15vh;
-            margin-bottom: 15vh;
+            margin-bottom: 10vh;
         }
     }
 
     @media (max-width: 640px) {
         #hero-container {
             margin-top: 10vh;
-            margin-bottom: 10vh;
+            margin-bottom: 5vh;
         }
     }
 

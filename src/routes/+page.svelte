@@ -2,10 +2,12 @@
     import type {PageData} from './$types';
     import {onMount} from "svelte";
 
-    import About from "$lib/components/About.svelte";
-    import type {User} from "$lib/models/user";
-    import Hero from "$lib/components/Hero.svelte";
     import {user} from "$lib/models/stores";
+    import type {User} from "$lib/models/user";
+
+    import About from "$lib/components/About.svelte";
+    import Hero from "$lib/components/Hero.svelte";
+    import Skills from "$lib/components/Skills.svelte";
 
     export let data: PageData;
 
@@ -16,3 +18,4 @@
 
 <Hero></Hero>
 <About></About>
+<Skills></Skills>
