@@ -66,3 +66,21 @@ export const congratsMessages = [
     "Mission accomplished!",
     "You earned it!",
 ];
+
+export const technologies = [
+    {
+        name: 'Angular',
+        facts: [
+            'I used Angular in my project blahhhh',
+            'I used Angular in my project blahhhh'
+        ]
+    },
+    {
+        name: 'C#',
+        facts: [
+            'In my position as a part-time Software Engineer at CoreLogic, I utilized C# to develop scalable and efficient API endpoints.',
+            'In my hackathon project OmniChat, I used C# as the primary language for server-side development and utilized its robust libraries and frameworks to create a seamless universal chat platform.'
+        ]
+    }
+]
+

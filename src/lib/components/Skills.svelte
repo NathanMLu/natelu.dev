@@ -1,30 +1,39 @@
 <script lang="ts">
-
     import Button from "$lib/components/Button.svelte";
+    import {technologies} from "$lib/models/constants";
+    import {each} from "svelte/internal";
 
     let selectedLanguage: string = "C#";
 
-
 </script>
 
-<div id="skills-container" class="flex flex-col justify-center items-center lg:flex-row lg:pl-36 lg:justify-between">
-    <div class="">
+<div id="skills-container" class="flex flex-col justify-center gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
+    <div class="order-2 lg:order-1">
         <div id="skills-logos" class="border-4 rounded-2xl border-dark-blue">
 
         </div>
         <Button lowercase="true" color="dark" customClass="mt-8">Full List</Button>
     </div>
 
-    <div class="flex align-middle justify-center flex-col flex-grow lg:mt-0 mt-12">
+    <div class="flex items-center justify-center flex-col flex-grow p-12 order-1">
         <h2 class="text-dark font-bold text-3xl text-center">
             My Skills
         </h2>
         <h4 class="text-primary text-2xl font-semibold text-center mt-10">
             {selectedLanguage}
         </h4>
-
+        <ul class="list-disc">
+            {#each technologies as technology}
+                {#if technology.name === selectedLanguage}
+                    {#each technology.facts as fact}
+                        <li class="text-black text-left mt-4 font-esteban">
+                            {fact}
+                        </li>
+                    {/each}
+                {/if}
+            {/each}
+        </ul>
     </div>
-
 </div>
 
 <style>
@@ -34,8 +43,8 @@
     }
 
     #skills-logos {
-        width: 60vw;
-        height: 30vw;
+        width: 55vw;
+        height: 25vw;
     }
 
     @media (max-width: 1024px) {
@@ -46,7 +55,7 @@
 
         #skills-logos {
             width: 80vw;
-            height: 40vw;
+            height: 45vw;
         }
     }
 
@@ -58,7 +67,11 @@
 
         #skills-logos {
             width: 90vw;
-            height: 110vw;
+            height: 100vw;
         }
+    }
+
+    .font-esteban {
+        font-family: 'Esteban', serif !important;
     }
 </style>
