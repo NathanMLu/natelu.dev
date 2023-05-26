@@ -3,9 +3,11 @@
     import {user} from "$lib/models/stores";
     import {completeLevel, getPoints} from "$lib/utils/userUtils";
 
+    const levelNumber = 1;
     let viewBoxWidth = 120;
     let isHovered = false;
     let isLogged = false;
+    let completedLevel = false;
     let levelTimeout;
 
     onMount(() => {
@@ -15,7 +17,12 @@
     afterUpdate(() => {
         if (isHovered && !isLogged) {
             levelTimeout = setTimeout(() => {
-                completeLevel(1, $user).then(() => {
+                completedLevel = true;
+                setTimeout(() => {
+                    completedLevel = false;
+                }, 250);
+
+                completeLevel(levelNumber, $user).then(() => {
                     getPoints($user).then((points: number) => {
                         user.update((u) => {
                             u.points = points;
@@ -54,7 +61,7 @@
 
 <svelte:window on:resize={updateViewBox}/>
 
-<div class="mr-0 lg:mr-32" on:mouseleave={mouseLeave}>
+<div class="mr-0 lg:mr-32 {completedLevel === true ? 'brightness-110' : ''}" on:mouseleave={mouseLeave}>
     <svg
             class="waves"
             xmlns="http://www.w3.org/2000/svg"
