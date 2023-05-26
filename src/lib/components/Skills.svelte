@@ -15,7 +15,7 @@
         <Button lowercase="true" color="dark" customClass="mt-8">Full List</Button>
     </div>
 
-    <div class="flex align-middle justify-center flex-col flex-grow">
+    <div class="flex align-middle justify-center flex-col flex-grow lg:mt-0 mt-12">
         <h2 class="text-dark font-bold text-3xl text-center">
             My Skills
         </h2>
