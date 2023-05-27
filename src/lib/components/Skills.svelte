@@ -11,7 +11,7 @@
 </script>
 
 <div id="skills-container"
-     class="flex flex-col justify-center gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
+     class="flex flex-col justify-center lg:gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
     <div class="order-2 lg:order-1">
         <div id="skills-logos" class="border-4 rounded-2xl border-dark-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-hidden">
             {#each technologies as technology}
@@ -25,7 +25,7 @@
         <h2 class="text-dark font-bold text-3xl text-center">
             My Skills
         </h2>
-        <h4 class="text-primary text-2xl font-semibold text-center mt-10">
+        <h4 class="text-primary text-xl font-semibold text-center mt-10">
             {selectedLanguage}
         </h4>
         <ul class="list-disc">
