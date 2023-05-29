@@ -15,6 +15,10 @@
         selectedLanguage = language;
     }
 
+    const toggleList = () => {
+
+    }
+
     onMount(() => {
 
     });
@@ -29,7 +33,11 @@
                 <img src="{technology.logo}" alt="{technology.name}" class="w-full h-full object-contain cursor-pointer" on:click="{() => updateLanguage(technology.name)}">
             {/each}
         </div>
-        <Button lowercase="true" color="dark" customClass="mt-8">Full List</Button>
+        <Button lowercase="true" color="dark" customClass="mt-8" on:click={toggleList}>Full List</Button>
+        <div id="full-list">
+
+
+        </div>
     </div>
 
     <div class="flex items-center justify-center flex-col flex-grow p-12 lg:px-12 lg:pt-12 lg:pb-0  order-1">
