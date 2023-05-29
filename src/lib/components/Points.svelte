@@ -39,7 +39,7 @@
 </script>
 
 <Toast points={pointsDiff} isVisible={showToast}/>
-<div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-4 left-4 drop-shadow-lg" on:mouseover={displayHelpMessage}>
+<div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-4 left-4 drop-shadow-lg" on:focus={displayHelpMessage} on:mouseover={displayHelpMessage}>
     <img alt="NateLu Coin" class="w-8 animate-spin {addingPoints ? 'adding-points' : ''}" src="{coin}"/>
     <h5 class="text-xl font-bold ml-2">{points}</h5>
 </div>

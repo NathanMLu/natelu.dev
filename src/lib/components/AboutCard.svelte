@@ -8,7 +8,7 @@
 
 <div class="bg-transparent">
     <div class="rounded-xl bg-secondary w-16 h-16 flex items-center justify-center">
-        <img src={image} alt="image" class="w-10 h-10"/>
+        <img src={image} class="w-10 h-10" alt="{headline}"/>
     </div>
     <h2 class="font-semibold text-lg whitespace-nowrap mt-2">
         {headline}

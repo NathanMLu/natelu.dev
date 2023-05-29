@@ -367,6 +367,298 @@ export const technologies = [
             'I used Bash in my project blahhhh'
         ]
     },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+    {
+        name: 'Bash',
+        logo: Bash,
+        facts: [
+            'I used Bash in my project blahhhh',
+            'I used Bash in my project blahhhh'
+        ]
+    },
+
 
 
 
