@@ -21,17 +21,7 @@
     }
 
     const getTechnology = (technology: string) => {
-        let technologyList = [];
-
-        for (let i = 0; i < technologies.length; i++) {
-            if (technologies[i].type === technology) {
-                technologyList.push(technologies[i]);
-            }
-        }
-
-        console.log(technologyList.length)
-
-        return technologyList;
+        return technologies.filter(tech => tech.type === technology);
     }
 
     onMount(() => {
