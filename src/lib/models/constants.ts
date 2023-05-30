@@ -392,7 +392,7 @@ export const technologies = [
         ]
     },
     {
-        Name: 'Octopus Deploy',
+        name: 'Octopus Deploy',
         logo: Octopus,
         type: technologyTypes.tool,
         facts: [
