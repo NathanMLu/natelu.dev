@@ -36,9 +36,11 @@ import React from '$lib/images/logos/react.svg';
 import Redux from '$lib/images/logos/redux.svg';
 import Sass from '$lib/images/logos/sass.svg';
 import Selenium from '$lib/images/logos/selenium.svg';
+import Sklearn from '$lib/images/logos/sklearn.svg';
 import Spring from '$lib/images/logos/spring.svg';
 import Svelte from '$lib/images/logos/svelte.svg';
 import Tailwind from '$lib/images/logos/tailwind.svg';
+import Tensorflow from '$lib/images/logos/tensorflow.svg';
 import Typescript from '$lib/images/logos/typescript.svg';
 import Webpack from '$lib/images/logos/webpack.svg';
 
@@ -392,6 +394,141 @@ export const technologies = [
         facts: [
             'In my work with C3 Investments, I utilized Numpy to perform exploratory data analysis and data preprocessing, gaining valuable insights into the data and enabling effective decision-making.',
             'In my personal project "Dino Jump", I used numpy to explore the use of reinforcement learning in game development, creating a simple game environment and training a NEAT (NeuroEvolution of Augmenting Topologies) model to play the game.'
+        ]
+    },
+    {
+        Name: 'Octopus Deploy',
+        logo: Octopus,
+        type: technologyTypes.tool,
+        facts: [
+            'At CoreLogic, I utilized Octopus Deploy to automate the deployment of software applications, ensuring that the application was deployed to the correct environment and that all components were working as intended.',
+            'During my internship, I followed CI/CD principles and utilized Octopus Deploy to automate the deployment of backend services and ensure that the application was functioning as expected.'
+        ]
+    },
+    {
+        name: 'Pandas',
+        logo: Pandas,
+        type: technologyTypes.library,
+        facts: [
+            'In my position as a Contract Machine Learning Engineer at C3 Investments LLC, I leveraged the power of pandas to preprocess and cleanse intricate financial datasets, empowering accurate analysis and modeling for the creation of customized trading indicators.',
+            'In my personal projects and kaggle competitions, I frequently utilized pandas as a versatile tool for data preprocessing, feature engineering, and data analysis, enabling effective decision-making and improved accuracy in machine learning models.'
+        ]
+    },
+    {
+        name: 'PHP',
+        logo: Php,
+        type: technologyTypes.language,
+        facts: [
+            'In my advanced web development course, I utilized PHP to create a dynamic drone images website, allowing users to upload, store, and retrieve images from the database, providing a seamless user experience.',
+            'I used PHP to develop a custom email server, allowing users to send and receive emails through a custom domain, and using slug URLs to access emails through a web browser.'
+        ]
+    },
+    {
+        name: 'Python',
+        logo: Python,
+        type: technologyTypes.language,
+        facts: [
+            'In my work with C3 Investments, I utilized Python to create custom trading indicators, leveraging the power of pandas and numpy to preprocess and cleanse intricate financial datasets, empowering accurate analysis and modeling.',
+            'In my personal trading bot project, I used Python with Flask and SqlAlchemy to develop a web portal with real-time trade metrics, allowing users to monitor their trading bot\'s performance and make informed decisions.'
+        ]
+    },
+    {
+        name: 'React',
+        logo: React,
+        type: technologyTypes.framework,
+        facts: [
+            'In Trackr, a supply chain logistics dApp, I utilized React along with a QR code library to implement a QR code scanning feature and web portal, allowing users to scan QR codes and view package information.',
+            'I utilized React to develop a universal chat platform called OmniChat, integrating various messaging platforms into a single UI through various APIs, allowing users to communicate with their friends on different platforms through a single interface.'
+        ]
+    },
+    {
+        name: 'Redux',
+        logo: Redux,
+        type: technologyTypes.library,
+        facts: [
+            'As an Associate Software Engineer at CoreLogic, I utilized Redux to manage the state of the application, including user information, authentication, and application settings, ensuring that the application was synced with the backend in real-time.',
+            'In personal projects, I leveraged Redux and similar state management libraries such as Flask-Login to manage user state and session information.'
+        ]
+    },
+    {
+        name: 'Sass',
+        logo: Sass,
+        type: technologyTypes.language,
+        facts: [
+            'In my advanced web development course, I utilized Sass to create a dynamic drone images website, including mixins and functions to ensure responsive design while maintaining customizability',
+            'In various personal projects, I used Sass variables and fonts to ensure consistency in styling and nesting to improve readability and maintainability of code.'
+        ]
+    },
+    {
+        name: 'Selenium',
+        logo: Selenium,
+        type: technologyTypes.library,
+        facts: [
+            'In a personal project, I utilized Selenium to create a web scraper to automate online shopping, allowing users to automatically search for items on outdated websites and integrating with a chrome extension to create a custom results page.',
+            'In my internship at Corelogic, I used Selenium to create test site functionality, such as logging in, navigating to a page, and filling out a form, ensuring that the application was functioning as expected.'
+        ]
+    },
+    {
+        name: 'Sklearn',
+        logo: Sklearn,
+        type: technologyTypes.library,
+        facts: [
+            'In my work with C3 Investments, I utilized Sklearn to create custom trading indicators, leveraging the power of pandas and numpy to preprocess and cleanse intricate financial datasets, empowering accurate analysis and modeling.',
+            'In my personal projects and kaggle competitions, I frequently utilized Sklearn as a versatile tool for data preprocessing, feature engineering, and data analysis, enabling effective decision-making and improved accuracy in machine learning models.'
+        ]
+    },
+    {
+        name: 'Spring',
+        logo: Spring,
+        type: technologyTypes.framework,
+        facts: [
+            'In my Advanced Java course, I utilized Spring to create a complex web application to manage mock data for a fictional company, including a RESTful API, a web portal, and a database, ensuring data integrity and efficient querying.',
+            'In personal projects, I have used Spring\'s inversion of control to create loosely coupled components, allowing for easy integration of new features and improved maintainability.'
+        ]
+    },
+    {
+        name: 'Svelte',
+        logo: Svelte,
+        type: technologyTypes.framework,
+        facts: [
+            'In my personal website (you\'re on it right now) I utilized Svelte to create a responsive and interactive UI, including animations and transitions, ensuring a seamless user experience.',
+            'I used Svelte to develop a simple multiplayer game and utilized websockets and a Redis KV store to enable real-time communication between players.'
+        ]
+    },
+    {
+        name: 'Tailwind',
+        logo: Tailwind,
+        type: technologyTypes.framework,
+        facts: [
+            'In my personal website (you\'re on it right now) I utilized Tailwind to create a responsive and interactive UI, including various custom components and animations, ensuring a seamless user experience.',
+            'In various personal projects, I used tailwind to customize the styling of components, creating a consistent and visually appealing UI.'
+        ]
+    },
+    {
+        name: 'Tensorflow',
+        logo: Tensorflow,
+        type: technologyTypes.library,
+        facts: [
+            'In my personal project "Dino Jump", I used Tensorflow to explore the use of reinforcement learning in game development, creating a simple game environment and training a NEAT (NeuroEvolution of Augmenting Topologies) model to play the game.',
+            'In my work with C3 Investments, I utilized Tensorflow to create custom trading indicators, leveraging the power of pandas and numpy to preprocess and cleanse intricate financial datasets, empowering accurate analysis and modeling.'
+        ]
+    },
+    {
+        name: 'Typescript',
+        logo: Typescript,
+        type: technologyTypes.language,
+        facts: [
+            'During my time at CoreLogic, I utilized Typescript and Angular to develop a web application to manage the company\'s internal data, including a RESTful API, a web portal, and a database, ensuring data integrity and efficient querying.',
+            'In my personal projects, I used Typescript to create a chrome extension to automate online eBay stores, allowing users to automatically fulfill orders, update inventory, and manage listings.'
+        ]
+    },
+    {
+        name: 'Webpack',
+        logo: Webpack,
+        type: technologyTypes.library,
+        facts: [
+            'In my project Sellomatr, I utilized Webpack to bundle the various components of the application, ensuring that the application was optimized for production.',
+            'In various personal projects, I used Webpack to bundle modules and assets, especially when using frameworks such as React and Svelte.'
         ]
     }
 ];
