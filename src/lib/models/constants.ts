@@ -340,7 +340,7 @@ export const technologies = [
     {
         name: 'MongoDB',
         logo: Mongodb,
-        type: technologyTypes.tool,
+        type: technologyTypes.library,
         facts: [
             'Implemented MongoDB as the backend database in UniverSafe, enabling efficient storage and retrieval of user information for incident reporting and prevention.',
             'As a Contract Machine Learning Engineer at C3 Investments LLC, I utilized MongoDB as a data storage solution to store and analyze large volumes of trading data, enabling efficient data processing and improved accuracy in creating custom trading indicators.'
@@ -376,7 +376,7 @@ export const technologies = [
     {
         name: 'Node.js',
         logo: Nodejs,
-        type: technologyTypes.tool,
+        type: technologyTypes.library,
         facts: [
             'Implemented a RESTful API using Node.js, React, and MongoDB for a personal project, allowing users to perform CRUD operations on data and ensuring efficient data handling and scalability.',
             'Scripted bots for various online games by leveraging Node.js and reverse engineering techniques, enabling automated gameplay through WebSocket connections within a Chrome extension browser script.'
@@ -448,7 +448,7 @@ export const technologies = [
     {
         name: 'Sass',
         logo: Sass,
-        type: technologyTypes.tool,
+        type: technologyTypes.library,
         facts: [
             'In my advanced web development course, I utilized Sass to create a dynamic drone images website, including mixins and functions to ensure responsive design while maintaining customizability',
             'In various personal projects, I used Sass variables and fonts to ensure consistency in styling and nesting to improve readability and maintainability of code.'
@@ -493,7 +493,7 @@ export const technologies = [
     {
         name: 'Tailwind',
         logo: Tailwind,
-        type: technologyTypes.framework,
+        type: technologyTypes.library,
         facts: [
             'In my personal website (you\'re on it right now) I utilized Tailwind to create a responsive and interactive UI, including various custom components and animations, ensuring a seamless user experience.',
             'In various personal projects, I used tailwind to customize the styling of components, creating a consistent and visually appealing UI.'

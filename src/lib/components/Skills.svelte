@@ -30,81 +30,83 @@
 
 </script>
 
-<div id="skills-container"
-     class="flex flex-col justify-center lg:gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
-    <div class="order-2 lg:order-1">
-        <div id="skills-logos" class="border-4 rounded-2xl border-dark-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-hidden">
-            {#each technologies as technology}
-                <img src="{technology.logo}" alt="{technology.name}" class="w-full h-full object-contain cursor-pointer" on:click="{() => updateTechnology(technology.name)}">
-            {/each}
-        </div>
-        <Button lowercase="true" color="dark" customClass="mt-8" on:click={toggleList}>Full List</Button>
-        {#if showFullList}
-            <div id="full-list" class="mt-6">
-                <div id="language" class="flex items-center justify-start align-middle gap-10">
-                    <h4 class="text-primary text-xl font-semibold text-center">
-                        Languages
-                    </h4>
-                    <p>
-                        {#each getTechnology(technologyTypes.language) as technology, index}
-                            {technology.name}{index !== getTechnology(technologyTypes.language).length - 1 ? ', ' : ''}
-                        {/each}
-                    </p>
-                </div>
-                <div id="framework" class="flex items-center justify-start align-middle gap-10">
-                    <h4 class="text-primary text-xl font-semibold text-center">
-                        Frameworks
-                    </h4>
-                    <p>
-                        {#each getTechnology(technologyTypes.framework) as technology, index}
-                            {technology.name}{index !== getTechnology(technologyTypes.framework).length - 1 ? ', ' : ''}
-                        {/each}
-                    </p>
-                </div>
-                <div id="library" class="flex items-center justify-start align-middle gap-10">
-                    <h4 class="text-primary text-xl font-semibold text-center">
-                        Libraries
-                    </h4>
-                    <p>
-                        {#each getTechnology(technologyTypes.library) as technology, index}
-                            {technology.name}{index !== getTechnology(technologyTypes.library).length - 1 ? ', ' : ''}
-                        {/each}
-                    </p>
-                </div>
-                <div id="tool" class="flex items-center justify-start align-middle gap-10">
-                    <h4 class="text-primary text-xl font-semibold text-center">
-                        Tools
-                    </h4>
-                    <p>
-                        {#each getTechnology(technologyTypes.tool) as technology, index}
-                            {technology.name}{index !== getTechnology(technologyTypes.tool).length - 1 ? ', ' : ''}
-                        {/each}
-                    </p>
-                </div>
+<div id="skills-container">
+    <div class="flex flex-col justify-center lg:gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
+        <div class="order-2 lg:order-1">
+            <div id="skills-logos" class="border-4 rounded-2xl border-dark-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-hidden">
+                {#each technologies as technology}
+                    <img src="{technology.logo}" alt="{technology.name}" class="w-full h-full object-contain cursor-pointer" on:click="{() => updateTechnology(technology.name)}">
+                {/each}
             </div>
+            <Button lowercase="true" color="dark" customClass="mt-8" on:click={toggleList}>Full List</Button>
+        </div>
 
-        {/if}
+        <div class="flex items-center justify-center flex-col flex-grow p-12 lg:px-12 lg:pt-12 lg:pb-0  order-1">
+            <h2 class="text-dark font-bold text-3xl text-center">
+                My Skills
+            </h2>
+            <h4 class="text-primary text-xl font-semibold text-center mt-10">
+                {selectedTechnology}
+            </h4>
+            <ul class="list-disc">
+                {#each technologies as technology}
+                    {#if technology.name === selectedTechnology}
+                        {#each technology.facts as fact}
+                            <li class="text-black text-left mt-4 font-esteban">
+                                {fact}
+                            </li>
+                        {/each}
+                    {/if}
+                {/each}
+            </ul>
+        </div>
     </div>
 
-    <div class="flex items-center justify-center flex-col flex-grow p-12 lg:px-12 lg:pt-12 lg:pb-0  order-1">
-        <h2 class="text-dark font-bold text-3xl text-center">
-            My Skills
-        </h2>
-        <h4 class="text-primary text-xl font-semibold text-center mt-10">
-            {selectedTechnology}
-        </h4>
-        <ul class="list-disc">
-            {#each technologies as technology}
-                {#if technology.name === selectedTechnology}
-                    {#each technology.facts as fact}
-                        <li class="text-black text-left mt-4 font-esteban">
-                            {fact}
-                        </li>
+
+    {#if showFullList}
+        <div id="full-list" class="mt-6 lg:pl-36 p-6">
+            <div id="language" class="flex items-center justify-start align-middle gap-10">
+                <h4 class="text-primary text-xl font-semibold text-start w-32">
+                    Languages
+                </h4>
+                <p>
+                    {#each getTechnology(technologyTypes.language) as technology, index}
+                        {technology.name}{index !== getTechnology(technologyTypes.language).length - 1 ? ', ' : ''}
                     {/each}
-                {/if}
-            {/each}
-        </ul>
-    </div>
+                </p>
+            </div>
+            <div id="framework" class="flex items-center justify-start align-middle gap-10">
+                <h4 class="text-primary text-xl font-semibold text-start w-32">
+                    Frameworks
+                </h4>
+                <p>
+                    {#each getTechnology(technologyTypes.framework) as technology, index}
+                        {technology.name}{index !== getTechnology(technologyTypes.framework).length - 1 ? ', ' : ''}
+                    {/each}
+                </p>
+            </div>
+            <div id="library" class="flex items-center justify-start align-middle gap-10">
+                <h4 class="text-primary text-xl font-semibold w-32 text-start">
+                    Libraries
+                </h4>
+                <p>
+                    {#each getTechnology(technologyTypes.library) as technology, index}
+                        {technology.name}{index !== getTechnology(technologyTypes.library).length - 1 ? ', ' : ''}
+                    {/each}
+                </p>
+            </div>
+            <div id="tool" class="flex items-center justify-start align-middle gap-10">
+                <h4 class="text-primary text-xl font-semibold w-32 text-start">
+                    Tools
+                </h4>
+                <p>
+                    {#each getTechnology(technologyTypes.tool) as technology, index}
+                        {technology.name}{index !== getTechnology(technologyTypes.tool).length - 1 ? ', ' : ''}
+                    {/each}
+                </p>
+            </div>
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -114,7 +116,7 @@
     }
 
     #skills-logos {
-        width: 55vw;
+        width: 50vw;
         height: 25vw;
     }
 
