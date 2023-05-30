@@ -113,11 +113,6 @@ export const congratsMessages = [
     "You earned it!",
 ];
 
-// 'language',
-//     'framework',
-//     'library',
-//     'tool'
-// enum for technology types that we can reference like technologyTypes.language, framework, etc
 export const technologyTypes = {
     language: 'language',
     framework: 'framework',
@@ -453,7 +448,7 @@ export const technologies = [
     {
         name: 'Sass',
         logo: Sass,
-        type: technologyTypes.language,
+        type: technologyTypes.tool,
         facts: [
             'In my advanced web development course, I utilized Sass to create a dynamic drone images website, including mixins and functions to ensure responsive design while maintaining customizability',
             'In various personal projects, I used Sass variables and fonts to ensure consistency in styling and nesting to improve readability and maintainability of code.'
