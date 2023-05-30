@@ -25,6 +25,7 @@ import Linux from '$lib/images/logos/linux.svg';
 import Mongodb from '$lib/images/logos/mongodb.svg';
 import Moq from '$lib/images/logos/moq.svg';
 import Mysql from '$lib/images/logos/mysql.svg';
+import Near from '$lib/images/logos/near.svg';
 import Nodejs from '$lib/images/logos/nodejs.svg';
 import Numpy from '$lib/images/logos/numpy.svg';
 import Octopus from '$lib/images/logos/octopus.svg';
@@ -229,6 +230,168 @@ export const technologies = [
         facts: [
             'At CoreLogic, I used Figma designs as a reference to ensure accurate implementation of UI/UX elements, maintaining consistency and fidelity throughout the development process.',
             'For my personal portfolio website (this website!), I utilized Figma to create the entire design, leveraging its powerful features for visual prototyping and refining the user experience.'
+        ]
+    },
+    {
+        name: 'Flask',
+        logo: Flask,
+        type: technologyTypes.framework,
+        facts: [
+            'In my contract work with C3 Investments, I utilized Flask to build a REST API with login functionality, session handling, and an admin dashboard, enabling secure user authentication, seamless user experiences, and efficient data management.',
+            'In personal projects, I leveraged Flask to implement webhooks for real-time data integration, integrated mobile notifications for timely updates, and integrated with various APIs to automate everyday tasks.'
+        ]
+    },
+    {
+        name: 'Git',
+        logo: Git,
+        type: technologyTypes.tool,
+        facts: [
+            'At CoreLogic, I utilized Git for version control, employing branching strategies and pull request workflows to facilitate collaboration and ensure seamless code integration.',
+            'During various hackathon projects, I used Git to manage team collaboration and easy rollbacks to previous versions, ensuring a well-organized and efficient development workflow.'
+        ]
+    },
+    {
+        name: 'GitHub',
+        logo: Github,
+        type: technologyTypes.tool,
+        facts: [
+            'In my work at CoreLogic, we utilized GitHub as our primary version control system, adopting a comprehensive branching strategy that directly impacted our deployment process and closely integrated with our Jira issue tracking system.',
+            'In hackathon projects and club websites, I used GitHub to manage team collaboration, ensuring seamless integration of code with multiple contributors.'
+        ]
+    },
+    {
+        name: 'Google Cloud Platform',
+        logo: GoogleCloud,
+        type: technologyTypes.tool,
+        facts: [
+            'At CoreLogic, I utilized Google Cloud Platform\'s Cloud Storage service to store image data and seamlessly integrate image upload and download functionalities into existing applications, ensuring efficient management and retrieval of image assets through APIs.',
+            'In my hackathon project Liquid Overlay, I leveraged Google Cloud Platform\'s Speech-to-Text service to transcribe voice chat in real-time, enhancing accessibility and providing a text-based alternative for communication within the gaming community.'
+        ]
+    },
+    {
+        name: 'Hibernate',
+        logo: Hibernate,
+        type: technologyTypes.library,
+        facts: [
+            'At CoreLogic, I architected the integration between our application and the database using NHibernate, leveraging its capabilities to design an efficient and scalable data access layer for a green fields application.',
+            'In my Advanced Java course, I utilized Hibernate to implement a data access layer for a basic web browser application, seamlessly integrating the application with a MySQL database and employing caching strategies to optimize load time.'
+        ]
+    },
+    {
+        name: 'HTML',
+        logo: Html,
+        type: technologyTypes.language,
+        facts: [
+            'In numerous hackathon projects, I demonstrated strong front-end skills by utilizing HTML for dynamic page templating to create interactive user interfaces, ensuring a seamless user experience.',
+            'In my project Smilio, I employed HTML and SVG animations to create a popular smartwatch game for Fitbit OS, gaining experience in creating responsive and user-friendly interfaces for wearable devices.'
+        ]
+    },
+    {
+        name: 'Java',
+        logo: Java,
+        type: technologyTypes.language,
+        facts: [
+            'In my Advanced Java course, I utilized Java to develop a simple web browser, showcasing my proficiency in object-oriented programming and application development using Java.',
+            'In my personal projects, I utilized Spring Boot, Hibernate, and Gradle to develop scalable Java applications with seamless database integration, efficient build automation, and dependency management.'
+        ]
+    },
+    {
+        name: 'JavaScript',
+        logo: Javascript,
+        type: technologyTypes.language,
+        facts: [
+            'In various hackathon projects and personal initiatives, I leveraged JavaScript as the primary language to create dynamic web applications, employing frameworks like React, Angular, and Svelte for interactive interfaces and real-time updates.',
+            'In "Smilio", I created a JavaScript-based Fitbit OS watch app with a game loop for smooth animations and interactions, showcasing its versatility and integrating with the Fitbit OS API for seamless hardware integration.'
+        ]
+    },
+    {
+        name: 'Jira',
+        logo: Jira,
+        type: technologyTypes.tool,
+        facts: [
+            'At CoreLogic, I actively participated in agile development methodologies, specifically sprint-based development, where I collaborated with cross-functional teams to plan, execute, and deliver software projects in iterative cycles.',
+            'In school clubs, I have effectively utilized Jira for project management and collaboration purposes when working on designing club websites and other tech-related projects.'
+        ]
+    },
+    {
+        name: 'Jupyter Notebooks',
+        logo: Jupyter,
+        type: technologyTypes.tool,
+        facts: [
+            'In my work with C3 Investments, I utilized Jupyter Notebooks to create interactive data visualizations and perform exploratory data analysis, gaining valuable insights into the data and enabling effective decision-making.',
+            'In my personal projects and kaggle competitions, I frequently utilized Jupyter Notebook as a versatile environment for machine learning tasks, such as data preprocessing, feature engineering, model training, and evaluation.'
+        ]
+    },
+    {
+        name: 'Kotlin',
+        logo: Kotlin,
+        type: technologyTypes.language,
+        facts: [
+            'Developed an in-game overlay in Kotlin for the "Liquid Overlay" project, incorporating voice and audio manipulation techniques, as well as a Foreign Function Interface (FFI) with C libraries for real-time audio processing.',
+            'Utilized Kotlin and Jetpack Compose in the "True Cost" hackathon project to create a cross-platform mobile app, showcasing Kotlin\'s versatility and seamless integration with external APIs and design frameworks.'
+        ]
+    },
+    {
+        name: 'Linux',
+        logo: Linux,
+        type: technologyTypes.tool,
+        facts: [
+            'Employed Linux as the foundation for various personal projects, including Raspberry Pi OS, where I set up lightweight scripts and managed remote servers for seamless automation and remote access.',
+            'Utilized Kali Linux, a specialized Linux distribution for ethical hacking, to perform penetration testing on various personal projects, gaining valuable insights into security vulnerabilities and best practices.'
+        ]
+    },
+    {
+        name: 'MongoDB',
+        logo: Mongodb,
+        type: technologyTypes.tool,
+        facts: [
+            'Implemented MongoDB as the backend database in UniverSafe, enabling efficient storage and retrieval of user information for incident reporting and prevention.',
+            'As a Contract Machine Learning Engineer at C3 Investments LLC, I utilized MongoDB as a data storage solution to store and analyze large volumes of trading data, enabling efficient data processing and improved accuracy in creating custom trading indicators.'
+        ]
+    },
+    {
+        name: 'Moq',
+        logo: Moq,
+        type: technologyTypes.library,
+        facts: [
+            'At CoreLogic, I utilized Moq to create mock objects for unit testing, ensuring that the application was functioning as expected and that all components were working as intended.',
+            'During my internship, I followed TDD principles and utilized Moq to create mock objects to test backend services and MSTest to load test API endpoints and ensure that the application was functioning as expected.'
+        ]
+    },
+    {
+        name: 'MySQL',
+        logo: Mysql,
+        type: technologyTypes.language,
+        facts: [
+            'In my advanced web development course, I integrated MySQL with PHP to create a dynamic drone images website, allowing users to upload, store, and retrieve images from the database, providing a seamless user experience.',
+            'In my personal projects, I leveraged MySQL as the backend database to store and manage data for various applications, ensuring data integrity, efficient querying, and scalability.'
+        ]
+    },
+    {
+        name: 'Near',
+        logo: Near,
+        type: technologyTypes.framework,
+        facts: [
+            'In my hackathon project Trackr, our team leveraged NEAR\'s JavaScript SDK a create a supply chain logistics dApp, enabling users to track the location of their packages in real-time and ensuring transparency in the supply chain.',
+            'Our team developed a smart contract factory to create and deploy smart contracts for each package, and provided easy access through a web interface and QR code scanning, ensuring all package information was stored on chain.'
+        ]
+    },
+    {
+        name: 'Node.js',
+        logo: Nodejs,
+        type: technologyTypes.tool,
+        facts: [
+            'Implemented a RESTful API using Node.js, React, and MongoDB for a personal project, allowing users to perform CRUD operations on data and ensuring efficient data handling and scalability.',
+            'Scripted bots for various online games by leveraging Node.js and reverse engineering techniques, enabling automated gameplay through WebSocket connections within a Chrome extension browser script.'
+        ]
+    },
+    {
+        name: 'Numpy',
+        logo: Numpy,
+        type: technologyTypes.library,
+        facts: [
+            'In my work with C3 Investments, I utilized Numpy to perform exploratory data analysis and data preprocessing, gaining valuable insights into the data and enabling effective decision-making.',
+            'In my personal project "Dino Jump", I used numpy to explore the use of reinforcement learning in game development, creating a simple game environment and training a NEAT (NeuroEvolution of Augmenting Topologies) model to play the game.'
         ]
     }
 ];
