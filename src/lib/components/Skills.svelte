@@ -25,6 +25,7 @@
     }
 
     onMount(() => {
+        // TODO: Add animation for the icons
 
     });
 
@@ -34,7 +35,7 @@
     <div class="flex flex-col justify-center lg:gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
         <div class="order-2 lg:order-1">
             <div id="skills-logos"
-                 class="border-4 rounded-2xl border-dark-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-y-scroll">
+                 class="border-4 rounded-2xl border-dark-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-hidden">
                 {#each technologies as technology}
                     <img src="{technology.logo}" alt="{technology.name}"
                          class="w-full h-full object-contain cursor-pointer"
