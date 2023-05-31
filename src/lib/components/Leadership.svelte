@@ -14,7 +14,7 @@
     <div class="bg-white lg:px-24 px-12 pb-12">
         <h2 class="text-dark font-bold text-3xl mb-12">Leadership</h2>
 
-        <div class="flex flex-row justify-between items-center gap-x-6">
+        <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-6">
             <LeadershipCard
                     image="{Freetail}"
                     title="Logistics Team"
@@ -62,7 +62,7 @@
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 764px) {
         #leadership-container {
             margin-top: 2.5vh;
             margin-bottom: 2.5vh;

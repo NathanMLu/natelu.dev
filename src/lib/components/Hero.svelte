@@ -39,7 +39,7 @@
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 764px) {
         #hero-container {
             margin-top: 10vh;
             margin-bottom: 5vh;

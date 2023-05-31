@@ -57,7 +57,7 @@
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         #about-container {
             margin-top: 5vh;
             margin-bottom: 0;

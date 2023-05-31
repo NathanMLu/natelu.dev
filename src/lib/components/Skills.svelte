@@ -129,7 +129,7 @@
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 764px) {
         #skills-container {
             margin-top: 2.5vh;
             margin-bottom: 2.5vh;
