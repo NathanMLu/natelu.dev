@@ -526,4 +526,4 @@ export const technologies = [
             'In various personal projects, I used Webpack to bundle modules and assets, especially when using frameworks such as React and Svelte.'
         ]
     }
-];
+].sort(() => Math.random() - 0.5);
