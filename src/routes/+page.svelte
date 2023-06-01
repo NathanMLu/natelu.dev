@@ -9,6 +9,7 @@
     import Hero from "$lib/components/Hero.svelte";
     import Skills from "$lib/components/Skills.svelte";
     import Leadership from "$lib/components/Leadership.svelte";
+    import Projects from "$lib/components/Projects.svelte";
 
     export let data: PageData;
 
@@ -21,3 +22,4 @@
 <About></About>
 <Skills></Skills>
 <Leadership></Leadership>
+<Projects></Projects>

@@ -18,6 +18,8 @@ export default {
                 'wave-two': '#6FC4E9',
                 'wave-three': '#0F9CDA',
                 'wave-four': '#095E83',
+                'devpost': '#01579B',
+                'youtube': '#FF3D00'
             },
             fontFamily: {
                 montserrat: ['Montserrat', 'sans-serif'],
