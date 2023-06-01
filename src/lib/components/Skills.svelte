@@ -2,7 +2,7 @@
     import {onMount} from "svelte";
 
     import Button from "$lib/components/Button.svelte";
-    import {technologies, technologyTypes} from "$lib/models/constants";
+    import {technologies, technologyTypes} from "$lib/models/skills";
 
     // The icons will be floating around on the screen and be moving diagonally to the top right from the bottom left.
     // When the user drags the mouse and is over the #skills-logos div, the icons will move in the opposite direction of the mouse, as if the user is dragging them.
