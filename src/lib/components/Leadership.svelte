@@ -10,7 +10,7 @@
     <div class="bg-white lg:px-24 px-12 pb-12">
         <h2 class="text-dark font-bold text-3xl mb-12">Leadership</h2>
 
-        <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-6">
+        <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 lg:gap-6 md:gap-8 gap-12">
             {#each Leadership as leadership}
                 <LeadershipCard
                         image="{leadership.image}"
