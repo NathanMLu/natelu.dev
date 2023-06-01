@@ -1,12 +1,11 @@
 <script lang="ts">
     import Curve from '$lib/images/bg-curve.svg';
     import LeadershipCard from "$lib/components/LeadershipCard.svelte";
-    import Freetail from "$lib/images/freetail.png";
-    import Csc from "$lib/images/csc.png";
-    import Ptk from "$lib/images/ptk.png";
-    import Riverhacks from "$lib/images/riverhacks.png";
-    import Tasa from "$lib/images/tasa.jpg";
-
+    import Freetail from "$lib/images/leadership/freetail.png";
+    import Csc from "$lib/images/leadership/csc.png";
+    import Ptk from "$lib/images/leadership/ptk.png";
+    import Riverhacks from "$lib/images/leadership/riverhacks.png";
+    import Tasa from "$lib/images/leadership/tasa.jpg";
 </script>
 
 <div id="leadership-container">

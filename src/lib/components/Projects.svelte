@@ -1,21 +1,23 @@
 <script lang="ts">
+    import {Projects} from "$lib/models/projects";
     import ProjectsCard from "$lib/components/ProjectsCard.svelte";
-    import LiquidOverlay from '$lib/images/liquid-overlay.jpg';
 </script>
 
 <div id="projects-container">
     <h2 class="text-dark font-bold text-3xl mt-16 mb-12 text-center">My Projects</h2>
 
-    <div class="flex align-middle justify-center flex-row mx-12 gap-y-16">
-        <!-- Todo: Load from constants file (figure out best way to do this in sveltekit) -->
-        <ProjectsCard image={LiquidOverlay}
-                      title="Liquid Overlay"
-                      description="Liquid Overlay is a first-person shooter game overlay that improves accessibility for the disabled community, transcribing voice chat, displaying game sounds as visual cues, and enabling auto-translation for users who speak different languages. This project won 1st place at Liquid Hacks, and was developed using audio manipulation techniques in collaboration with an amazing team of four."
-                      githubLink="https://github.com/NathanMLu/LiquidOverlay"
-                      devpostLink="https://devpost.com/software/liquidoverlay"
-                      youtubeLink="https://youtu.be/-OF2GF7EBwA"
-                      languages={['google cloud', 'figma', 'c', 'kotlin', 'compose', 'winAPI']}>
-        </ProjectsCard>
+    <div class="flex flex-col align-middle justify-center mx-12 gap-y-16">
+        {#each Projects as project, index}
+            <ProjectsCard image={project.image}
+                          title={project.title}
+                          description={project.description}
+                          githubLink={project.githubLink}
+                          devpostLink={project.devpostLink}
+                          youtubeLink={project.youtubeLink}
+                          languages={project.languages}
+                          isDefault="{index % 2 === 0}">
+            </ProjectsCard>
+        {/each}
     </div>
 </div>
 

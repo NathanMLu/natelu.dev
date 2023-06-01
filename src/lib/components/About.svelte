@@ -1,7 +1,7 @@
 <script lang="ts">
-    import AboutCode from '$lib/images/about-code.svg';
-    import AboutEntrepreneur from '$lib/images/about-entrepreneur.svg';
-    import AboutSchool from '$lib/images/about-school.svg';
+    import AboutCode from '$lib/images/about/about-code.svg';
+    import AboutEntrepreneur from '$lib/images/about/about-entrepreneur.svg';
+    import AboutSchool from '$lib/images/about/about-school.svg';
     import Curve from '$lib/images/bg-curve.svg';
     import Button from "$lib/components/Button.svelte";
     import AboutCard from "$lib/components/AboutCard.svelte";
