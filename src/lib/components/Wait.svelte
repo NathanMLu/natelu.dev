@@ -5,7 +5,7 @@
 
 <div id="wait-container">
     <img alt="top curve" src="{Curve}" class="w-full scale-y-[-1]">
-    <div class="bg-white pl-36 pt-12 pb-8">
+    <div class="bg-white lg:pl-36 md:pl-16 pl-8 pt-12 pb-8">
         <h2 class="text-dark font-bold text-3xl mb-8">Don't stop here. There's more to see!</h2>
         <a href="/projects">
             <Button color="primary">More Projects</Button>
