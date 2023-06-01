@@ -6,7 +6,7 @@
 <div id="projects-container">
     <h2 class="text-dark font-bold text-3xl mt-16 mb-12 text-center">My Projects</h2>
 
-    <div class="flex flex-col align-middle justify-center mx-12 gap-y-16">
+    <div class="flex flex-col align-middle justify-center lg:mx-12 md:mx-8 mx-2 gap-y-16">
         {#each Projects as project, index}
             <ProjectsCard image={project.image}
                           title={project.title}

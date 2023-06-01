@@ -7,7 +7,7 @@
 
 <div class="rounded-xl bg-card-bg drop-shadow-lg w-60 leadership-card">
     <a href={link} target="_blank" rel="noopener noreferrer">
-        <img src={image} alt={title} class="w-full h-32 object-cover rounded-t-xl"/>
+        <img src={image} alt={title} class="w-full lg:h-32 md:h-48 sm:h-48 object-cover rounded-t-xl"/>
     </a>
     <div class="mt-4 px-4 pt-2 pb-4">
         <h3 class="text-xl font-semibold text-black">{title}</h3>
