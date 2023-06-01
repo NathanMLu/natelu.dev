@@ -14,6 +14,7 @@
                           githubLink={project.githubLink}
                           devpostLink={project.devpostLink}
                           youtubeLink={project.youtubeLink}
+                          liveLink="{project.liveLink}"
                           languages={project.languages}
                           isDefault="{index % 2 === 0}">
             </ProjectsCard>

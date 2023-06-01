@@ -52,7 +52,7 @@
     </div>
 {:else}
     <div class="grid grid-cols-12 projects-card items-center">
-        <div class="col-span-5 col-start-3 z-10 row-span-full flex content-end items-end flex-col">
+        <div class="col-span-5 col-start-3 z-10 row-span-full flex content-end items-start flex-col">
             <h2 class="text-2xl font-semibold text-black">{title}</h2>
             <div class="w-full rounded-xl flex items-center justify-center mt-4 bg-white py-4 px-8 drop-shadow-xl">
                 <p class="text-dark">
@@ -82,7 +82,7 @@
                 {/if}
                 {#if liveLink}
                     <a href="{liveLink}" target="_blank">
-                        <iconify-icon icon="mdi:web" height="30px" width="30px" class="text-black"></iconify-icon>
+                        <iconify-icon icon="mdi:web" height="30px" width="30px" class="text-primary"></iconify-icon>
                     </a>
                 {/if}
 
