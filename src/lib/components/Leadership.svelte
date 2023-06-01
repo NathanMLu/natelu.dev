@@ -6,7 +6,7 @@
 </script>
 
 <div id="leadership-container">
-    <img alt="About background" src="{Curve}" class="w-full -scale-x-100" />
+    <img alt="Leadership Background" src="{Curve}" class="w-full -scale-x-100" />
     <div class="bg-white lg:px-24 px-12 pb-12">
         <h2 class="text-dark font-bold text-3xl mb-12">Leadership</h2>
 

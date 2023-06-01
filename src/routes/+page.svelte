@@ -10,6 +10,7 @@
     import Skills from "$lib/components/Skills.svelte";
     import Leadership from "$lib/components/Leadership.svelte";
     import Projects from "$lib/components/Projects.svelte";
+    import Wait from "$lib/components/Wait.svelte";
 
     export let data: PageData;
 
@@ -23,3 +24,4 @@
 <Skills></Skills>
 <Leadership></Leadership>
 <Projects></Projects>
+<Wait></Wait>
