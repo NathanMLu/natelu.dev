@@ -22,11 +22,13 @@
                     {description}
                 </p>
             </div>
-            <div class="flex flex-row gap-x-2 mt-2">
+            <h5 class="text-primary font-semibold mt-2">
                 {#each languages as language}
-                    <span class="text-primary font-semibold">{language}</span>
+                    <span class="ml-2">
+                        {language}
+                    </span>
                 {/each}
-            </div>
+            </h5>
             <div class="flex flex-row gap-x-4 mt-2 items-center">
                 {#if devpostLink}
                     <a href="{devpostLink}" target="_blank">
@@ -66,11 +68,13 @@
                     {description}
                 </p>
             </div>
-            <div class="flex flex-row gap-x-2 mt-2">
+            <h5 class="text-primary font-semibold mt-2">
                 {#each languages as language}
-                    <span class="text-primary font-semibold">{language}</span>
+                    <span class="mr-2">
+                        {language}
+                    </span>
                 {/each}
-            </div>
+            </h5>
             <div class="flex flex-row gap-x-4 mt-2 items-center">
                 {#if devpostLink}
                     <a href="{devpostLink}" target="_blank">
