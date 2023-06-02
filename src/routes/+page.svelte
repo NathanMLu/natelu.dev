@@ -11,6 +11,7 @@
     import Leadership from "$lib/components/Leadership.svelte";
     import Projects from "$lib/components/Projects.svelte";
     import Wait from "$lib/components/Wait.svelte";
+    import Activities from "$lib/components/Activities.svelte";
 
     export let data: PageData;
 
@@ -25,3 +26,4 @@
 <Leadership></Leadership>
 <Projects></Projects>
 <Wait></Wait>
+<Activities></Activities>

@@ -17,13 +17,13 @@
 <style>
     #wait-container {
         margin-top: 10vh;
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
     }
 
     @media (max-width: 1024px) {
         #wait-container {
             margin-top: 5vh;
-            margin-bottom: 5vh;
+            margin-bottom: 2.5vh;
         }
     }
 
