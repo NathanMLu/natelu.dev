@@ -4,35 +4,67 @@
     export let text = '';
 </script>
 
-<div class="card">
-    <h1 class="text-2xl text-dark font-semibold">{headline}</h1>
-    <div class="card-content w-full mt-4">
-        <div class="front">
-            <img src={image} alt="image" class="h-72 w-full" />
-        </div>
-        <div class="back bg-dark-blue px-6 py-4">
-            <p class="text-white">{text}</p>
+<div>
+    <h1 class="text-xl text-dark font-semibold lg:whitespace-nowrap">{headline}</h1>
+    <div class="flip-card card-dimensions mt-4">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src={image} alt="image" class="card-dimensions " />
+            </div>
+            <div class="flip-card-back bg-dark-blue px-6 py-4 overflow-y-scroll">
+                <p class="text-white">{text}</p>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-    .card-content {
-        transition: transform 1s;
+    .flip-card {
+        background-color: transparent;
+        perspective: 1000px;
+    }
+
+    .card-dimensions {
+        width: 45vh;
+        height: 25vh;
+    }
+
+    @media (max-width: 1024px) {
+        .card-dimensions {
+            width: 40vh;
+            height: 22.5vh;
+        }
+    }
+
+    @media (max-width: 764px) {
+        .card-dimensions {
+            width: 35vh;
+            height: 22.5vh;
+        }
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
         transform-style: preserve-3d;
     }
 
-    .card:hover .card-content {
+    .flip-card:hover .flip-card-inner {
         transform: rotateY(180deg);
-        transition: transform 0.5s;
     }
 
-    .back, .front {
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
         backface-visibility: hidden;
     }
 
-    .back {
+    .flip-card-back {
         transform: rotateY(180deg);
     }
-
 </style>

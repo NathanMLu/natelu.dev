@@ -40,7 +40,7 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 764px) {
         .leadership-card {
             width: 80%;
         }
