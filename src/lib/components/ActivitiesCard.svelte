@@ -9,9 +9,9 @@
     <div class="flip-card card-dimensions mt-4">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src={image} alt="image" class="card-dimensions " />
+                <img src={image} alt="image" class="card-dimensions drop-shadow-xl rounded-sm" />
             </div>
-            <div class="flip-card-back bg-dark-blue px-6 py-4 overflow-y-scroll">
+            <div class="flip-card-back bg-dark-blue px-6 py-4 drop-shadow-xl rounded-sm overflow-y-scroll lg:overflow-y-auto md:overflow-y-auto">
                 <p class="text-white">{text}</p>
             </div>
         </div>
