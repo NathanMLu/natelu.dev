@@ -2,10 +2,13 @@
     export let image = '';
     export let headline = '';
     export let text = '';
+    export let link = '';
 </script>
 
 <div>
-    <h1 class="text-xl text-dark font-semibold lg:whitespace-nowrap">{headline}</h1>
+    <a href="{link}" target="_blank" rel="noopener noreferrer">
+        <h1 class="text-xl text-dark font-semibold lg:whitespace-nowrap">{headline}</h1>
+    </a>
     <div class="flip-card card-dimensions mt-4">
         <div class="flip-card-inner">
             <div class="flip-card-front">

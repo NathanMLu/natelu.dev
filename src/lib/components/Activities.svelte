@@ -11,7 +11,8 @@
                 <ActivitiesCard
                         image={activity.image}
                         headline={activity.headline}
-                        text={activity.text}>
+                        text={activity.text}
+                        link={activity.link}>
                 </ActivitiesCard>
             {/each}
         </div>
