@@ -33,11 +33,10 @@ export const POST = async ({request}: { request: Request }) => {
             );
         }
 
-        // send the email
         await sendEmail({
             to: "contact@natelu.dev",
-            from: "{body.name} <{body.email}>",
-            subject: "New message from ${body.name}",
+            from: body.email,
+            subject: "New message from " + body.name,
             content: body.message,
         });
 
