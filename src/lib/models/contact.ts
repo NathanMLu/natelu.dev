@@ -36,3 +36,9 @@ export const jokes = [
         punchline: "break"
     }
 ]
+
+export const socials = {
+    github: "https://github.com/NathanMLu",
+    linkedin: "https://www.linkedin.com/in/natelumax/",
+    youtube: "https://www.youtube.com/channel/UCtcjlRmmZhB9f9II2rfiu3Q"
+}

@@ -19,7 +19,9 @@ export default {
                 'wave-three': '#0F9CDA',
                 'wave-four': '#095E83',
                 'devpost': '#01579B',
-                'youtube': '#FF3D00'
+                'youtube': '#FF3D00',
+                'github': '#171515',
+                'linkedin': '#0e76a8',
             },
             fontFamily: {
                 montserrat: ['Montserrat', 'sans-serif'],

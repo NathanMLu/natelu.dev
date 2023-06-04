@@ -1,5 +1,6 @@
 <script lang="ts">
-    import {jokes} from "$lib/models/contact";
+    import {jokes, socials} from "$lib/models/contact";
+
     import pfp from '$lib/images/contact/pfp.jpg';
     import Button from "$lib/components/Button.svelte";
 
@@ -95,6 +96,17 @@
     </div>
     <div class="lg:mt-0 mt-8 mb-4 px-8">
         <img src="{pfp}" alt="profile pic" class="lg:w-72 md:w-72 rounded-md drop-shadow-xl profile-pic">
+        <div class="flex justify-center gap-4 mt-5 items-center">
+            <a href="{socials.linkedin}" target="_blank" rel="noopener noreferrer">
+                <iconify-icon icon="devicon:linkedin" class="text-4xl text-linkedin hover:brightness-105" width="30px" height="30px"></iconify-icon>
+            </a>
+            <a href="{socials.github}" target="_blank" rel="noopener noreferrer">
+                <iconify-icon icon="akar-icons:github-fill" class="text-4xl text-github hover:brightness-105" width="30px" height="30px"></iconify-icon>
+            </a>
+            <a href="{socials.youtube}" target="_blank" rel="noopener noreferrer">
+                <iconify-icon icon="akar-icons:youtube-fill" class="text-4xl text-youtube hover:brightness-105" width="35px" height="35px"></iconify-icon>
+            </a>
+        </div>
     </div>
 </div>
 
