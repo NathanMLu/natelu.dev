@@ -51,6 +51,10 @@
                 email = '';
                 message = '';
                 sent = true;
+
+                setTimeout(() => {
+                    sent = false;
+                }, 5000);
             } else {
                 error = 'Something went wrong, please try again later';
             }
