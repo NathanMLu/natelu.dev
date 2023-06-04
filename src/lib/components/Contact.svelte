@@ -49,6 +49,7 @@
                 name = '';
                 email = '';
                 message = '';
+                sent = true;
             } else {
                 error = 'Something went wrong, please try again later';
             }

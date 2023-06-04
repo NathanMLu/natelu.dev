@@ -1,5 +1,5 @@
-import sgMail from "@sendgrid/mail";
-import {SENDGRID_API_KEY, FROM_EMAIL, TO_EMAIL} from "$env/static/private";
+import nodemailer from "nodemailer";
+import {EMAIL_APP_PASSKEY, EMAIL_APP_USERNAME} from "$env/static/private";
 
 // POST /api/contact
 export const POST = async ({request}: { request: Request }) => {
@@ -33,7 +33,7 @@ export const POST = async ({request}: { request: Request }) => {
             );
         }
 
-        console.log(`POST /api/contact - name: ${body.name}, email: ${body.email}, message: ${body.message}`);
+        console.log(`POST /api/contact - name: ${body.name}, email: ${body.email}`);
         await sendEmail(body.name, body.email, body.message);
 
         return new Response(JSON.stringify({message: "Message sent"}), {
@@ -49,15 +49,23 @@ export const POST = async ({request}: { request: Request }) => {
 }
 
 const sendEmail = async (name: string, email: string, message: string) => {
-    sgMail.setApiKey(SENDGRID_API_KEY);
-    const msg = {
-        to: TO_EMAIL,
-        from: { email: FROM_EMAIL, name: "Nathan Lu" },
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: EMAIL_APP_USERNAME,
+            pass: EMAIL_APP_PASSKEY,
+        }
+    });
+
+    let time = new Date();
+
+    const mailOptions = {
+        from: EMAIL_APP_USERNAME,
+        to: EMAIL_APP_USERNAME,
         replyTo: email,
-        subject: `Contact Form: New message from ${name}`,
-        text: message
+        subject: `natelu.dev - New message from ${name}`,
+        html: `<p>From: ${name} (${email})</p><p>${message}</p><p>Sent at ${time.toLocaleString()}</p>`,
     };
 
-    console.log(`Sending email to ${TO_EMAIL} from ${FROM_EMAIL} with replyTo ${email}`);
-    await sgMail.send(msg);
+    await transporter.sendMail(mailOptions);
 }
