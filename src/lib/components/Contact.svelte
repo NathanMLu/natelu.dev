@@ -5,8 +5,56 @@
 
     let joke = jokes[Math.floor(Math.random() * jokes.length)];
 
+    let name = '';
+    let email = '';
+    let message = '';
+    let error = '';
+    let sent = false;
+
     const toggleJoke = () => {
         joke = jokes[Math.floor(Math.random() * jokes.length)];
+    }
+
+    const sendMessage = () => {
+        if (name === '' || email === '' || message === '') {
+            error = 'Please fill out all fields';
+            return;
+        }
+        const emailRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+        if (!emailRegex.test(email)) {
+            error = 'Please enter a valid email';
+            return;
+        }
+
+        if (message.length > 500) {
+            error = 'Message must be less than 500 characters';
+            return;
+        }
+
+        if (name.length > 50) {
+            error = 'Name must be less than 50 characters';
+            return;
+        }
+
+        error = '';
+
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name, email, message})
+        }).then(res => {
+            if (res.status === 200) {
+                name = '';
+                email = '';
+                message = '';
+            } else {
+                error = 'Something went wrong, please try again later';
+            }
+        }).catch(err => {
+            error = err;
+        })
     }
 </script>
 
@@ -19,24 +67,30 @@
             {joke.joke.substring(joke.joke.indexOf(joke.punchline) + joke.punchline.length)})
         </h3>
 
-        <form class="mt-5" action="/api/contact" method="POST">
+        <div class="mt-5">
             <div class="flex flex-col">
                 <label for="name" class="text-dark text-lg font-semibold font-esteban">Name</label>
-                <input type="text" name="name" id="name" class="rounded-md p-2 mt-1" required/>
+                <input type="text" name="name" id="name" class="rounded-md p-2 mt-1" required bind:value={name}/>
             </div>
             <div class="flex flex-col mt-3">
                 <label for="email" class="text-dark text-lg font-semibold font-esteban">Email</label>
-                <input type="email" name="email" id="email" class="rounded-md p-2 mt-1" required/>
+                <input type="email" name="email" id="email" class="rounded-md p-2 mt-1" required bind:value={email}/>
             </div>
-            <div class="flex flex-col mt-3 mb-7">
+            <div class="flex flex-col mt-3 mb-2">
                 <label for="message" class="text-dark text-lg font-semibold font-esteban">Message</label>
                 <textarea name="message" id="message" rows="7" maxlength="500"
-                          class="rounded-md p-2 mt-1"></textarea>
+                          class="rounded-md p-2 mt-1" bind:value={message}></textarea>
             </div>
-            <Button type="submit" color="dark">
+            {#if error}
+                <p class="text-red-500 text-lg font-semibold">{error}</p>
+            {/if}
+            {#if sent}
+                <p class="text-green-500 text-lg font-semibold">Message sent!</p>
+            {/if}
+            <Button color="dark" customClass="mt-5" on:click={sendMessage}>
                 Send message
             </Button>
-        </form>
+        </div>
     </div>
     <div class="lg:mt-0 mt-8 mb-4 px-8">
         <img src="{pfp}" alt="profile pic" class="lg:w-72 md:w-72 rounded-md drop-shadow-xl profile-pic">

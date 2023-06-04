@@ -1,5 +1,5 @@
 import sgMail from "@sendgrid/mail";
-import {SENDGRID_API_KEY} from "$env/static/private";
+import {SENDGRID_API_KEY, FROM_EMAIL, TO_EMAIL} from "$env/static/private";
 
 // POST /api/contact
 export const POST = async ({request}: { request: Request }) => {
@@ -33,12 +33,8 @@ export const POST = async ({request}: { request: Request }) => {
             );
         }
 
-        await sendEmail({
-            to: "contact@natelu.dev",
-            from: body.email,
-            subject: "New message from " + body.name,
-            content: body.message,
-        });
+        console.log(`POST /api/contact - name: ${body.name}, email: ${body.email}, message: ${body.message}`);
+        await sendEmail(body.name, body.email, body.message);
 
         return new Response(JSON.stringify({message: "Message sent"}), {
             status: 200,
@@ -52,25 +48,16 @@ export const POST = async ({request}: { request: Request }) => {
     }
 }
 
-async function sendEmail({to, from, subject, content,}: {
-    to: string;
-    from: string;
-    subject: string;
-    content: string;
-}) {
+const sendEmail = async (name: string, email: string, message: string) => {
     sgMail.setApiKey(SENDGRID_API_KEY);
     const msg = {
-        to,
-        from,
-        subject,
-        text: content,
-        html: content.replace(/\n/g, "<br>"),
+        to: TO_EMAIL,
+        from: { email: FROM_EMAIL, name: "Nathan Lu" },
+        replyTo: email,
+        subject: `Contact Form: New message from ${name}`,
+        text: message
     };
 
-    try {
-        await sgMail.send(msg);
-    } catch (error) {
-        console.error(error);
-        throw new Error("Failed to send email");
-    }
+    console.log(`Sending email to ${TO_EMAIL} from ${FROM_EMAIL} with replyTo ${email}`);
+    await sgMail.send(msg);
 }
