@@ -4,7 +4,7 @@
 
     import coin from '$lib/images/coin.svg'
     import {congratsMessages} from "$lib/models/constants";
-
+    // TODO: Refactor this whole component
 
     export let points;
     export let isVisible: boolean = false;
