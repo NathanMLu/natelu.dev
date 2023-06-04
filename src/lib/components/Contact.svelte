@@ -70,23 +70,23 @@
 
         <div class="mt-5">
             <div class="flex flex-col">
-                <label for="name" class="text-dark text-lg font-semibold font-esteban">Name</label>
-                <input type="text" name="name" id="name" class="rounded-md p-2 mt-1" required bind:value={name}/>
+                <label for="name" class="text-dark text-lg font-semibold">Name</label>
+                <input type="text" name="name" id="name" class="rounded-md p-2 mt-1 font-esteban" required bind:value={name}/>
             </div>
             <div class="flex flex-col mt-3">
-                <label for="email" class="text-dark text-lg font-semibold font-esteban">Email</label>
-                <input type="email" name="email" id="email" class="rounded-md p-2 mt-1" required bind:value={email}/>
+                <label for="email" class="text-dark text-lg font-semibold">Email</label>
+                <input type="email" name="email" id="email" class="rounded-md p-2 mt-1 font-esteban" required bind:value={email}/>
             </div>
             <div class="flex flex-col mt-3 mb-2">
-                <label for="message" class="text-dark text-lg font-semibold font-esteban">Message</label>
+                <label for="message" class="text-dark text-lg font-semibold">Message</label>
                 <textarea name="message" id="message" rows="7" maxlength="500"
-                          class="rounded-md p-2 mt-1" bind:value={message}></textarea>
+                          class="rounded-md p-2 mt-1 font-esteban" bind:value={message}></textarea>
             </div>
             {#if error}
                 <p class="text-red-500 text-lg font-semibold">{error}</p>
             {/if}
             {#if sent}
-                <p class="text-green-500 text-lg font-semibold">Message sent!</p>
+                <p class="text-primary text-lg font-semibold">Message sent!</p>
             {/if}
             <Button color="dark" customClass="mt-5" on:click={sendMessage}>
                 Send message
