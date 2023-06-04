@@ -37,7 +37,6 @@
                 Send message
             </Button>
         </form>
-
     </div>
     <div class="lg:mt-0 mt-8 mb-4 px-8">
         <img src="{pfp}" alt="profile pic" class="lg:w-72 md:w-72 rounded-md drop-shadow-xl profile-pic">
