@@ -28,7 +28,7 @@
     <div class="hidden md:flex md:flex-grow md:items-center md:justify-center gap-10">
         <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#about">About</a>
         <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#projects">Projects</a>
-        <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#leaderboard">Leaderboard</a>
+        <a class="text-dark text-lg font-semibold lowercase hover:text-dark-blue" href="#river">Shop</a>
     </div>
 
     <div class="hidden md:block">
@@ -52,8 +52,8 @@
         <div class="flex flex-col items-center justify-center h-full">
             <a href="#about" class="mx-3 my-2 text-dark text-lg font-semibold lowercase hover:text-dark-blue">About</a>
             <a href="#projects" class="mx-3 my-2 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Projects</a>
-            <a href="#leaderboard"
-               class="mx-3 mt-2 mb-4 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Leaderboard</a>
+            <a href="#river"
+               class="mx-3 mt-2 mb-4 text-dark text-lg font-semibold lowercase hover:text-dark-blue">Shop</a>
             <a href="/resume">
                 <Button color="dark" lowercase="true">
                     Resume

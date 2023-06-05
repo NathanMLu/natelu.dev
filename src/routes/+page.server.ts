@@ -1,7 +1,7 @@
 import {kv} from "@vercel/kv";
 
 import type {PageServerLoad} from './$types';
-import {defaultUserName, defaultUserPoints} from "$lib/models/constants";
+import {DEFAULT_USER_NAME, DEFAULT_USER_POINTS} from "$lib/models/constants";
 
 export const load: PageServerLoad = async ({cookies}) => {
     let sessionId = cookies.get('session_id');
@@ -37,8 +37,8 @@ const createUser = async (sessionId: string) => {
     if (response === null || response === 0) {
         try {
             await kv.hmset(`user:${sessionId}`, {
-                name: defaultUserName,
-                points: defaultUserPoints
+                name: DEFAULT_USER_NAME,
+                points: DEFAULT_USER_POINTS
             });
         } catch (error) {
             throw new Error(String(error));

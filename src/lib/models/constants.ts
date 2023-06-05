@@ -1,5 +1,6 @@
-export const defaultUserName = 'NateLu Clone';
-export const defaultUserPoints = 10
+export const DEFAULT_USER_NAME = 'NateLu Clone';
+export const DEFAULT_USER_POINTS = 10;
+export const SCALE_RIVER_HEIGHT = 0.7;
 
 export const levelPoints: { [key: number]: number } = {
     1: 15,

@@ -139,7 +139,7 @@
 
     @media (max-width: 764px) {
         #contact-container {
-            margin-top: 2.5vh;
+            margin-top: 10vh;
             margin-bottom: 2.5vh;
         }
     }
