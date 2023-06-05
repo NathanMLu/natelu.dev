@@ -6,7 +6,7 @@
     import {About, AboutDescription} from "$lib/models/about";
 </script>
 
-<div id="about-container">
+<div id="about">
     <img alt="About background" src="{Curve}" class="w-full">
     <div class="bg-white flex justify-start lg:justify-between align-middle lg:flex-row lg:px-24 px-12 pb-16 gap-20 flex-col">
         <div class="flex justify-start flex-col lg:pt-8 pt-16">
@@ -30,20 +30,20 @@
 </div>
 
 <style>
-    #about-container {
+    #about {
         margin-top: 15vh;
         margin-bottom: 0;
     }
 
     @media (max-width: 1024px) {
-        #about-container {
+        #about {
             margin-top: 10vh;
             margin-bottom: 0;
         }
     }
 
     @media (max-width: 768px) {
-        #about-container {
+        #about {
             margin-top: 5vh;
             margin-bottom: 0;
         }

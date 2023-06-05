@@ -12,6 +12,7 @@
     import Projects from "$lib/components/Projects.svelte";
     import Wait from "$lib/components/Wait.svelte";
     import Activities from "$lib/components/Activities.svelte";
+    import River from "$lib/components/River.svelte";
     import Contact from "$lib/components/Contact.svelte";
 
     export let data: PageData;
@@ -28,4 +29,5 @@
 <Projects></Projects>
 <Wait></Wait>
 <Activities></Activities>
+<River></River>
 <Contact></Contact>

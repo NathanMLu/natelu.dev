@@ -3,7 +3,7 @@
     import ProjectsCard from "$lib/components/ProjectsCard.svelte";
 </script>
 
-<div id="projects-container">
+<div id="projects">
     <h2 class="text-dark font-bold text-3xl mt-16 mb-12 text-center">My Projects</h2>
 
     <div class="flex flex-col align-middle justify-center lg:mx-12 md:mx-8 mx-2 gap-y-16">
@@ -23,20 +23,20 @@
 </div>
 
 <style>
-    #projects-container {
+    #projects {
         margin-top: 10vh;
         margin-bottom: 10vh;
     }
 
     @media (max-width: 1024px) {
-        #projects-container {
+        #projects {
             margin-top: 5vh;
             margin-bottom: 5vh;
         }
     }
 
     @media (max-width: 764px) {
-        #projects-container {
+        #projects {
             margin-top: 2.5vh;
             margin-bottom: 2.5vh;
         }

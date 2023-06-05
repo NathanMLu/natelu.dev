@@ -54,7 +54,7 @@
                 {selectedTechnology}
             </h4>
             <ul class="list-disc">
-                {#each technologies as technology}
+                {#each technologies.sort((a, b) => a.name.localeCompare(b.name)) as technology}
                     {#if technology.name === selectedTechnology}
                         {#each technology.facts as fact}
                             <li class="text-black text-left mt-4 font-esteban">
