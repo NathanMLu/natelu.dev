@@ -4,10 +4,11 @@
     export let inverse = false;
     export let lowercase = false;
     export let customClass = '';
+    export let disabled = false;
 </script>
 
 <button
-        class="{color} whitespace-nowrap w-min font-semibold drop-shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90 {customClass}"
+        class="{color} whitespace-nowrap w-min font-semibold drop-shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90 {customClass} {disabled ? 'opacity-50 cursor-not-allowed' : ''}"
         class:flat={flat}
         class:inverse={inverse}
         class:lowercase={lowercase}

@@ -8,13 +8,13 @@ export const SHOP_ITEMS = [
         description: 'I love fishing during my spare time!'
     },
     {
-        name: 'Nemo',
+        name: 'Nemoz',
         image: nemo,
         price: 15,
         description: 'I love fishing during my spare time!'
     },
     {
-        name: 'Nemo',
+        name: 'Nemos',
         image: nemo,
         price: 15,
         selected: true,
@@ -24,3 +24,5 @@ export const SHOP_ITEMS = [
 
 
 export const SHOP_DESCRIPTION = "Spend your tokens and buy items to place on the riverbed forever!"
+
+export const MAX_MESSAGE_LENGTH = 25;
