@@ -3,14 +3,18 @@
     import riverbed from '$lib/images/river/riverbed.png';
     import Button from "$lib/components/Button.svelte";
     import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
+    import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
 
     import {afterUpdate, onMount} from 'svelte';
+    import ShopItem from "$lib/components/ShopItem.svelte";
 
     let canvas: HTMLCanvasElement;
     let ctx: CanvasRenderingContext2D;
     let showModal = false;
+    let bgImage: HTMLImageElement;
 
     onMount(() => {
+        loadBackground();
         handleResize();
         ctx = canvas.getContext('2d');
 
@@ -35,6 +39,17 @@
         showModal = false;
     }
 
+    const loadBackground = () => {
+        bgImage = new Image();
+        bgImage.src = riverbed;
+    }
+
+    const handleBackgroundClick = (event) => {
+        if (event.target === event.currentTarget) {
+            closeShop();
+        }
+    };
+
     const drawScreen = () => {
         drawMap();
 
@@ -42,12 +57,7 @@
     }
 
     const drawMap = () => {
-        const img = new Image();
-        img.src = riverbed;
-
-        img.onload = () => {
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        }
+        ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
     }
 
     const handleResize = () => {
@@ -58,16 +68,28 @@
 
 <svelte:window on:resize={handleResize}/>
 {#if showModal}
-    <div class="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div class="bg-light-blue rounded-3xl w-1/2">
-            <div class="flex flex-col items-center justify-center p-8">
-                <h1 class="text-3xl font-bold text-dark mb-6">
-                    Nate's Shop
-                </h1>
-                <p class="text-dark mb-6">
-                    Nate's shop is currently under construction. Please check back later!
-                </p>
-                <Button color="primary" on:click={closeShop}>Close</Button>
+    <div class="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" on:click={handleBackgroundClick}>
+        <div class="bg-light-blue rounded-3xl w-1/2 overflow-y-auto" id="shop-modal">
+            <div class="lg:py-10 lg:px-14 md:py-8 md:px-10 py-6 px-8">
+                <div class="flex justify-between items-center flex-row">
+                    <h1 class="lg:text-4xl md:text-2xl text-xl font-bold text-dark text-start">
+                        Nate's Shop
+                    </h1>
+                    <iconify-icon icon="material-symbols:close" class="lg:text-4xl md:text-2xl text-xl text-dark cursor-pointer" width="40px" height="40px" on:click={closeShop}></iconify-icon>
+                </div>
+                <p class="text-black mt-4">{SHOP_DESCRIPTION}</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-4">
+                    {#each SHOP_ITEMS as item}
+                        <ShopItem
+                                name={item.name}
+                                image={item.image}
+                                price={item.price}
+                                description={item.description}
+                                selected={item.selected}>
+                        </ShopItem>
+                    {/each}
+                </div>
             </div>
         </div>
     </div>
@@ -84,6 +106,12 @@
             <Button color="primary" on:click={openShop}>Nate's Shop</Button>
         </div>
     </div>
-    <canvas id="riverbed" class="bg-green" bind:this={canvas}>
+    <canvas class="bg-green" bind:this={canvas}>
     </canvas>
 </div>
+
+<style>
+    #shop-modal {
+        max-height: 90%;
+    }
+</style>
