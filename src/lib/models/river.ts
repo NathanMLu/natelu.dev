@@ -22,6 +22,15 @@ export const SHOP_ITEMS = [
     }
 ]
 
+export const MESSAGE_PLACEHOLDERS = [
+    "i like this website",
+    "hi mom",
+    "wow this is cool",
+    "i love this",
+    "i'm famous now",
+    "i'm on the riverbed",
+    "i'm on the riverbed!",
+]
 
 export const SHOP_DESCRIPTION = "Spend your tokens and buy items to place on the riverbed forever!"
 
