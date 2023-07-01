@@ -12,7 +12,7 @@ export const SHOP_ITEMS: ShopItem[] = [
         name: 'nemoz',
         prettyName: 'Nemoz',
         image: nemo,
-        price: 18,
+        price: 1,
         description: 'I love fishing during my spare time!'
     },
     {
@@ -33,12 +33,10 @@ export const SHOP_ITEMS: ShopItem[] = [
 
 export const MESSAGE_PLACEHOLDERS = [
     "i like this website",
-    "hi mom",
     "wow this is cool",
     "i love this",
     "i'm famous now",
     "i'm on the riverbed",
-    "i'm on the riverbed!",
 ]
 
 export const SHOP_DESCRIPTION = "Spend your tokens and buy items to place on the riverbed forever!"

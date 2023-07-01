@@ -20,6 +20,10 @@ export const load: PageServerLoad = async ({cookies}) => {
     }
 
     const user = await kv.hgetall(`user:${sessionId}`) as { name: string, points: string };
+    if (user === null) {
+        cookies.delete('session_id');
+    }
+
     return {
         props: {
             user: {
