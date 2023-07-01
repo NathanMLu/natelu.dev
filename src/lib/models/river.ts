@@ -75,3 +75,10 @@ export interface ShopItem {
     price: number;
     description: string;
 }
+
+export interface RiverItem {
+    name: string;
+    customMessage: string;
+    image: string;
+    // TODO: Coordinates
+}

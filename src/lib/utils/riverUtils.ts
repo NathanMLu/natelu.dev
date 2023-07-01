@@ -23,3 +23,14 @@ export const buyItem = async (item: CartItem, user: User) => {
     return true;
 };
 
+
+export const getItems = async () => {
+    const response = await fetch('/api/river', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    return await response.json();
+}

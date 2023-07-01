@@ -1,8 +1,7 @@
 <script lang="ts">
-    import {afterUpdate, onMount} from 'svelte';
+    import {afterUpdate} from 'svelte';
 
     import coin from '$lib/images/coin.svg';
-    import riverbed from '$lib/images/river/riverbed.png';
     import Button from "$lib/components/Button.svelte";
     import {loading, user} from "$lib/models/stores";
 
@@ -10,14 +9,10 @@
     import ShopItem from "$lib/components/ShopItem.svelte";
     import {buyItem} from "$lib/utils/riverUtils";
     import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
-    import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
     import {getPoints} from "$lib/utils/userUtils";
+    import RiverCanvas from "$lib/components/RiverCanvas.svelte";
 
-
-    let canvas: HTMLCanvasElement;
-    let ctx: CanvasRenderingContext2D;
     let showModal = false;
-    let bgImage: HTMLImageElement;
 
     let cart: Array<CartItem> = [];
     let cartTotal = 0;
@@ -29,22 +24,12 @@
         points = user.points;
     });
 
-    onMount(() => {
-        loadBackground();
-        handleResize();
-        ctx = canvas.getContext('2d');
-
-        drawScreen();
-    });
-
     afterUpdate(() => {
         if (showModal) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
         }
-
-        handleResize();
     });
 
     const buyItems = () => {
@@ -101,34 +86,14 @@
         cartTotal = 0;
     }
 
-    const loadBackground = () => {
-        bgImage = new Image();
-        bgImage.src = riverbed;
-    }
-
     const handleBackgroundClick = (event) => {
         if (event.target === event.currentTarget) {
             closeShop();
         }
     };
 
-    const drawScreen = () => {
-        drawMap();
-
-        requestAnimationFrame(drawScreen);
-    }
-
-    const drawMap = () => {
-        ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-    }
-
-    const handleResize = () => {
-        canvas.width = document.body.clientWidth;
-        canvas.height = window.innerHeight * SCALE_RIVER_HEIGHT;
-    }
 </script>
 
-<svelte:window on:resize={handleResize}/>
 {#if showModal}
     <div class="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
          on:click={handleBackgroundClick}>
@@ -200,16 +165,11 @@
             <Button color="primary" on:click={openShop}>Nate's Shop</Button>
         </div>
     </div>
-    <canvas class="bg-green" bind:this={canvas}>
-    </canvas>
+    <RiverCanvas></RiverCanvas>
 </div>
 
 <style>
     #shop-modal {
         max-height: 90%;
-    }
-
-    .cost-width {
-        /*width: 4.5rem;*/
     }
 </style>
