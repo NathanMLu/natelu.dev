@@ -28,6 +28,9 @@
         handleResize();
     });
 
+    /*
+     * Load Functions
+     */
     export const loadItems = async () => {
         items = [];
         let riverItems = await getItems();
@@ -39,7 +42,10 @@
                     customMessage: item.customMessage,
                     image: shopItem.image,
                     x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height
+                    y: Math.random() * canvas.height,
+                    width: 100,
+                    height: 100,
+                    showTooltip: false,
                 });
             }
 
@@ -56,6 +62,10 @@
         bgImage.src = riverbed;
     }
 
+
+    /*
+     * Draw Functions
+     */
     const drawScreen = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawMap();
@@ -67,42 +77,71 @@
 
     const drawItems = () => {
         items.forEach((item) => {
-            let image = itemImages.find((image) => image.src.includes(item.image));
+            const image = itemImages.find((image) => image.src.includes(item.image));
             if (image) {
-                ctx.drawImage(image, item.x, item.y, 100, 100);
+                ctx.drawImage(image, item.x, item.y, item.width, item.height);
+
+                if (item.showTooltip && item.customMessage) {
+                    const tooltipPadding = 5;
+                    const tooltipHeight = 25;
+                    const tooltipWidth = ctx.measureText(item.customMessage).width + tooltipPadding * 2;
+                    const tooltipX = item.x + item.width / 2 - tooltipWidth / 2;
+                    const tooltipY = item.y - tooltipHeight - tooltipPadding;
+
+                    ctx.fillStyle = "black";
+                    ctx.beginPath();
+                    ctx.moveTo(tooltipX, tooltipY + tooltipHeight / 2);
+                    ctx.arcTo(tooltipX, tooltipY, tooltipX + tooltipWidth, tooltipY, 5);
+                    ctx.arcTo(tooltipX + tooltipWidth, tooltipY, tooltipX + tooltipWidth, tooltipY + tooltipHeight, 5);
+                    ctx.arcTo(tooltipX + tooltipWidth, tooltipY + tooltipHeight, tooltipX, tooltipY + tooltipHeight, 5);
+                    ctx.arcTo(tooltipX, tooltipY + tooltipHeight, tooltipX, tooltipY, 5);
+                    ctx.closePath();
+                    ctx.fill();
+
+                    ctx.fillStyle = "white";
+                    ctx.font = "16px Arial";
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+                    ctx.fillText(item.customMessage, tooltipX + tooltipWidth / 2, tooltipY + tooltipHeight / 2);
+                }
             }
         });
-    }
+    };
 
-    const moveItems = () => {
-        items.forEach((item) => {
-            const speed = 4;
-            const dx = (Math.random() - 0.5) * speed;
-            const dy = (Math.random() - 0.5) * speed;
 
-            // Update the item's position
-            item.x += dx;
-            item.y += dy;
-
-            // Keep the item within the canvas bounds
-            if (item.x < 0) item.x = 0;
-            if (item.y < 0) item.y = 0;
-            if (item.x + 100 > canvas.width) item.x = canvas.width - 100;
-            if (item.y + 100 > canvas.height) item.y = canvas.height - 100;
-        });
-    }
 
     const drawMap = () => {
         ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
     }
 
+
+    /*
+     * Update Functions
+     */
+    const moveItems = () => {
+    }
+
+    /*
+     * Event Handlers
+     */
     const handleResize = () => {
         canvas.width = document.body.clientWidth;
         canvas.height = window.innerHeight * SCALE_RIVER_HEIGHT;
     }
 
+    const handleMouseMove = (event) => {
+        const { left, top, width, height } = canvas.getBoundingClientRect();
+        const x = (event.clientX - left) * (canvas.width / width);
+        const y = (event.clientY - top) * (canvas.height / height);
+
+        items.forEach((item) => {
+            item.showTooltip = x >= item.x && x <= item.x + item.width && y >= item.y && y <= item.y + item.height;
+        });
+    };
+
+
 </script>
 
 <svelte:window on:resize={handleResize}/>
-<canvas class="bg-green" bind:this={canvas}>
+<canvas class="bg-green" bind:this={canvas} on:mousemove={handleMouseMove}>
 </canvas>

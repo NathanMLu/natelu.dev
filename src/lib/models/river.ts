@@ -82,4 +82,7 @@ export interface RiverItem {
     image: string;
     x: number;
     y: number;
+    width: number;
+    height: number;
+    showTooltip: boolean;
 }

@@ -13,7 +13,8 @@
     import RiverCanvas from "$lib/components/RiverCanvas.svelte";
 
     let showModal = false;
-    let loadItems;
+    let loadItems = () => {
+    };
 
     let cart: Array<CartItem> = [];
     let cartTotal = 0;
