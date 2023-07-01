@@ -1,15 +1,17 @@
 <script lang="ts">
+    import {afterUpdate, onMount} from 'svelte';
+
     import coin from '$lib/images/coin.svg';
     import riverbed from '$lib/images/river/riverbed.png';
     import Button from "$lib/components/Button.svelte";
-    import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
     import {user} from "$lib/models/stores";
 
-
-    import {afterUpdate, onMount} from 'svelte';
-    import ShopItem from "$lib/components/ShopItem.svelte";
     import type {CartItem} from "$lib/models/river";
+    import ShopItem from "$lib/components/ShopItem.svelte";
+    import {buyItem} from "$lib/utils/riverUtils";
     import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
+    import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
+
 
     let canvas: HTMLCanvasElement;
     let ctx: CanvasRenderingContext2D;
@@ -42,6 +44,15 @@
 
         handleResize();
     });
+
+    const buyItems = () => {
+        // loop through cartItems and call buyItem. call all in parallel, then close shop
+        const promises = cart.map(item => buyItem(item, $user));
+
+        Promise.all(promises).then(() => {
+            closeShop();
+        });
+    }
 
     const addToCart = (event) => {
         cart.push({name: event.detail.name, customMessage: event.detail.customMessage, price: event.detail.price});
@@ -136,7 +147,7 @@
                                     {cartTotal}</h5>
                             </div>
                         </div>
-                        <Button color="primary" customClass="mt-3"
+                        <Button color="primary" customClass="mt-3" on:click={buyItems}
                                 disabled={cart.length === 0 || points < cartTotal}
                         >Buy</Button>
                     </div>
