@@ -3,17 +3,21 @@
     import riverbed from '$lib/images/river/riverbed.png';
     import Button from "$lib/components/Button.svelte";
     import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
-    import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
     import {user} from "$lib/models/stores";
 
 
     import {afterUpdate, onMount} from 'svelte';
     import ShopItem from "$lib/components/ShopItem.svelte";
+    import type {CartItem} from "$lib/models/river";
+    import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
 
     let canvas: HTMLCanvasElement;
     let ctx: CanvasRenderingContext2D;
     let showModal = false;
     let bgImage: HTMLImageElement;
+
+    let cart: Array<CartItem> = [];
+    let cartTotal = 0;
 
     let points = 0;
 
@@ -38,6 +42,16 @@
 
         handleResize();
     });
+
+    const addToCart = (event) => {
+        cart.push({name: event.detail.name, customMessage: event.detail.customMessage, price: event.detail.price});
+        cartTotal += event.detail.price;
+    }
+
+    const removeFromCart = (event) => {
+        cart = cart.filter(item => item.name !== event.detail.name);
+        cartTotal = Math.max(0, cartTotal - event.detail.price);
+    }
 
     const openShop = () => {
         showModal = true;
@@ -76,14 +90,17 @@
 
 <svelte:window on:resize={handleResize}/>
 {#if showModal}
-    <div class="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" on:click={handleBackgroundClick}>
+    <div class="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+         on:click={handleBackgroundClick}>
         <div class="bg-light-blue rounded-3xl lg:w-3/4 md:w-4/5 w-5/6 overflow-y-auto" id="shop-modal">
             <div class="lg:py-10 lg:px-14 md:py-8 md:px-10 py-6 px-8">
                 <div class="flex justify-between items-center flex-row">
                     <h1 class="lg:text-4xl md:text-2xl text-xl font-bold text-dark text-start">
                         Nate's Shop
                     </h1>
-                    <iconify-icon icon="material-symbols:close" class="lg:text-4xl md:text-2xl text-xl text-dark cursor-pointer" width="40px" height="40px" on:click={closeShop}></iconify-icon>
+                    <iconify-icon icon="material-symbols:close"
+                                  class="lg:text-4xl md:text-2xl text-xl text-dark cursor-pointer" width="40px"
+                                  height="40px" on:click={closeShop}></iconify-icon>
                 </div>
                 <p class="text-black mt-2">{SHOP_DESCRIPTION}</p>
 
@@ -91,26 +108,38 @@
                     {#each SHOP_ITEMS as item}
                         <ShopItem
                                 name={item.name}
+                                prettyName={item.prettyName}
                                 image={item.image}
                                 price={item.price}
                                 description={item.description}
-                                >
+                                on:addToCart={addToCart}
+                                on:removeFromCart={removeFromCart}
+                        >
                         </ShopItem>
                     {/each}
                 </div>
 
-                <div class="mt-8 flex flex-row justify-end items-center">
-<!--                    <div class="flex justify-start items-center gap-x-2 w-min">-->
-<!--                        <h1 class="text-2xl font-bold text-dark">-->
-<!--                            Total:-->
-<!--                        </h1>-->
-<!--                        <div class="rounded-2xl px-2 py-1.5 flex flex-row justify-between self-end bg-grey items-center drop-shadow-lg w-20">-->
-<!--                            <img alt="NateLu Coin" class="w-8" src="{coin}"/>-->
-<!--                            <h5 class="text-xl font-bold ml-2">{points}</h5>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                <div class="mt-6 flex flex-row justify-between items-end">
+                    <div class="rounded-2xl px-2 py-1 flex flex-row justify-between self-end bg-grey items-center drop-shadow-lg cost-width">
+                        <img alt="NateLu Coin" class="w-6" src="{coin}"/>
+                        <h5 class="text-lg font-bold ml-2">{points}</h5>
+                    </div>
 
-                    <Button color="primary" class="mt-4">Checkout</Button>
+                    <div class="flex flex-col items-end justify-end">
+                        <div class="flex justify-start items-center gap-x-2">
+                            <h1 class="text-xl font-bold text-dark">
+                                Total:
+                            </h1>
+                            <div class="rounded-2xl px-2 py-1 flex flex-row bg-grey items-center drop-shadow-lg">
+                                <img alt="NateLu Coin" class="w-6" src="{coin}"/>
+                                <h5 class="text-lg font-bold ml-2 {points < cartTotal ? 'text-red-500' : ''}">
+                                    {cartTotal}</h5>
+                            </div>
+                        </div>
+                        <Button color="primary" customClass="mt-3"
+                                disabled={cart.length === 0 || points < cartTotal}
+                        >Complete Order</Button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,5 +164,9 @@
 <style>
     #shop-modal {
         max-height: 90%;
+    }
+
+    .cost-width {
+        /*width: 4.5rem;*/
     }
 </style>
