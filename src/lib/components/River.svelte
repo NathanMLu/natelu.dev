@@ -11,6 +11,7 @@
     import {buyItem} from "$lib/utils/riverUtils";
     import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
     import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
+    import {getPoints} from "$lib/utils/userUtils";
 
 
     let canvas: HTMLCanvasElement;
@@ -20,6 +21,7 @@
 
     let cart: Array<CartItem> = [];
     let cartTotal = 0;
+    let errorMsg = '';
 
     let points = 0;
 
@@ -53,15 +55,23 @@
         loading.set(true);
         const promises = cart.map(item => buyItem(item, $user));
 
-        Promise.all(promises).then(() => {
-            user.update(user => {
-                user.points -= cartTotal;
-                return user;
+        Promise.all(promises)
+            .then(() => {
+                getPoints($user).then((points: number) => {
+                    user.update((u) => {
+                        u.points = points;
+                        return u;
+                    });
+                });
+                closeShop();
+                loading.set(false);
+            })
+            .catch((error) => {
+                errorMsg = error;
+
+                loading.set(false);
             });
-            closeShop();
-            loading.set(false);
-        });
-    }
+    };
 
     const addToCart = (event) => {
         cart.push({name: event.detail.name, customMessage: event.detail.customMessage, price: event.detail.price});
@@ -76,13 +86,19 @@
     const openShop = () => {
         showModal = true;
 
-        cart = [];
+        resetFields();
     }
 
     const closeShop = () => {
         showModal = false;
 
+        resetFields();
+    }
+
+    const resetFields = () => {
+        errorMsg = '';
         cart = [];
+        cartTotal = 0;
     }
 
     const loadBackground = () => {
@@ -150,6 +166,9 @@
                     </div>
 
                     <div class="flex flex-col items-end justify-end">
+                        {#if errorMsg}
+                            <p class="text-red-500 text-lg font-semibold mb-2">{errorMsg}</p>
+                        {/if}
                         <div class="flex justify-start items-center gap-x-2">
                             <h1 class="text-xl font-bold text-dark">
                                 Total:
