@@ -13,6 +13,7 @@
     import RiverCanvas from "$lib/components/RiverCanvas.svelte";
 
     let showModal = false;
+    let loadItems;
 
     let cart: Array<CartItem> = [];
     let cartTotal = 0;
@@ -48,6 +49,8 @@
                         return u;
                     });
                 });
+
+                loadItems();
                 closeShop();
                 loading.set(false);
             })
@@ -165,7 +168,9 @@
             <Button color="primary" on:click={openShop}>Nate's Shop</Button>
         </div>
     </div>
-    <RiverCanvas></RiverCanvas>
+    <RiverCanvas bind:loadItems={loadItems}>
+
+    </RiverCanvas>
 </div>
 
 <style>

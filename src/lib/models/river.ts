@@ -80,5 +80,6 @@ export interface RiverItem {
     name: string;
     customMessage: string;
     image: string;
-    // TODO: Coordinates
+    x: number;
+    y: number;
 }

@@ -74,7 +74,7 @@ export const POST = async ({request}: { request: Request }) => {
 // GET /api/river/
 export const GET = async ({url}: { url: URL }) => {
     try {
-        console.log(`GET /api/river - sessionId: ${url.searchParams.get("sessionId")}`)
+        console.log(`GET /api/river/`)
         const keys = await kv.keys("river:*");
         const river = await Promise.all(keys.map(async (key) => {
                 return await kv.hgetall(key);
