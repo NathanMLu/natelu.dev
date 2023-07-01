@@ -1,4 +1,9 @@
 import nemo from '$lib/images/river/nemo.png'
+import tree from '$lib/images/river/tree.png'
+import trout from '$lib/images/river/trout.png'
+import drone from '$lib/images/river/drone.png'
+import sprout from '$lib/images/river/sprout.png'
+import rock from '$lib/images/river/rock.png'
 
 export const SHOP_ITEMS: ShopItem[] = [
     {
@@ -6,28 +11,42 @@ export const SHOP_ITEMS: ShopItem[] = [
         prettyName: 'Nemo',
         image: nemo,
         price: 15,
-        description: 'I love fishing during my spare time!'
+        description: 'My aquarium doesn\'t have any tropical fish!'
     },
     {
-        name: 'nemoz',
-        prettyName: 'Nemoz',
-        image: nemo,
-        price: 1,
-        description: 'I love fishing during my spare time!'
+        name: 'tree',
+        prettyName: 'Tree',
+        image: tree,
+        price: 12,
+        description: 'I started planting fruit trees!'
     },
     {
-        name: 'nemos',
-        prettyName: 'Nemos',
-        image: nemo,
+        name: 'trout',
+        prettyName: 'Trout',
+        image: trout,
         price: 20,
         description: 'I love fishing during my spare time!'
     },
     {
-        name: 'nemosssssss',
-        prettyName: 'Nemossssss',
-        image: nemo,
-        price: 200,
-        description: 'I love fishing during my spare time!'
+        name: 'drone',
+        prettyName: 'Drone',
+        image: drone,
+        price: 35,
+        description: 'My first drone only cost me $35!'
+    },
+    {
+        name: 'sprout',
+        prettyName: 'Sprout',
+        image: sprout,
+        price: 10,
+        description: 'Gardening is one of my favorite hobbies!'
+    },
+    {
+        name: 'rock',
+        prettyName: 'Rock',
+        image: rock,
+        price: 5,
+        description: 'My backyard is full of limestone!'
     }
 ]
 

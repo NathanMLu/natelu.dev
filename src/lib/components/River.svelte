@@ -138,7 +138,7 @@
                         </div>
                         <Button color="primary" customClass="mt-3"
                                 disabled={cart.length === 0 || points < cartTotal}
-                        >Complete Order</Button>
+                        >Buy</Button>
                     </div>
                 </div>
             </div>

@@ -72,7 +72,6 @@ export const POST = async ({request}: { request: Request }) => {
 
 
 // GET /api/river/
-// should have optional query param: ?sessionId=..., and if it does, label the items that the user has, if not, just return all items
 export const GET = async ({url}: { url: URL }) => {
     try {
         console.log(`GET /api/river - sessionId: ${url.searchParams.get("sessionId")}`)
@@ -83,53 +82,6 @@ export const GET = async ({url}: { url: URL }) => {
             }
         ));
 
-        const sessionId = url.searchParams.get("sessionId");
-        if (sessionId === null) {
-            return new Response(JSON.stringify(river), {status: 200});
-        }
-
-        const userKeys = await kv.keys(`river:${sessionId}:*`);
-        const userRiver = await Promise.all(userKeys.map(async (key) => {
-                return await kv.hgetall(key);
-            }
-        ));
-
-        const labeledRiver = river.map(item => {
-            if (item) {
-                const isUserItem = userRiver.some(userItem => userItem && userItem.name === item.name);
-                return {
-                    ...item,
-                    isUserItem
-                };
-            }
-        });
-
-        return new Response(JSON.stringify(labeledRiver), {status: 200});
-    } catch (error) {
-        console.error(error);
-        return new Response(
-            JSON.stringify({error: "Internal Server Error"}),
-            {status: 500}
-        );
-    }
-};
-
-// DELETE /api/river
-// deletes everything from river:*
-export const DELETE = async () => {
-
-    try {
-        console.log(`DELETE /api/river`)
-        const keys = await kv.keys("river:*");
-        const river = await Promise.all(keys.map(async (key) => {
-                return await kv.hgetall(key);
-            }
-        ));
-
-        await Promise.all(river.map(async (item) => {
-            await kv.del(`river:${item?.name}`);
-        }));
-
         return new Response(JSON.stringify(river), {status: 200});
     } catch (error) {
         console.error(error);
@@ -138,4 +90,4 @@ export const DELETE = async () => {
             {status: 500}
         );
     }
-}
+};
