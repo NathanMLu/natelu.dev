@@ -1,5 +1,11 @@
 import {kv} from "@vercel/kv";
 import {MAX_MESSAGE_LENGTH, SHOP_ITEMS} from "$lib/models/river";
+import {
+    RegExpMatcher,
+    TextCensor,
+    englishDataset,
+    englishRecommendedTransformers,
+} from 'obscenity';
 
 // POST /api/river
 export const POST = async ({request}: { request: Request }) => {
@@ -20,6 +26,17 @@ export const POST = async ({request}: { request: Request }) => {
         if (body.customMessage && body.customMessage.length > MAX_MESSAGE_LENGTH) {
             return new Response(
                 JSON.stringify({error: "customMessage must be less than 100 characters"}),
+                {status: 400}
+            );
+        }
+
+        const matcher = new RegExpMatcher({
+            ...englishDataset.build(),
+            ...englishRecommendedTransformers,
+        });
+        if (body.customMessage && matcher.hasMatch(body.customMessage)) {
+            return new Response(
+                JSON.stringify({error: "Do not use profanity"}),
                 {status: 400}
             );
         }
