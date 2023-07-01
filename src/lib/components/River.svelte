@@ -4,7 +4,7 @@
     import coin from '$lib/images/coin.svg';
     import riverbed from '$lib/images/river/riverbed.png';
     import Button from "$lib/components/Button.svelte";
-    import {user} from "$lib/models/stores";
+    import {loading, user} from "$lib/models/stores";
 
     import type {CartItem} from "$lib/models/river";
     import ShopItem from "$lib/components/ShopItem.svelte";
@@ -46,11 +46,20 @@
     });
 
     const buyItems = () => {
-        // loop through cartItems and call buyItem. call all in parallel, then close shop
+        if (cart.length === 0 || points < cartTotal) {
+            return;
+        }
+
+        loading.set(true);
         const promises = cart.map(item => buyItem(item, $user));
 
         Promise.all(promises).then(() => {
+            user.update(user => {
+                user.points -= cartTotal;
+                return user;
+            });
             closeShop();
+            loading.set(false);
         });
     }
 
@@ -66,10 +75,14 @@
 
     const openShop = () => {
         showModal = true;
+
+        cart = [];
     }
 
     const closeShop = () => {
         showModal = false;
+
+        cart = [];
     }
 
     const loadBackground = () => {

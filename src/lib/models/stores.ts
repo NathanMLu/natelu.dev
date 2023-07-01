@@ -6,3 +6,5 @@ export const user = writable<User>({
     points: 0,
     sessionId: ''
 });
+
+export const loading = writable<boolean>(false);

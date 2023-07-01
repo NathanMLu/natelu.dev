@@ -7,12 +7,13 @@
     <div class="lds-dual-ring"></div>
 </div>
 
+<div id="overlay"></div>
+
 <style>
     #spinner {
         position: fixed;
         z-index: 9999;
     }
-
 
     .lds-dual-ring {
         display: inline-block;
@@ -39,5 +40,15 @@
         100% {
             transform: rotate(360deg);
         }
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        z-index: 9998; /* Below the spinner */
     }
 </style>

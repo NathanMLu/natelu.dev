@@ -2,7 +2,6 @@ import type {CartItem} from "$lib/models/river";
 import type {User} from "$lib/models/user";
 
 export const buyItem = async (item: CartItem, user: User) => {
-    // POST /api/river
     try {
         const response = await fetch('/api/river', {
             method: 'POST',
@@ -19,5 +18,5 @@ export const buyItem = async (item: CartItem, user: User) => {
     } catch (e) {
         return false;
     }
-
 }
+
