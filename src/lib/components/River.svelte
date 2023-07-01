@@ -119,8 +119,8 @@
                     {/each}
                 </div>
 
-                <div class="mt-6 flex flex-row justify-between items-end">
-                    <div class="rounded-2xl px-2 py-1 flex flex-row justify-between self-end bg-grey items-center drop-shadow-lg cost-width">
+                <div class="mt-6 flex flex-row justify-between items-start">
+                    <div class="rounded-2xl px-2 py-1 flex flex-row justify-between bg-grey items-center drop-shadow-lg cost-width">
                         <img alt="NateLu Coin" class="w-6" src="{coin}"/>
                         <h5 class="text-lg font-bold ml-2">{points}</h5>
                     </div>
