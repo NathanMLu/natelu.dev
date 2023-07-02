@@ -130,11 +130,17 @@
     }
 
     const scaleWidth = (width: number) => {
-        return width * canvas.width / 1000;
+        if (canvas.width > canvas.height) {
+            return width * canvas.width / 1000;
+        }
+        return width * canvas.height / 1000;
     }
 
     const scaleHeight = (height: number) => {
-        return height * canvas.width / 1000;
+        if (canvas.width > canvas.height) {
+            return height * canvas.width / 1000;
+        }
+        return height * canvas.height / 1000;
     }
 
     /*
@@ -143,6 +149,8 @@
     const handleResize = () => {
         canvas.width = document.body.clientWidth;
         canvas.height = window.innerHeight * SCALE_RIVER_HEIGHT;
+
+        loadItems();
     }
 
     const handleMouseMove = (event) => {
