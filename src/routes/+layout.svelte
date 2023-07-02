@@ -7,6 +7,7 @@
     import Points from "$lib/components/Points.svelte";
     import Spinner from "$lib/components/Spinner.svelte";
     import {loading} from "$lib/models/stores";
+    import Toast from "$lib/components/Toast.svelte";
 </script>
 
 <svelte:head>
@@ -15,6 +16,7 @@
 </svelte:head>
 
 <div class="flex flex-col min-h-screen">
+    <Toast></Toast>
     {#if $loading === true}
         <Spinner></Spinner>
     {/if}

@@ -1,23 +1,24 @@
 <script lang="ts">
-    import {afterUpdate} from "svelte";
     import {fade} from 'svelte/transition';
 
     import coin from '$lib/images/coin.svg'
     import {congratsMessages} from "$lib/models/constants";
-    // TODO: Refactor this whole component
+    import {toast} from "$lib/models/stores";
 
-    export let points;
-    export let isVisible: boolean = false;
-    let msg;
+    toast.subscribe((toast) => {
+        if (toast.show) {
+            if (toast.message === '') {
+                toast.message = generateMsg();
+            }
 
-    afterUpdate(() => {
-        if (isVisible) {
-            msg = generateMsg();
+            setTimeout(() => {
+                handleClose();
+            }, 2000);
         }
     });
 
     const handleClose = () => {
-        isVisible = false;
+        toast.set({show: false, heading: '', message: ''});
     };
 
     const generateMsg = () => {
@@ -26,20 +27,15 @@
     };
 </script>
 
-{#if isVisible}
+{#if $toast.show}
     <div class="bg-white rounded-lg flex flex-row p-2 border-l-8 border-orange fixed bottom-4 right-4 drop-shadow-lg z-10" transition:fade>
         <img src="{coin}" alt="coin" class="w-8">
         <div class="mx-5">
             <h2 class="text-xl font-bold">
-                +{points}
-                {#if points > 1}
-                    points!
-                {:else}
-                    point!
-                {/if}
+                {$toast.heading}
             </h2>
             <p>
-                {msg}
+                {$toast.message}
             </p>
         </div>
         <div class="cursor-pointer" on:click={handleClose}>

@@ -1,45 +1,32 @@
 <script lang="ts">
     import coin from '$lib/images/coin.svg'
     import {user} from "$lib/models/stores";
-    import Toast from "$lib/components/Toast.svelte";
+    import {toast} from "$lib/models/stores";
 
     let points: number;
-    let pointsDiff: number;
     let addingPoints: boolean = false;
-    let showToast: boolean = false;
 
     user.subscribe((user) => {
         if (user.points > points) {
-            pointsDiff = user.points - points;
-
             addingPoints = true;
             setTimeout(() => {
                 addingPoints = false;
             }, 1000);
-
-            if (points != undefined && points != 0) {
-                showToast = true;
-                setTimeout(() => {
-                    showToast = false;
-                }, 3000);
-            }
-
         }
 
         points = user.points;
     });
 
     export const displayHelpMessage = () => {
-        alert("implement later")
-        // showToast = true;
-        // setTimeout(() => {
-        //     showToast = false;
-        // }, 3000);
+        toast.set({
+            heading: "Earn coins!",
+            message: "Complete challenges and buy rewards.",
+            show: true,
+        });
     }
 </script>
 
-<Toast points={pointsDiff} isVisible={showToast}/>
-<div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-4 left-4 drop-shadow-lg" on:focus={displayHelpMessage} on:mouseover={displayHelpMessage}>
+<div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-4 left-4 drop-shadow-lg" on:mouseenter={displayHelpMessage}>
     <img alt="NateLu Coin" class="w-8 animate-spin {addingPoints ? 'adding-points' : ''}" src="{coin}"/>
     <h5 class="text-xl font-bold ml-2">{points}</h5>
 </div>
