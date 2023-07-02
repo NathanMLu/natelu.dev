@@ -12,8 +12,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: nemo,
         price: 15,
         description: 'My aquarium doesn\'t have any tropical fish!',
-        width: 100,
-        height: 100
+        width: 75,
+        height: 75
     },
     {
         name: 'tree',
@@ -21,8 +21,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: tree,
         price: 12,
         description: 'I started planting fruit trees!',
-        width: 100,
-        height: 100
+        width: 75,
+        height: 75
     },
     {
         name: 'trout',
@@ -30,17 +30,17 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: trout,
         price: 20,
         description: 'I love fishing during my spare time!',
-        width: 100,
-        height: 100
+        width: 75,
+        height: 75
     },
     {
         name: 'drone',
         prettyName: 'Drone',
         image: drone,
-        price: 35,
+        price: 75,
         description: 'My first drone only cost me $35!',
-        width: 100,
-        height: 100
+        width: 75,
+        height: 75
     },
     {
         name: 'sprout',
@@ -48,8 +48,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: sprout,
         price: 10,
         description: 'Gardening is one of my favorite hobbies!',
-        width: 100,
-        height: 100
+        width: 75,
+        height: 75
     },
     {
         name: 'rock',
@@ -57,8 +57,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: rock,
         price: 5,
         description: 'My backyard is full of limestone!',
-        width: 100,
-        height: 100
+        width: 75,
+        height: 75
     }
 ]
 

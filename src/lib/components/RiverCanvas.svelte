@@ -2,11 +2,11 @@
     import {afterUpdate, onMount} from "svelte";
 
     import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
+    import type {RiverItem} from "$lib/models/river";
     import {SHOP_ITEMS} from "$lib/models/river";
 
     import riverbed from '$lib/images/river/riverbed.png';
     import {getItems} from "$lib/utils/riverUtils";
-    import type {RiverItem} from "$lib/models/river";
 
     let canvas: HTMLCanvasElement;
     let ctx: CanvasRenderingContext2D;
@@ -43,8 +43,8 @@
                     image: shopItem.image,
                     x: scaleXCoordinate(item.x, shopItem.width),
                     y: scaleYCoordinate(item.y, shopItem.height),
-                    width: shopItem.width,
-                    height: shopItem.height,
+                    width: scaleWidth(shopItem.width),
+                    height: scaleHeight(shopItem.height),
                     showTooltip: false,
                 });
             }
@@ -55,8 +55,6 @@
             }
             itemImages.push(image);
         });
-
-        console.log(items);
     }
 
     const loadBackground = () => {
@@ -131,6 +129,13 @@
         return coordinate * canvas.height / 1000 - height / 2;
     }
 
+    const scaleWidth = (width: number) => {
+        return width * canvas.width / 1000;
+    }
+
+    const scaleHeight = (height: number) => {
+        return height * canvas.width / 1000;
+    }
 
     /*
      * Event Handlers
@@ -141,7 +146,7 @@
     }
 
     const handleMouseMove = (event) => {
-        const { left, top, width, height } = canvas.getBoundingClientRect();
+        const {left, top, width, height} = canvas.getBoundingClientRect();
         const x = (event.clientX - left) * (canvas.width / width);
         const y = (event.clientY - top) * (canvas.height / height);
 
