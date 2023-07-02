@@ -5,6 +5,11 @@ import drone from '$lib/images/river/drone.png'
 import sprout from '$lib/images/river/sprout.png'
 import rock from '$lib/images/river/rock.png'
 
+export enum RiverItemType {
+    fish = 'fish',
+    other = 'other'
+}
+
 export const SHOP_ITEMS: ShopItem[] = [
     {
         name: 'nemo',
@@ -12,8 +17,9 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: nemo,
         price: 15,
         description: 'My aquarium doesn\'t have any tropical fish!',
-        width: 75,
-        height: 75
+        width: 65,
+        height: 65,
+        type: RiverItemType.fish
     },
     {
         name: 'tree',
@@ -22,7 +28,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         price: 12,
         description: 'I started planting fruit trees!',
         width: 75,
-        height: 75
+        height: 75,
+        type: RiverItemType.other
     },
     {
         name: 'trout',
@@ -31,7 +38,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         price: 20,
         description: 'I love fishing during my spare time!',
         width: 75,
-        height: 75
+        height: 75,
+        type: RiverItemType.fish
     },
     {
         name: 'drone',
@@ -40,7 +48,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         price: 75,
         description: 'My first drone only cost me $35!',
         width: 75,
-        height: 75
+        height: 75,
+        type: RiverItemType.other
     },
     {
         name: 'sprout',
@@ -48,8 +57,9 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: sprout,
         price: 10,
         description: 'Gardening is one of my favorite hobbies!',
-        width: 75,
-        height: 75
+        width: 50,
+        height: 50,
+        type: RiverItemType.other
     },
     {
         name: 'rock',
@@ -58,7 +68,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         price: 5,
         description: 'My backyard is full of limestone!',
         width: 75,
-        height: 75
+        height: 75,
+        type: RiverItemType.other
     }
 ]
 
@@ -88,6 +99,7 @@ export interface ShopItem {
     description: string;
     width: number;
     height: number;
+    type: RiverItemType;
 }
 
 export interface RiverItem {

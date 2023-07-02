@@ -69,6 +69,18 @@ export const POST = async ({request}: { request: Request }) => {
             });
         }
 
+        let x = Math.floor(Math.random() * 1000);
+        let y = Math.floor(Math.random() * 1000);
+        if (item.type === "fish") {
+            x = Math.floor(Math.random() * 450) + 500;
+            y = Math.floor(Math.random() * 300) + 400;
+        } else {
+            while (x > 500 && x < 950 && y > 400 && y < 700) {
+                x = Math.floor(Math.random() * 1000);
+                y = Math.floor(Math.random() * 1000);
+            }
+        }
+
         await kv.hset(`user:${body.sessionId}`, {points: Number(user.points) - item.price});
         await kv.hset(`river:${body.sessionId}:${body.name}`, {
             name: body.name,
