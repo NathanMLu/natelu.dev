@@ -12,6 +12,12 @@
             setTimeout(() => {
                 addingPoints = false;
             }, 1000);
+
+            toast.set({
+                heading: "+" + (user.points - points) + " point" + (user.points - points > 1 ? "s" : "") + "!",
+                message: "",
+                show: true,
+            });
         }
 
         points = user.points;
