@@ -73,6 +73,8 @@ export const POST = async ({request}: { request: Request }) => {
         await kv.hset(`river:${body.sessionId}:${body.name}`, {
             name: body.name,
             customMessage: body.customMessage || "",
+            x: Math.floor(Math.random() * 1000),
+            y: Math.floor(Math.random() * 1000),
         });
 
         return new Response(JSON.stringify({sessionId: body.sessionId}), {

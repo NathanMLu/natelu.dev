@@ -41,10 +41,10 @@
                     name: item.name,
                     customMessage: item.customMessage,
                     image: shopItem.image,
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    width: 100,
-                    height: 100,
+                    x: scaleXCoordinate(item.x, shopItem.width),
+                    y: scaleYCoordinate(item.y, shopItem.height),
+                    width: shopItem.width,
+                    height: shopItem.height,
                     showTooltip: false,
                 });
             }
@@ -55,6 +55,8 @@
             }
             itemImages.push(image);
         });
+
+        console.log(items);
     }
 
     const loadBackground = () => {
@@ -86,11 +88,11 @@
                     const tooltipHeight = 25;
                     const tooltipWidth = ctx.measureText(item.customMessage).width + tooltipPadding * 2;
                     const tooltipX = item.x + item.width / 2 - tooltipWidth / 2;
-                    const tooltipY = item.y - tooltipHeight - tooltipPadding;
+                    const tooltipY = item.y - tooltipHeight;
 
                     ctx.fillStyle = "black";
                     ctx.beginPath();
-                    ctx.moveTo(tooltipX, tooltipY + tooltipHeight / 2);
+                    ctx.moveTo(tooltipX, tooltipY + tooltipHeight);
                     ctx.arcTo(tooltipX, tooltipY, tooltipX + tooltipWidth, tooltipY, 5);
                     ctx.arcTo(tooltipX + tooltipWidth, tooltipY, tooltipX + tooltipWidth, tooltipY + tooltipHeight, 5);
                     ctx.arcTo(tooltipX + tooltipWidth, tooltipY + tooltipHeight, tooltipX, tooltipY + tooltipHeight, 5);
@@ -108,18 +110,27 @@
         });
     };
 
-
-
     const drawMap = () => {
         ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
     }
-
 
     /*
      * Update Functions
      */
     const moveItems = () => {
     }
+
+    /*
+     * Helper Functions
+     */
+    const scaleXCoordinate = (coordinate: number, width: number) => {
+        return coordinate * canvas.width / 1000 - width / 2;
+    }
+
+    const scaleYCoordinate = (coordinate: number, height: number) => {
+        return coordinate * canvas.height / 1000 - height / 2;
+    }
+
 
     /*
      * Event Handlers

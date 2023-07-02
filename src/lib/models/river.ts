@@ -11,42 +11,54 @@ export const SHOP_ITEMS: ShopItem[] = [
         prettyName: 'Nemo',
         image: nemo,
         price: 15,
-        description: 'My aquarium doesn\'t have any tropical fish!'
+        description: 'My aquarium doesn\'t have any tropical fish!',
+        width: 100,
+        height: 100
     },
     {
         name: 'tree',
         prettyName: 'Tree',
         image: tree,
         price: 12,
-        description: 'I started planting fruit trees!'
+        description: 'I started planting fruit trees!',
+        width: 100,
+        height: 100
     },
     {
         name: 'trout',
         prettyName: 'Trout',
         image: trout,
         price: 20,
-        description: 'I love fishing during my spare time!'
+        description: 'I love fishing during my spare time!',
+        width: 100,
+        height: 100
     },
     {
         name: 'drone',
         prettyName: 'Drone',
         image: drone,
         price: 35,
-        description: 'My first drone only cost me $35!'
+        description: 'My first drone only cost me $35!',
+        width: 100,
+        height: 100
     },
     {
         name: 'sprout',
         prettyName: 'Sprout',
         image: sprout,
         price: 10,
-        description: 'Gardening is one of my favorite hobbies!'
+        description: 'Gardening is one of my favorite hobbies!',
+        width: 100,
+        height: 100
     },
     {
         name: 'rock',
         prettyName: 'Rock',
         image: rock,
         price: 5,
-        description: 'My backyard is full of limestone!'
+        description: 'My backyard is full of limestone!',
+        width: 100,
+        height: 100
     }
 ]
 
@@ -74,6 +86,8 @@ export interface ShopItem {
     image: string;
     price: number;
     description: string;
+    width: number;
+    height: number;
 }
 
 export interface RiverItem {
