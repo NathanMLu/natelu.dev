@@ -26,7 +26,7 @@
     export const displayHelpMessage = () => {
         toast.set({
             heading: "Earn coins!",
-            message: "Complete challenges and buy rewards.",
+            message: "Complete challenges and spend them in the shop.",
             show: true,
         });
     }

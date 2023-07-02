@@ -8,6 +8,7 @@
     import Spinner from "$lib/components/Spinner.svelte";
     import {loading} from "$lib/models/stores";
     import Toast from "$lib/components/Toast.svelte";
+    import Quiz from "$lib/components/Quiz.svelte";
 </script>
 
 <svelte:head>
@@ -16,10 +17,12 @@
 </svelte:head>
 
 <div class="flex flex-col min-h-screen">
-    <Toast></Toast>
     {#if $loading === true}
         <Spinner></Spinner>
     {/if}
+
+    <Toast/>
+    <Quiz/>
     <Navbar/>
     <main class="flex-grow">
         <slot/>

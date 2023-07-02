@@ -32,7 +32,7 @@
     </div>
 
     <div class="hidden md:block">
-        <a href="/resume">
+        <a href="/resume" target="_blank" rel="noopener noreferrer">
             <Button color="dark" lowercase="true">
                 Resume
             </Button>

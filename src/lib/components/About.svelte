@@ -2,8 +2,21 @@
     import Curve from '$lib/images/bg-curve.svg';
     import Button from "$lib/components/Button.svelte";
     import AboutCard from "$lib/components/AboutCard.svelte";
+    import {quizzes} from "$lib/models/quiz";
+    import {quiz} from "$lib/models/stores";
 
     import {About, AboutDescription} from "$lib/models/about";
+
+    const openAboutQuiz = (name: string) => {
+        // find the associated quiz, then set the quiz store to that quiz so that it will show
+        const aboutQuiz = quizzes.find(quiz => quiz.name === name);
+        if (aboutQuiz) {
+            quiz.set({
+                ...aboutQuiz,
+                show: true
+            });
+        }
+    }
 </script>
 
 <div id="about">
@@ -18,11 +31,14 @@
         </div>
         <div class="flex gap-12 lg:gap-6 justify-evenly align-middle flex-col md:flex-row">
             {#each About as about}
-                <AboutCard image="{about.image}"
-                           headline="{about.headline}"
-                           link="{about.link}"
-                           linkText="{about.linkText}"
-                           text="{about.text}">
+                <AboutCard
+                        on:showQuiz={() => openAboutQuiz(about.name)}
+                        name="{about.name}"
+                        image="{about.image}"
+                        headline="{about.headline}"
+                        link="{about.link}"
+                        linkText="{about.linkText}"
+                        text="{about.text}">
                 </AboutCard>
             {/each}
         </div>

@@ -1,13 +1,18 @@
 <script>
+    import {createEventDispatcher} from "svelte";
+
     export let image = "";
     export let headline = "";
     export let text = "";
     export let link = "";
     export let linkText = "";
+
+    const dispatch = createEventDispatcher();
 </script>
 
 <div class="bg-transparent">
-    <div class="rounded-xl bg-secondary w-16 h-16 flex items-center justify-center">
+    <div class="rounded-xl bg-secondary w-16 h-16 flex items-center justify-center cursor-pointer hover:opacity-75"
+         on:click={() => dispatch('showQuiz')}>
         <img src={image} class="w-10 h-10" alt="{headline}"/>
     </div>
     <h2 class="font-semibold text-lg whitespace-nowrap mt-2">

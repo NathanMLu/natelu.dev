@@ -8,6 +8,7 @@ export const AboutDescription = 'I am a creative problem solver with a passion f
 
 export const About = [
     {
+        name: 'corelogic',
         image: AboutCode,
         headline: 'Software Engineer',
         text: 'I am a Associate Software Engineer at CoreLogic - a leader in the property solutions and intelligence industry.',
@@ -15,6 +16,7 @@ export const About = [
         linkText: 'CoreLogic'
     },
     {
+        name: 'ut',
         image: AboutSchool,
         headline: 'Student',
         text: 'I am a junior at UT Austin studying Electrical and Computer Engineering & Entrepreneurship, with a focus on Data Science.',
@@ -22,6 +24,7 @@ export const About = [
         linkText: 'UT Austin'
     },
     {
+        name: 'neurofix',
         image: AboutEntrepreneur,
         headline: 'Entrepreneur',
         text: 'I manage Neurofix - an ecommerce business that refurbishes used consumer electronics with over $60,000 in sales.',
