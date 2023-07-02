@@ -1,6 +1,7 @@
 <script>
     import {createEventDispatcher} from "svelte";
 
+    export let name = "";
     export let image = "";
     export let headline = "";
     export let text = "";

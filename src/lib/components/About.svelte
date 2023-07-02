@@ -8,7 +8,6 @@
     import {About, AboutDescription} from "$lib/models/about";
 
     const openAboutQuiz = (name: string) => {
-        // find the associated quiz, then set the quiz store to that quiz so that it will show
         const aboutQuiz = quizzes.find(quiz => quiz.name === name);
         if (aboutQuiz) {
             quiz.set({

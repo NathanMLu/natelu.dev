@@ -18,7 +18,8 @@ export const toast = writable<Toast>({
 export const quiz = writable<Quiz>({
     question: '',
     options: [],
-    show: false
+    show: false,
+    name: ''
 });
 
 export const loading = writable<boolean>(false);

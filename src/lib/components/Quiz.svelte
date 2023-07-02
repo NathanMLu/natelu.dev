@@ -1,6 +1,9 @@
 <script lang="ts">
     import {quiz} from "$lib/models/stores";
     import {QUIZ_DESCRIPTION} from "$lib/models/quiz";
+    import Button from "$lib/components/Button.svelte";
+
+    let selectedOption = "";
 
     const closeQuiz = () => {
         quiz.update((q) => {
@@ -13,6 +16,10 @@
         if (event.target === event.currentTarget) {
             closeQuiz();
         }
+    };
+
+    const submitQuiz = () => {
+        console.log(selectedOption)
     };
 
 </script>
@@ -32,9 +39,30 @@
                 </div>
                 <p class="text-black mt-2">{QUIZ_DESCRIPTION}</p>
 
-                <div>
+                <div class="flex flex-col mx-12 mt-10 justify-items-center items-center">
+                    <h2 class="text-dark text-2xl font-bold text-center w-1/2 mb-4">
+                        {$quiz.question}
+                    </h2>
+
+                    {#each $quiz.options as option}
+                        <label class="bg-white text-black rounded-lg px-4 py-2 my-2 w-1/2 drop-shadow-lg flex justify-items-start items-center gap-4 cursor-pointer {selectedOption === option.text ? 'bg-wave-two' : ''}">
+                            <input type="radio" class="form-radio h-5 w-5 text-dark cursor-pointer" name="radio"
+                                   value={option.text} id={option.text} bind:group={selectedOption}>
+                            <span class="text-dark font-semibold text-lg cursor-pointer">
+                                {option.text}
+                            </span>
+                        </label>
+                    {/each}
+
+                    <div class="w-1/2">
+                        <Button color="primary" customClass="self-start mt-6" on:click={submitQuiz}>
+                            Submit
+                        </Button>
+                    </div>
+
 
                 </div>
+            </div>
         </div>
     </div>
 {/if}
