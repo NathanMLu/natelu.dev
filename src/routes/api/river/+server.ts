@@ -69,15 +69,17 @@ export const POST = async ({request}: { request: Request }) => {
             });
         }
 
-        let x = Math.floor(Math.random() * 1000);
-        let y = Math.floor(Math.random() * 1000);
+        let x = Math.floor(Math.random() * 900) + 50;
+        let y = Math.floor(Math.random() * 900) + 50;
         if (item.type === "fish") {
-            x = Math.floor(Math.random() * 450) + 500;
-            y = Math.floor(Math.random() * 300) + 400;
+            x = Math.floor(Math.random() * 550) + 400;
+            y = Math.floor(Math.random() * 400) + 350;
+
+            console.log(x, y)
         } else {
-            while (x > 500 && x < 950 && y > 400 && y < 700) {
-                x = Math.floor(Math.random() * 1000);
-                y = Math.floor(Math.random() * 1000);
+            while (x > 400 && x < 950 && y > 350 && y < 750) {
+                x = Math.floor(Math.random() * 900) + 50;
+                y = Math.floor(Math.random() * 900) + 50;
             }
         }
 
@@ -85,8 +87,8 @@ export const POST = async ({request}: { request: Request }) => {
         await kv.hset(`river:${body.sessionId}:${body.name}`, {
             name: body.name,
             customMessage: body.customMessage || "",
-            x: Math.floor(Math.random() * 1000),
-            y: Math.floor(Math.random() * 1000),
+            x: x,
+            y: y,
         });
 
         return new Response(JSON.stringify({sessionId: body.sessionId}), {
