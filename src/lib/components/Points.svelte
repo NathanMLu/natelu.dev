@@ -5,9 +5,10 @@
 
     let points: number;
     let addingPoints: boolean = false;
+    let initialSubscribed: boolean = false;
 
     user.subscribe((user) => {
-        if (user.points > points) {
+        if (user.points > points && initialSubscribed) {
             addingPoints = true;
             setTimeout(() => {
                 addingPoints = false;
@@ -21,6 +22,7 @@
         }
 
         points = user.points;
+        if (points >= 0) initialSubscribed = true;
     });
 
     export const displayHelpMessage = () => {
@@ -34,7 +36,9 @@
 
 <div class="cursor-pointer rounded-xl gap-1 bg-grey px-3 py-1.5 flex flex-row items-center fixed bottom-4 left-4 drop-shadow-lg" on:mouseenter={displayHelpMessage}>
     <img alt="NateLu Coin" class="w-8 animate-spin {addingPoints ? 'adding-points' : ''}" src="{coin}"/>
-    <h5 class="text-xl font-bold ml-2">{points}</h5>
+    {#if points >= 0}
+        <h5 class="text-xl font-bold ml-2">{points}</h5>
+    {/if}
 </div>
 
 <style>

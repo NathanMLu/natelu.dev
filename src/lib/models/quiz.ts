@@ -20,10 +20,21 @@ export const quizzes: Quiz[] = [
             {text: "Los Angeles", correct: false},
             {text: "Chicago", correct: false},
         ]
+    },
+    {
+        name: "ut",
+        question: "What is the capital of the United States?",
+        options: [
+            {text: "New York", correct: false},
+            {text: "a", correct: true},
+            {text: "Los Angeles", correct: false},
+            {text: "Chicago", correct: false},
+        ]
     }];
 
 export const quizPoints: { [key: string]: number } = {
     "corelogic": 25,
+    "ut": 50
 }
 
 export const QUIZ_DESCRIPTION: string = "Complete the quiz to earn points and spend them in the shop!";

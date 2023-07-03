@@ -1,7 +1,7 @@
 import {quizPoints, quizzes} from "$lib/models/quiz";
 import {kv} from "@vercel/kv";
 
-// POST /api/quiz/answer: {sessionId: string, quizName: string, answer: string}
+// POST /api/quiz: {sessionId: string, quizName: string, answer: string}
 export const POST = async ({request}: { request: Request }) => {
     try {
         const body = await request.json();
@@ -12,7 +12,7 @@ export const POST = async ({request}: { request: Request }) => {
             );
         }
 
-        console.log(`POST /api/quiz/answer - sessionId: ${body.sessionId}`)
+        console.log(`POST /api/quiz - sessionId: ${body.sessionId}`)
         if (!body.quizName) {
             return new Response(
                 JSON.stringify({error: "quizName is required"}),
@@ -45,16 +45,22 @@ export const POST = async ({request}: { request: Request }) => {
         }
 
         const correct = quiz.options.find((option) => option.text === answer)?.correct;
-        if (correct === undefined) {
-            return new Response(JSON.stringify({error: "Invalid answer"}), {
+        if (correct === undefined || !correct) {
+            return new Response(JSON.stringify({error: "Invalid/incorrect answer"}), {
                 status: 400,
             });
         }
 
-        // check if user has already answered this quiz, if so, just give 1 point, otherwise give points for the quiz
+        if (user[`quiz:${quizName}`]) {
+            console.log(`User has already completed quiz ${quizName}`)
+            await kv.hincrby(`user:${body.sessionId}`, "points", 1);
+        } else {
+            console.log(`User has not completed quiz ${quizName}`)
+            await kv.hset(`user:${body.sessionId}`, {[`quiz:${quizName}`]: true});
+            await kv.hincrby(`user:${body.sessionId}`, "points", quizPoints[quizName]);
+        }
 
-
-        return new Response(JSON.stringify({correct}), {
+        return new Response(JSON.stringify({sessionId: body.sessionId}), {
             status: 200,
         });
     } catch (error) {

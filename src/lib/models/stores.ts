@@ -5,7 +5,7 @@ import type {Quiz} from "$lib/models/quiz";
 
 export const user = writable<User>({
     name: '',
-    points: 0,
+    points: -1,
     sessionId: ''
 });
 

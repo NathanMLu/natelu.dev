@@ -74,8 +74,6 @@ export const POST = async ({request}: { request: Request }) => {
         if (item.type === "fish") {
             x = Math.floor(Math.random() * 550) + 400;
             y = Math.floor(Math.random() * 400) + 350;
-
-            console.log(x, y)
         } else {
             while (x > 400 && x < 950 && y > 350 && y < 750) {
                 x = Math.floor(Math.random() * 900) + 50;

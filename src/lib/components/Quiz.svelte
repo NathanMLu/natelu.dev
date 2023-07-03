@@ -19,7 +19,7 @@
     };
 
     const submitQuiz = () => {
-        console.log(selectedOption)
+        // console.log(selectedOption)
     };
 
 </script>

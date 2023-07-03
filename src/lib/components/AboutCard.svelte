@@ -2,7 +2,7 @@
     import {createEventDispatcher} from "svelte";
     import {toast} from "$lib/models/stores";
 
-    export let name = "";
+    export const name = "";
     export let image = "";
     export let headline = "";
     export let text = "";
@@ -12,7 +12,6 @@
     const dispatch = createEventDispatcher();
 
     const showAboutQuizPrompt = () => {
-        console.log("showAboutQuizPrompt")
         toast.set({
             show: true,
             message: "Click on an icon to take a quiz!",
