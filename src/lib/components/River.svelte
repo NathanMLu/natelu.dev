@@ -164,7 +164,7 @@
             <h1 class="text-3xl font-bold text-dark mb-6">
                 Spend your
                 <img src="{coin}" class="inline align-middle w-14 mx-2" alt="coin">
-                tokens and add to the riverbed!
+                coins and add to the riverbed!
             </h1>
             <Button color="primary" on:click={openShop}>Nate's Shop</Button>
         </div>

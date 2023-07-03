@@ -80,8 +80,9 @@ export const MESSAGE_PLACEHOLDERS = [
     "i'm famous now",
     "i'm on the riverbed",
 ]
+export const SCALE_RIVER_HEIGHT = 0.7;
 
-export const SHOP_DESCRIPTION = "Spend your tokens and buy items to place on the riverbed forever!"
+export const SHOP_DESCRIPTION = "Spend your coins and buy items to place on the riverbed forever!"
 
 export const MAX_MESSAGE_LENGTH = 25;
 

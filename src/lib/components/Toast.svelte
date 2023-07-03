@@ -6,6 +6,7 @@
     import {toast} from "$lib/models/stores";
 
     toast.subscribe((toast) => {
+        console.log(toast)
         if (toast.show) {
             if (toast.message === '') {
                 toast.message = generateMsg();

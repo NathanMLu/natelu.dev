@@ -1,9 +1,8 @@
 <script lang="ts">
     import {afterUpdate, onMount} from "svelte";
 
-    import {SCALE_RIVER_HEIGHT} from "$lib/models/constants";
     import type {RiverItem} from "$lib/models/river";
-    import {SHOP_ITEMS} from "$lib/models/river";
+    import {SCALE_RIVER_HEIGHT, SHOP_ITEMS} from "$lib/models/river";
 
     import riverbed from '$lib/images/river/riverbed.png';
     import {getItems} from "$lib/utils/riverUtils";
