@@ -1,9 +1,12 @@
 <script lang="ts">
-    import {quiz} from "$lib/models/stores";
+    import {loading, quiz, user} from "$lib/models/stores";
     import {QUIZ_DESCRIPTION} from "$lib/models/quiz";
     import Button from "$lib/components/Button.svelte";
+    import {completeQuiz} from "$lib/utils/quizUtils";
+    import {getPoints} from "$lib/utils/userUtils";
 
     let selectedOption = "";
+    let errorMsg = "";
 
     const closeQuiz = () => {
         quiz.update((q) => {
@@ -19,8 +22,27 @@
     };
 
     const submitQuiz = () => {
-        // console.log(selectedOption)
+        if (selectedOption === "") {
+            return;
+        }
+
+        loading.set(true);
+        completeQuiz($quiz.name, selectedOption, $user).then(() => {
+            getPoints($user).then((points: number) => {
+                user.update((u) => {
+                    u.points = points;
+                    return u;
+                });
+            });
+
+            closeQuiz();
+        }).catch((err) => {
+            errorMsg = err.message;
+        });
+
+        loading.set(false);
     };
+
 
 </script>
 
@@ -54,7 +76,11 @@
                         </label>
                     {/each}
 
-                    <div class="lg:w-1/2 md:w-2/3 w-3/4 ">
+                    <div class="lg:w-1/2 md:w-2/3 w-3/4">
+                        {#if errorMsg !== ""}
+                            <p class=" text-red-500 mt-2 self-start">{errorMsg}</p>
+                        {/if}
+
                         <Button color="primary" customClass="self-start mt-6" on:click={submitQuiz}>
                             Submit
                         </Button>
