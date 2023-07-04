@@ -62,13 +62,6 @@ export const POST = async ({request}: { request: Request }) => {
             });
         }
 
-        const userItem = await kv.hgetall(`river:${body.sessionId}:${body.name}`);
-        if (userItem !== null) {
-            return new Response(JSON.stringify({error: "User already has item"}), {
-                status: 400,
-            });
-        }
-
         let x = Math.floor(Math.random() * 900) + 50;
         let y = Math.floor(Math.random() * 900) + 50;
         if (item.type === "fish") {
@@ -82,7 +75,7 @@ export const POST = async ({request}: { request: Request }) => {
         }
 
         await kv.hset(`user:${body.sessionId}`, {points: Number(user.points) - item.price});
-        await kv.hset(`river:${body.sessionId}:${body.name}`, {
+        await kv.hset(`river:${body.sessionId}:${body.name}:${x}:${y}`, {
             name: body.name,
             customMessage: body.customMessage || "",
             x: x,
