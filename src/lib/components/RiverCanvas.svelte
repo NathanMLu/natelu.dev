@@ -16,9 +16,6 @@
 
     onMount(() => {
         loadBackground();
-        handleResize();
-        loadItems();
-
         ctx = canvas.getContext('2d');
         drawScreen();
     });

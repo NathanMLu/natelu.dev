@@ -30,11 +30,23 @@ export const quizzes: Quiz[] = [
             {text: "Business", correct: false},
             {text: "Computational Engineering", correct: false}
         ]
-    }];
+    },
+    {
+        name: "neurofix",
+        question: "What do I sell on my ecommerce business?",
+        options: [
+            {text: "Furniture", correct: false},
+            {text: "Electronics", correct: true},
+            {text: "Clothing", correct: false},
+            {text: "Books", correct: false}
+        ]
+    }
+];
 
 export const quizPoints: { [key: string]: number } = {
     "corelogic": 25,
     "ut": 30,
+    "neurofix": 20
 }
 
 export const QUIZ_DESCRIPTION: string = "Complete the quiz to earn points and spend them in the shop!";
