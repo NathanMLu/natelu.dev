@@ -9,7 +9,7 @@
     import ShopItem from "$lib/components/ShopItem.svelte";
     import {buyItem} from "$lib/utils/riverUtils";
     import {SHOP_DESCRIPTION, SHOP_ITEMS} from "$lib/models/river";
-    import {getPoints} from "$lib/utils/userUtils";
+    import {completeLevel, getPoints} from "$lib/utils/userUtils";
     import RiverCanvas from "$lib/components/RiverCanvas.svelte";
 
     let showModal = false;
@@ -21,6 +21,7 @@
     let errorMsg = '';
 
     let points = 0;
+    const levelNumber = 11;
 
     user.subscribe(user => {
         points = user.points;
@@ -61,6 +62,17 @@
                 loading.set(false);
             });
     };
+
+    const giveOneCoin = () => {
+        completeLevel(levelNumber, $user).then(() => {
+            getPoints($user).then((points: number) => {
+                user.update((u) => {
+                    u.points = points;
+                    return u;
+                });
+            });
+        });
+    }
 
     const addToCart = (event) => {
         cart.push({name: event.detail.name, customMessage: event.detail.customMessage, price: event.detail.price});
@@ -163,7 +175,7 @@
         <div class="flex flex-col items-start justify-center lg:px-24 px-12 pt-32 pb-28">
             <h1 class="text-3xl font-bold text-dark mb-6">
                 Spend your
-                <img src="{coin}" class="inline align-middle w-14 mx-2" alt="coin">
+                <img src="{coin}" class="inline align-middle w-14 mx-2 hover:animate-spin cursor-pointer" alt="coin" on:click={giveOneCoin}/>
                 coins and add to the riverbed!
             </h1>
             <Button color="primary" on:click={openShop}>Nate's Shop</Button>

@@ -9,6 +9,7 @@
     import {loading} from "$lib/models/stores";
     import Toast from "$lib/components/Toast.svelte";
     import Quiz from "$lib/components/Quiz.svelte";
+    import FloatingCoins from "$lib/components/FloatingCoins.svelte";
 </script>
 
 <svelte:head>
@@ -21,6 +22,7 @@
         <Spinner></Spinner>
     {/if}
 
+    <FloatingCoins/>
     <Toast/>
     <Quiz/>
     <Navbar/>

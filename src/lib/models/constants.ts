@@ -11,6 +11,7 @@ export const levelPoints: { [key: number]: number } = {
     8: 50,
     9: 55,
     10: 60,
+    11: 1
 };
 
 export const congratsMessages = [
