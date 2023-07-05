@@ -46,16 +46,14 @@ export const POST = async ({request}: { request: Request }) => {
 
         const correct = quiz.options.find((option) => option.text === answer)?.correct;
         if (correct === undefined || !correct) {
-            return new Response(JSON.stringify({error: "Invalid/incorrect answer"}), {
+            return new Response(JSON.stringify({error: "Incorrect answer"}), {
                 status: 400,
             });
         }
 
         if (user[`quiz:${quizName}`]) {
-            console.log(`User has already completed quiz ${quizName}`)
             await kv.hincrby(`user:${body.sessionId}`, "points", 1);
         } else {
-            console.log(`User has not completed quiz ${quizName}`)
             await kv.hset(`user:${body.sessionId}`, {[`quiz:${quizName}`]: true});
             await kv.hincrby(`user:${body.sessionId}`, "points", quizPoints[quizName]);
         }

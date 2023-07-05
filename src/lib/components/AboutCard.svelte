@@ -21,7 +21,7 @@
 </script>
 
 <div class="bg-transparent">
-    <div class="rounded-xl bg-secondary w-16 h-16 flex items-center justify-center cursor-pointer hover:opacity-75"
+    <div class="rounded-xl bg-secondary w-16 h-16 flex items-center justify-center cursor-pointer about-card-icon"
          on:click={() => dispatch('showQuiz')}
          on:mouseenter={showAboutQuizPrompt}>
         <img src={image} class="w-10 h-10" alt="{headline}"/>
@@ -54,5 +54,13 @@
 <style>
     .font-esteban {
         font-family: 'Esteban', serif !important;
+    }
+
+    .about-card-icon {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .about-card-icon:hover {
+        transform: scale(1.1);
     }
 </style>

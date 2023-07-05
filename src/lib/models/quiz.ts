@@ -13,28 +13,28 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
     {
         name: "corelogic",
-        question: "What is the capital of the United States?",
+        question: "What is my role at CoreLogic?",
         options: [
-            {text: "New York", correct: false},
-            {text: "Washington, D.C.", correct: true},
-            {text: "Los Angeles", correct: false},
-            {text: "Chicago", correct: false},
+            {text: "Senior Software Engineer", correct: false},
+            {text: "Machine Learning Engineer", correct: false},
+            {text: "Associate Software Engineer", correct: true},
+            {text: "Software Engineer Intern", correct: false}
         ]
     },
     {
         name: "ut",
-        question: "What is the capital of the United States?",
+        question: "What is my major at UT?",
         options: [
-            {text: "New York", correct: false},
-            {text: "a", correct: true},
-            {text: "Los Angeles", correct: false},
-            {text: "Chicago", correct: false},
+            {text: "Computer Science", correct: false},
+            {text: "Electrical/Computer Engineering", correct: true},
+            {text: "Business", correct: false},
+            {text: "Computational Engineering", correct: false}
         ]
     }];
 
 export const quizPoints: { [key: string]: number } = {
     "corelogic": 25,
-    "ut": 50
+    "ut": 30,
 }
 
 export const QUIZ_DESCRIPTION: string = "Complete the quiz to earn points and spend them in the shop!";
