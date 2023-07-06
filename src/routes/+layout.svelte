@@ -22,7 +22,6 @@
         <Spinner></Spinner>
     {/if}
 
-    <FloatingCoins/>
     <Toast/>
     <Quiz/>
     <Navbar/>
@@ -31,6 +30,7 @@
     </main>
     <Points/>
     <Footer/>
+    <FloatingCoins/>
 </div>
 
 
