@@ -27,7 +27,7 @@
             });
         }
         coins = [...coins];
-    }
+    };
 
     const repopulateCoin = (index: number) => {
         coins[index] = {
@@ -103,11 +103,8 @@
     }
 </script>
 
-<div class="fixed inset-0 flex flex-col justify-center items-center">
-    <div class="absolute inset-0 overflow-hidden">
-        {#each coins as coin}
-            <img src={coinImg} alt="coin" class="absolute cursor-pointer w-8"
-                 style="left: {coin.x}px; top: {coin.y}px; opacity: {coin.opacity}" on:click={() => giveOneCoin(coin)}/>
-        {/each}
-    </div>
-</div>
+{#each coins as coin}
+    <img src={coinImg} alt="coin" class="fixed cursor-pointer w-8"
+         style="left: {coin.x}px; top: {coin.y}px; opacity: {coin.opacity}" on:click={() => giveOneCoin(coin)}/>
+{/each}
+
