@@ -3,25 +3,25 @@ import {kv} from "@vercel/kv";
 import type {PageServerLoad} from './$types';
 import {DEFAULT_USER_NAME, DEFAULT_USER_POINTS} from "$lib/models/constants";
 
-export const load: PageServerLoad = async ({cookies}) => {
-    let sessionId = cookies.get('session_id');
+export const load: PageServerLoad = async (event) => {
+    let sessionId = event.cookies.get('session_id');
 
     // Create a new session if one doesn't exist
     if (!sessionId) {
         sessionId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        cookies.set('session_id', sessionId, {
+        event.cookies.set('session_id', sessionId, {
             expires: new Date('Fri, 31 Dec 9999 23:59:59 GMT'),
         });
 
         await createUser(sessionId).catch((error) => {
             console.log(error);
-            cookies.delete('session_id');
+            event.cookies.delete('session_id');
         });
     }
 
     const user = await kv.hgetall(`user:${sessionId}`) as { name: string, points: string };
     if (user === null) {
-        cookies.delete('session_id');
+        event.cookies.delete('session_id');
     }
 
     return {
@@ -48,4 +48,4 @@ const createUser = async (sessionId: string) => {
             throw new Error(String(error));
         }
     }
-}
+};

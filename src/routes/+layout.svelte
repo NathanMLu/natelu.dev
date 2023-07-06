@@ -10,6 +10,10 @@
     import Toast from "$lib/components/Toast.svelte";
     import Quiz from "$lib/components/Quiz.svelte";
     import FloatingCoins from "$lib/components/FloatingCoins.svelte";
+    import { dev } from '$app/environment';
+    import { inject } from '@vercel/analytics';
+
+    inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <svelte:head>
@@ -28,7 +32,7 @@
     <meta property="og:site_name" content="Nate Lu" />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen dark">
     {#if $loading === true}
         <Spinner></Spinner>
     {/if}

@@ -30,5 +30,8 @@ export default {
         },
     },
     plugins: [],
+    exports: {
+        darkMode: 'class',
+    }
 }
 
