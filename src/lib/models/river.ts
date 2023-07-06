@@ -4,6 +4,12 @@ import trout from '$lib/images/river/trout.png'
 import drone from '$lib/images/river/drone.png'
 import sprout from '$lib/images/river/sprout.png'
 import rock from '$lib/images/river/rock.png'
+import corn from '$lib/images/river/corn.png'
+import dirt from '$lib/images/river/dirt.png'
+import grass from '$lib/images/river/grass.png'
+import grasshopper from '$lib/images/river/grasshopper.png'
+import logs from '$lib/images/river/logs.png'
+import shovel from '$lib/images/river/shovel.png'
 
 export enum RiverItemType {
     fish = 'fish',
@@ -15,7 +21,7 @@ export const SHOP_ITEMS: ShopItem[] = [
         name: 'nemo',
         prettyName: 'Nemo',
         image: nemo,
-        price: 15,
+        price: 25,
         description: 'My aquarium doesn\'t have any tropical fish!',
         width: 65,
         height: 65,
@@ -25,7 +31,7 @@ export const SHOP_ITEMS: ShopItem[] = [
         name: 'tree',
         prettyName: 'Tree',
         image: tree,
-        price: 12,
+        price: 50,
         description: 'I started planting fruit trees!',
         width: 75,
         height: 75,
@@ -35,17 +41,17 @@ export const SHOP_ITEMS: ShopItem[] = [
         name: 'trout',
         prettyName: 'Trout',
         image: trout,
-        price: 20,
+        price: 30,
         description: 'I love fishing during my spare time!',
-        width: 75,
-        height: 75,
+        width: 50,
+        height: 50,
         type: RiverItemType.fish
     },
     {
         name: 'drone',
         prettyName: 'Drone',
         image: drone,
-        price: 75,
+        price: 150,
         description: 'My first drone only cost me $35!',
         width: 75,
         height: 75,
@@ -55,7 +61,7 @@ export const SHOP_ITEMS: ShopItem[] = [
         name: 'sprout',
         prettyName: 'Sprout',
         image: sprout,
-        price: 10,
+        price: 15,
         description: 'Gardening is one of my favorite hobbies!',
         width: 50,
         height: 50,
@@ -65,10 +71,70 @@ export const SHOP_ITEMS: ShopItem[] = [
         name: 'rock',
         prettyName: 'Rock',
         image: rock,
-        price: 5,
+        price: 20,
         description: 'My backyard is full of limestone!',
-        width: 75,
-        height: 75,
+        width: 50,
+        height: 50,
+        type: RiverItemType.other
+    },
+    {
+        name: 'corn',
+        prettyName: 'Corn',
+        image: corn,
+        price: 45,
+        description: 'Planting corn is surprisingly hard!',
+        width: 50,
+        height: 50,
+        type: RiverItemType.other
+    },
+    {
+        name: 'dirt',
+        prettyName: 'Dirt',
+        image: dirt,
+        price: 10,
+        description: 'Compost makes a huge difference!',
+        width: 40,
+        height: 40,
+        type: RiverItemType.other
+    },
+    {
+        name: 'grass',
+        prettyName: 'Grass',
+        image: grass,
+        price: 20,
+        description: 'Texas grass always ends up dying!',
+        width: 50,
+        height: 50,
+        type: RiverItemType.other
+    },
+    {
+        name: 'grasshopper',
+        prettyName: 'Grasshopper',
+        image: grasshopper,
+        price: 45,
+        description: 'Grasshoppers makes great bait!',
+        width: 50,
+        height: 50,
+        type: RiverItemType.other
+    },
+    {
+        name: 'logs',
+        prettyName: 'Logs',
+        image: logs,
+        price: 35,
+        description: 'Who\'s gonna carry the boats?',
+        width: 50,
+        height: 50,
+        type: RiverItemType.other
+    },
+    {
+        name: 'shovel',
+        prettyName: 'Shovel',
+        image: shovel,
+        price: 60,
+        description: 'A must have for any gardener!',
+        width: 50,
+        height: 50,
         type: RiverItemType.other
     }
 ]

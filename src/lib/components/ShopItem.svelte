@@ -62,7 +62,6 @@
             <label for="customMessage-{prettyName}" class="font-semibold mt-3">
                 Message <span class="{customMessage.length > MAX_MESSAGE_LENGTH ? 'text-red-500' : ''}">({customMessage.length}/{MAX_MESSAGE_LENGTH})</span>:
             </label>
-            <!-- TODO: randomize placeholder -->
             <textarea name="customMessage-{prettyName}" placeholder="{MESSAGE_PLACEHOLDERS[Math.floor(Math.random() * MESSAGE_PLACEHOLDERS.length)]}"
                       id="customMessage-{prettyName}"
                       class="rounded-md p-2 mt-1 font-esteban box-border w-full h-full resize-none border-2 border-grey"
