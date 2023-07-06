@@ -6,14 +6,14 @@
 <div id="hero-container" class="flex flex-col items-center justify-center lg:flex-row">
     <div class="flex justify-center w-full lg:w-1/2">
         <div class="h-min">
-            <h1 class="font-bold text-7xl lg:pl-0 md:pl-0 pl-2">
+            <h1 class="font-bold dark:text-white text-7xl lg:pl-0 md:pl-0 pl-2">
                 Nate Lu
             </h1>
-            <h3 class="font-semibold text-lg mt-2 w-80 lg:w-60 lg:pl-0 md:pl-0 pl-2">
+            <h3 class="font-semibold dark:text-light-blue text-lg mt-2 w-80 lg:w-60 lg:pl-0 md:pl-0 pl-2">
                 Hello! I'm a Software Engineer, Student, and Entrepreneur.
             </h3>
             <a href="#contact" class="lg:pl-0 md:pl-0 pl-2">
-                <Button customClass="mt-10">
+                <Button customClass="mt-10" class="bg-primary text-white">
                     Contact
                 </Button>
             </a>

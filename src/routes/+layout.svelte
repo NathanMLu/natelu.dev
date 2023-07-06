@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import "../app.css";
     import "iconify-icon"
 
@@ -12,6 +12,7 @@
     import FloatingCoins from "$lib/components/FloatingCoins.svelte";
     import { dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
+    import Toggler from "$lib/components/Toggler.svelte";
 
     inject({ mode: dev ? 'development' : 'production' });
 </script>
@@ -32,7 +33,7 @@
     <meta property="og:site_name" content="Nate Lu" />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen dark">
+<div class="flex flex-col min-h-screen">
     {#if $loading === true}
         <Spinner></Spinner>
     {/if}
@@ -46,6 +47,7 @@
     <Points/>
     <Footer/>
     <FloatingCoins/>
+    <Toggler/>
 </div>
 
 

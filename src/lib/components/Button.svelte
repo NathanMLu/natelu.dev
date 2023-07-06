@@ -1,8 +1,8 @@
-<script>
-    export let color = 'primary';
+<script lang="ts">
     export let flat = false;
     export let inverse = false;
     export let lowercase = false;
+    // TODO: Remove customClass
     export let customClass = '';
     export let disabled = false;
 </script>
@@ -12,7 +12,7 @@
         class:inverse={inverse}
         class:lowercase={lowercase}
         class:disabled={disabled}
-        class="{color} whitespace-nowrap w-min font-semibold drop-shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90 {customClass} {disabled ? 'opacity-50 cursor-not-allowed' : ''}"
+        class="{$$restProps.class} whitespace-nowrap w-min font-semibold drop-shadow-lg border-0 cursor-pointer text-lg rounded-lg px-3 py-1.5 hover:opacity-90 {customClass} {disabled ? 'opacity-50 cursor-not-allowed' : ''}"
         on:click>
     <slot></slot>
 </button>
@@ -31,47 +31,47 @@
         text-transform: lowercase;
     }
 
-    .primary {
-        background: theme('colors.primary');
-        color: white;
-    }
+    /*.primary {*/
+    /*    background: theme('colors.primary');*/
+    /*    color: white;*/
+    /*}*/
 
-    .secondary {
-        background: theme('colors.secondary');
-        color: theme('colors.dark');
-    }
+    /*.secondary {*/
+    /*    background: theme('colors.secondary');*/
+    /*    color: theme('colors.dark');*/
+    /*}*/
 
-    .dark {
-        background: theme('colors.dark');
-        color: white;
-    }
+    /*.dark {*/
+    /*    background: theme('colors.dark');*/
+    /*    color: white;*/
+    /*}*/
 
-    .grey {
-        background: theme('colors.grey');
-        color: theme('colors.dark');
-    }
+    /*.grey {*/
+    /*    background: theme('colors.grey');*/
+    /*    color: theme('colors.dark');*/
+    /*}*/
 
-    .primary.inverse {
-        color: theme('colors.primary');
-        background: white;
-        border: 2px solid theme('colors.primary');
-    }
+    /*.primary.inverse {*/
+    /*    color: theme('colors.primary');*/
+    /*    background: white;*/
+    /*    border: 2px solid theme('colors.primary');*/
+    /*}*/
 
-    .secondary.inverse {
-        color: theme('colors.secondary');
-        background: white;
-        border: 2px solid theme('colors.secondary');
-    }
+    /*.secondary.inverse {*/
+    /*    color: theme('colors.secondary');*/
+    /*    background: white;*/
+    /*    border: 2px solid theme('colors.secondary');*/
+    /*}*/
 
-    .dark.inverse {
-        color: theme('colors.dark');
-        background: white;
-        border: 2px solid theme('colors.dark');
-    }
+    /*.dark.inverse {*/
+    /*    color: theme('colors.dark');*/
+    /*    background: white;*/
+    /*    border: 2px solid theme('colors.dark');*/
+    /*}*/
 
-    .grey.inverse {
-        color: theme('colors.grey');
-        background: white;
-        border: 2px solid theme('colors.grey');
-    }
+    /*.grey.inverse {*/
+    /*    color: theme('colors.grey');*/
+    /*    background: white;*/
+    /*    border: 2px solid theme('colors.grey');*/
+    /*}*/
 </style>

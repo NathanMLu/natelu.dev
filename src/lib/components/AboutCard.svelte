@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {createEventDispatcher} from "svelte";
     import {toast} from "$lib/models/stores";
 
