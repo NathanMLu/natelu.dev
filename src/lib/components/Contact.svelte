@@ -64,7 +64,7 @@
     }
 </script>
 
-<div id="contact-container" class="flex justify-evenly items-center lg:flex-row md:flex-row flex-col">
+<div id="contact" class="flex justify-evenly items-center lg:flex-row md:flex-row flex-col">
     <div class="lg:w-2/5 lg:mr-14 px-8">
         <h1 class="text-3xl text-dark font-semibold">Contact Me</h1>
         <h3 class="text-primary font-semibold text-xl mt-2 cursor-pointer" on:click={toggleJoke}>
@@ -125,20 +125,20 @@
         filter: grayscale(0%);
     }
 
-    #contact-container {
+    #contact {
         margin-top: 10vh;
         margin-bottom: 5vh;
     }
 
     @media (max-width: 1024px) {
-        #contact-container {
+        #contact {
             margin-top: 5vh;
             margin-bottom: 2.5vh;
         }
     }
 
     @media (max-width: 764px) {
-        #contact-container {
+        #contact {
             margin-top: 10vh;
             margin-bottom: 2.5vh;
         }
