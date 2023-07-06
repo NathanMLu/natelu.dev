@@ -44,9 +44,9 @@ export const quizzes: Quiz[] = [
 ];
 
 export const quizPoints: { [key: string]: number } = {
-    "corelogic": 25,
+    "corelogic": 30,
     "ut": 30,
-    "neurofix": 20
+    "neurofix": 30
 }
 
 export const QUIZ_DESCRIPTION: string = "Complete the quiz to earn points and spend them in the shop!";
