@@ -46,7 +46,7 @@
     </main>
     <Points/>
     <Footer/>
-    <FloatingCoins/>
+<!--    <FloatingCoins/>-->
     <Toggler/>
 </div>
 
