@@ -33,9 +33,10 @@
         riverItems.forEach((item) => {
             let shopItem = SHOP_ITEMS.find((shopItem) => shopItem.name === item.name);
             if (shopItem) {
+                console.log(item)
                 items.push({
                     name: item.name,
-                    customMessage: item.customMessage,
+                    custom_message: item.custom_message,
                     image: shopItem.image,
                     x: scaleXCoordinate(item.x, shopItem.width),
                     y: scaleYCoordinate(item.y, shopItem.height),
@@ -77,10 +78,10 @@
             if (image) {
                 ctx.drawImage(image, item.x, item.y, item.width, item.height);
 
-                if (item.showTooltip && item.customMessage) {
+                if (item.showTooltip && item.custom_message) {
                     const tooltipPadding = 5;
                     const tooltipHeight = 25;
-                    const tooltipWidth = ctx.measureText(item.customMessage).width + tooltipPadding * 2;
+                    const tooltipWidth = ctx.measureText(item.custom_message).width + tooltipPadding * 2;
                     const tooltipX = item.x + item.width / 2 - tooltipWidth / 2;
                     const tooltipY = item.y - tooltipHeight;
 
@@ -98,7 +99,7 @@
                     ctx.font = "16px Arial";
                     ctx.textAlign = "center";
                     ctx.textBaseline = "middle";
-                    ctx.fillText(item.customMessage, tooltipX + tooltipWidth / 2, tooltipY + tooltipHeight / 2);
+                    ctx.fillText(item.custom_message, tooltipX + tooltipWidth / 2, tooltipY + tooltipHeight / 2);
                 }
             }
         });

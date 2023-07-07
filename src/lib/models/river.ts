@@ -171,7 +171,7 @@ export interface ShopItem {
 
 export interface RiverItem {
     name: string;
-    customMessage: string;
+    custom_message: string;
     image: string;
     x: number;
     y: number;
