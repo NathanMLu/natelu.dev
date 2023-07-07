@@ -36,6 +36,9 @@
             });
 
             closeQuiz();
+            selectedOption = "";
+            errorMsg = "";
+
         }).catch((err) => {
             errorMsg = err.message;
         });
