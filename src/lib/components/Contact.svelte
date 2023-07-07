@@ -66,7 +66,7 @@
 
 <div id="contact" class="flex justify-evenly items-center lg:flex-row md:flex-row flex-col">
     <div class="lg:w-2/5 lg:mr-14 px-8">
-        <h1 class="text-3xl text-dark font-semibold">Contact Me</h1>
+        <h1 class="text-3xl text-dark dark:text-secondary font-semibold">Contact Me</h1>
         <h3 class="text-primary font-semibold text-xl mt-2 cursor-pointer" on:click={toggleJoke}>
             ({joke.joke.substring(0, joke.joke.indexOf(joke.punchline))}
             <i>{joke.punchline}</i>
@@ -75,15 +75,15 @@
 
         <div class="mt-5">
             <div class="flex flex-col">
-                <label for="name" class="text-dark text-lg font-semibold">Name</label>
+                <label for="name" class="text-dark dark:text-secondary text-lg font-semibold">Name</label>
                 <input type="text" name="name" id="name" class="rounded-md p-2 mt-1 font-esteban" required bind:value={name}/>
             </div>
             <div class="flex flex-col mt-3">
-                <label for="email" class="text-dark text-lg font-semibold">Email</label>
+                <label for="email" class="text-dark dark:text-secondary text-lg font-semibold">Email</label>
                 <input type="email" name="email" id="email" class="rounded-md p-2 mt-1 font-esteban" required bind:value={email}/>
             </div>
             <div class="flex flex-col mt-3 mb-2">
-                <label for="message" class="text-dark text-lg font-semibold">Message</label>
+                <label for="message" class="text-dark dark:text-secondary text-lg font-semibold">Message</label>
                 <textarea name="message" id="message" rows="7" maxlength="500"
                           class="rounded-md p-2 mt-1 font-esteban" bind:value={message}></textarea>
             </div>
@@ -93,7 +93,7 @@
             {#if sent}
                 <p class="text-primary text-lg font-semibold">Message sent!</p>
             {/if}
-            <Button class="bg-dark text-white mt-5" on:click={sendMessage}>
+            <Button class="bg-dark dark:bg-white dark:text-dark text-white mt-5" on:click={sendMessage}>
                 Send message
             </Button>
         </div>

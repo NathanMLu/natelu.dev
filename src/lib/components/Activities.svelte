@@ -5,7 +5,7 @@
 
 <div id="activities-container">
     <div class="lg:px-24 px-12 pb-12">
-        <h2 class="text-dark font-bold text-3xl mb-12">Activities</h2>
+        <h2 class="text-dark dark:text-secondary font-bold text-3xl mb-12">Activities</h2>
         <div class="grid gap-12 activities">
             {#each Activities as activity}
                 <ActivitiesCard
