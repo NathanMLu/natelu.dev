@@ -93,7 +93,7 @@
             {#if sent}
                 <p class="text-primary text-lg font-semibold">Message sent!</p>
             {/if}
-            <Button color="dark" customClass="mt-5" on:click={sendMessage}>
+            <Button class="bg-dark text-white mt-5" on:click={sendMessage}>
                 Send message
             </Button>
         </div>

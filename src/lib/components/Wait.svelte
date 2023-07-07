@@ -8,7 +8,7 @@
     <div class="bg-white lg:pl-36 md:pl-16 pl-8 pt-12 pb-8">
         <h2 class="text-dark font-bold text-3xl mb-8">Don't stop here. There's more to see!</h2>
         <a href="/projects">
-            <Button color="primary">More Projects</Button>
+            <Button class="bg-primary text-white">More Projects</Button>
         </a>
     </div>
     <img alt="bottom curve" src="{Curve}" class="w-full -scale-x-100">

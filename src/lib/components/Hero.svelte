@@ -13,7 +13,7 @@
                 Hello! I'm a Software Engineer, Student, and Entrepreneur.
             </h3>
             <a href="#contact" class="lg:pl-0 md:pl-0 pl-2">
-                <Button customClass="mt-10" class="bg-primary text-white">
+                <Button class="bg-primary text-white mt-10">
                     Contact
                 </Button>
             </a>

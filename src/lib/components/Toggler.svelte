@@ -12,22 +12,31 @@
         darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
     }
 
+    if (browser) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    }
+
     onMount(() => {
-        if (browser) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                if (e.matches) {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            });
+        const theme = localStorage.getItem('theme');
+
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            darkMode = true;
         }
     });
+
 </script>
 
 <div class="fixed bottom-7 right-12">
     <input checked={darkMode} on:click={handleSwitchDarkMode} type="checkbox" id="theme-toggle" class="invisible"/>
-    <label for="theme-toggle" class="inline-block cursor-pointer h-9 w-9 absolute rounded-full duration-300 content-['']"></label>
+    <label for="theme-toggle"
+           class="inline-block cursor-pointer h-9 w-9 absolute rounded-full duration-300 content-['']"></label>
 </div>
 
 <style>

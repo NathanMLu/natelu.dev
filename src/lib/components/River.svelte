@@ -160,7 +160,7 @@
                                     {cartTotal}</h5>
                             </div>
                         </div>
-                        <Button color="primary" customClass="mt-3" on:click={buyItems}
+                        <Button class="bg-primary text-white mt-3" on:click={buyItems}
                                 disabled={cart.length === 0 || points < cartTotal}
                         >Buy</Button>
                     </div>
@@ -178,7 +178,7 @@
                 <img src="{coin}" class="inline align-middle w-14 mx-2 hover:animate-spin cursor-pointer" alt="coin" on:click={giveOneCoin}/>
                 coins and add to the riverbed!
             </h1>
-            <Button color="primary" on:click={openShop}>Nate's Shop</Button>
+            <Button class="bg-primary text-white" on:click={openShop}>Nate's Shop</Button>
         </div>
     </div>
     <RiverCanvas bind:loadItems={loadItems}>

@@ -25,7 +25,7 @@
             <h2 class="text-dark font-bold text-3xl">About Me</h2>
             <p class="mt-4 text-dark">{AboutDescription}</p>
             <a href="/about">
-                <Button lowercase="true" customClass="whitespace-nowrap mt-8">More About Me!</Button>
+                <Button lowercase="true" class="bg-primary text-white whitespace-nowrap mt-8">More About Me!</Button>
             </a>
         </div>
         <div class="flex gap-12 lg:gap-6 justify-evenly align-middle flex-col md:flex-row">

@@ -81,7 +81,7 @@
                             <p class=" text-red-500 mt-2 self-start">{errorMsg}</p>
                         {/if}
 
-                        <Button color="primary" customClass="self-start mt-6" on:click={submitQuiz}>
+                        <Button class="bg-primary text-secondary self-start mt-6" on:click={submitQuiz}>
                             Submit
                         </Button>
                     </div>

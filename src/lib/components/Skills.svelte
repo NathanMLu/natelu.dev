@@ -35,7 +35,7 @@
     <div class="flex flex-col justify-center lg:gap-8 items-center lg:items-start lg:flex-row lg:pl-36 lg:justify-between">
         <div class="order-2 lg:order-1">
             <div id="skills-logos"
-                 class="border-4 rounded-2xl border-dark-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-y-scroll">
+                 class="border-4 rounded-2xl border-dark-blue dark:border-light-blue grid lg:grid-cols-8 md:grid-cols-8 grid-cols-5 gap-4 p-4 overflow-y-scroll bg-secondary">
                 {#each technologies as technology}
                     <img src="{technology.logo}" alt="{technology.name}"
                          class="w-full h-full object-contain cursor-pointer"
@@ -43,11 +43,11 @@
                          on:mouseover="{() => updateTechnology(technology.name)}">
                 {/each}
             </div>
-            <Button lowercase="true" color="dark" customClass="mt-6" on:click={toggleList}>Full List</Button>
+            <Button lowercase="true" class="bg-dark dark:bg-white text-white dark:text-dark mt-6" on:click={toggleList}>Full List</Button>
         </div>
 
-        <div class="flex items-center justify-center flex-col flex-grow p-12 lg:px-12 lg:pt-12 lg:pb-0  order-1">
-            <h2 class="text-dark font-bold text-3xl text-center">
+        <div class="flex items-center justify-center flex-col flex-grow p-12 lg:px-12 lg:pt-12 lg:pb-0 order-1">
+            <h2 class="text-dark font-bold text-3xl text-center dark:text-secondary">
                 My Skills
             </h2>
             <h4 class="text-primary text-xl font-semibold text-center mt-10">
@@ -57,7 +57,7 @@
                 {#each technologies.sort((a, b) => a.name.localeCompare(b.name)) as technology}
                     {#if technology.name === selectedTechnology}
                         {#each technology.facts as fact}
-                            <li class="text-black text-left mt-4 font-esteban">
+                            <li class="text-black dark:text-light-blue text-left mt-4 font-esteban">
                                 {fact}
                             </li>
                         {/each}
@@ -73,7 +73,7 @@
             <h4 class="text-primary text-xl font-semibold lg:col-span-2 md:col-span-2 col-span-3">
                 Languages
             </h4>
-            <p class="lg:col-span-6 md:col-span-6 col-span-5">
+            <p class="lg:col-span-6 md:col-span-6 col-span-5 dark:text-white">
                 {#each getTechnology(technologyTypes.language) as technology, index}
                     {technology.name}{index !== getTechnology(technologyTypes.language).length - 1 ? ', ' : ''}
                 {/each}
@@ -81,7 +81,7 @@
             <h4 class="text-primary text-xl font-semibold lg:col-span-2 md:col-span-2 col-span-3">
                 Frameworks
             </h4>
-            <p class="lg:col-span-6 md:col-span-6 col-span-5">
+            <p class="lg:col-span-6 md:col-span-6 col-span-5 dark:text-white">
                 {#each getTechnology(technologyTypes.framework) as technology, index}
                     {technology.name}{index !== getTechnology(technologyTypes.framework).length - 1 ? ', ' : ''}
                 {/each}
@@ -89,7 +89,7 @@
             <h4 class="text-primary text-xl font-semibold lg:col-span-2 md:col-span-2 col-span-3">
                 Libraries
             </h4>
-            <p class="lg:col-span-6 md:col-span-6 col-span-5">
+            <p class="lg:col-span-6 md:col-span-6 col-span-5 dark:text-white">
                 {#each getTechnology(technologyTypes.library) as technology, index}
                     {technology.name}{index !== getTechnology(technologyTypes.library).length - 1 ? ', ' : ''}
                 {/each}
@@ -97,7 +97,7 @@
             <h4 class="text-primary text-xl font-semibold lg:col-span-2 md:col-span-2 col-span-3">
                 Tools
             </h4>
-            <p class="lg:col-span-6 md:col-span-6 col-span-5">
+            <p class="lg:col-span-6 md:col-span-6 col-span-5 dark:text-white">
                 {#each getTechnology(technologyTypes.tool) as technology, index}
                     {technology.name}{index !== getTechnology(technologyTypes.tool).length - 1 ? ', ' : ''}
                 {/each}

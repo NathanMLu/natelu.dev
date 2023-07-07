@@ -25,6 +25,9 @@
     }
 
     const addToCart = () => {
+        if (customMessage.length > MAX_MESSAGE_LENGTH) {
+            return;
+        }
         dispatch('addToCart', {
             name,
             customMessage,
@@ -69,11 +72,11 @@
                       bind:value={customMessage}></textarea>
 
             {#if selected}
-                <Button color="dark" customClass="mt-3" on:click={removeFromCart}>
+                <Button class="bg-dark text-white mt-3" on:click={removeFromCart}>
                     Remove from Cart
                 </Button>
             {:else}
-                <Button color="primary" customClass="mt-3 disabled:opacity-50" disabled="{customMessage.length > MAX_MESSAGE_LENGTH}"
+                <Button class="bg-primary text-white mt-3 disabled:opacity-50" disabled="{customMessage.length > MAX_MESSAGE_LENGTH}"
                         on:click={addToCart}>
                     Add to Cart
                 </Button>

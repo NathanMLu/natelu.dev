@@ -16,7 +16,7 @@
              class="object-cover brightness-90 duration-200 transition hover:brightness-100 lg:col-span-6 lg:col-start-3 md:col-start-2 md:col-span-7 col-start-1 col-span-12 lg:blur-0 md:blur-sm blur-md row-span-full rounded-sm shadow-lg h-96"
              alt="{title}">
         <div class="lg:col-span-5 lg:col-start-6 md:col-start-6 md:col-span-6 col-start-2 col-span-10 z-10 row-span-full flex content-end items-end flex-col">
-            <h2 class="text-2xl font-semibold text-black">{title}</h2>
+            <h2 class="text-2xl font-semibold text-black dark:text-white">{title}</h2>
             <div class="bg-white py-4 px-8 drop-shadow-xl w-full rounded-xl mt-4">
                 <div class="flex items-center justify-center">
                     <p class="text-dark text-end">
@@ -67,7 +67,7 @@
              class="object-cover brightness-90 duration-200 transition hover:brightness-100 lg:col-span-6 lg:col-start-5 md:col-start-5 md:col-span-7 col-start-1 col-span-12 lg:blur-0 md:blur-sm blur-md row-span-full rounded-sm shadow-lg h-96"
              alt="{title}">
         <div class="lg:col-span-5 lg:col-start-3 md:col-start-2 md:col-span-6 col-start-2 col-span-10 z-10 row-span-full flex content-end items-start flex-col">
-            <h2 class="text-2xl font-semibold text-black">{title}</h2>
+            <h2 class="text-2xl font-semibold text-black dark:text-white">{title}</h2>
             <div class="bg-white py-4 px-8 drop-shadow-xl w-full rounded-xl mt-4">
                 <div class="w-full flex items-center justify-center">
                     <p class="text-dark">
@@ -109,7 +109,6 @@
         </div>
     </div>
 {/if}
-
 
 <style>
 </style>

@@ -104,7 +104,7 @@
 </script>
 
 {#each coins as coin}
-    <img src={coinImg} alt="coin" class="fixed cursor-pointer w-8"
+    <img src={coinImg} alt="coin" class="fixed cursor-pointer w-8 overflow-hidden"
          style="left: {coin.x}px; top: {coin.y}px; opacity: {coin.opacity}" on:click={() => giveOneCoin(coin)}/>
 {/each}
 
