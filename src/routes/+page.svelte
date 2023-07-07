@@ -18,7 +18,6 @@
     export let data: PageData;
 
     onMount(async () => {
-        console.log(data.user)
         user.set(data.user as User);
     });
 </script>

@@ -33,7 +33,6 @@
         riverItems.forEach((item) => {
             let shopItem = SHOP_ITEMS.find((shopItem) => shopItem.name === item.name);
             if (shopItem) {
-                console.log(item)
                 items.push({
                     name: item.name,
                     custom_message: item.custom_message,

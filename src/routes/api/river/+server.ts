@@ -103,7 +103,6 @@ export const POST = async ({request}: { request: Request }) => {
 export const GET = async ({url}: { url: URL }) => {
     try {
         const river = await sql`SELECT * FROM river`;
-        console.log(river.fields)
 
         return new Response(JSON.stringify(river.rows), {status: 200});
     } catch (error) {
