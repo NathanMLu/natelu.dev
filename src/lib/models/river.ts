@@ -23,8 +23,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: nemo,
         price: 25,
         description: 'My aquarium doesn\'t have any tropical fish!',
-        width: 65,
-        height: 65,
+        width: 50,
+        height: 50,
         type: RiverItemType.fish
     },
     {
@@ -103,8 +103,8 @@ export const SHOP_ITEMS: ShopItem[] = [
         image: grass,
         price: 20,
         description: 'Texas grass always ends up dying!',
-        width: 50,
-        height: 50,
+        width: 30,
+        height: 30,
         type: RiverItemType.other
     },
     {
