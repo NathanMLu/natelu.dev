@@ -1,7 +1,7 @@
 <script lang="ts">
     import {jokes, socials} from "$lib/models/contact";
 
-    import pfp from '$lib/images/contact/pfp.jpg';
+    import pfp from '$lib/images/contact/pfp_smallest.png';
     import Button from "$lib/components/Button.svelte";
 
     let joke = jokes[Math.floor(Math.random() * jokes.length)];
