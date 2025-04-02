@@ -6,6 +6,7 @@
     import {quiz} from "$lib/models/stores";
 
     import {About, AboutDescription} from "$lib/models/about";
+    import {socials} from "$lib/models/contact";
 
     const openAboutQuiz = (name: string) => {
         const aboutQuiz = quizzes.find(quiz => quiz.name === name);
@@ -24,7 +25,7 @@
         <div class="flex justify-start flex-col lg:pt-8 pt-16">
             <h2 class="text-dark font-bold text-3xl">About Me</h2>
             <p class="mt-4 text-dark">{AboutDescription}</p>
-            <a href="/about">
+            <a href="{socials.linkedin}" target="_blank" rel="noopener noreferrer">
                 <Button lowercase="true" class="bg-primary text-white whitespace-nowrap mt-8">More About Me!</Button>
             </a>
         </div>

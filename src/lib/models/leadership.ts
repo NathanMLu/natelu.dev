@@ -8,13 +8,13 @@ export const Leadership = [
     {
         image: Freetail,
         title: 'Logistics Team',
-        description: 'Key organizer and event coordinator for Texas’ largest student-run hackathon, HackTX, with 1000+ attendees.',
+        description: 'Organizer and event coordinator for Texas’ largest student-run hackathon, HackTX, with 1000+ attendees.',
         link: 'https://freetailhackers.com/'
     },
     {
         image: Csc,
         title: 'President',
-        description: 'Grew CS club by 300% by organizing weekly meetings, team projects, workshops, guest speakers, and student org outreach.',
+        description: 'Grew CS club to 500+ members by organizing weekly meetings, team projects, workshops, and student org outreach.',
         link: 'https://austincc.campuslabs.com/engage/organization/acc_csc'
     },
     {

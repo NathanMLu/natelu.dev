@@ -13,7 +13,7 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
     {
         name: "corelogic",
-        question: "What is my role at CoreLogic?",
+        question: "What was my role at CoreLogic?",
         options: [
             {text: "Senior Software Engineer", correct: false},
             {text: "Machine Learning Engineer", correct: false},
